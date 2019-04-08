@@ -19,7 +19,6 @@ brew 'fzf'
 brew 'jq'
 brew 'tmux'
 brew 'the_silver_searcher'
-brew 'vagrant'
 brew 'trash'
 
 # Apps
