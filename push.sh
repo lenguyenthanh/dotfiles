@@ -6,7 +6,7 @@ echo -e "\033[0;32m Pushing to github..\033[0m"
 git add .
 
 # Commit changes.
-msg="Backup `date`"
+msg="Backup at `date`"
 if [ $# -eq 1 ]
   then msg="$1"
 fi

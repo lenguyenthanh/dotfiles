@@ -8,14 +8,14 @@ if test ! $(which brew); then
 fi
 
 # Update Homebrew recipes
-# brew update
+brew update
 
 # Install all our dependencies with bundle (See Brewfile)
-#brew tap homebrew/bundle
-#brew bundle
+brew tap homebrew/bundle
+brew bundle
 
 # Make ZSH the default shell environment
-#chsh -s $(which zsh)
+chsh -s $(which zsh)
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
@@ -42,10 +42,13 @@ ln -s $HOME/.dotfiles/init.vim $HOME/.config/nvim
 rm -rf $HOME/.ideavimrc
 ln -s $HOME/.dotfiles/ideavimrc $HOME/.ideavimrc
 
-
-# Symlink vimrc
+# Symlink tmux
 rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
+
+# Symlink mackup
+rm -rf $HOME/.mackup.cfg
+ln -s $HOME/.dotfiles/mackup.cfg $HOME/.mackup.cfg
 
 # Symlink the Mackup config file to the home directory
 #ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
