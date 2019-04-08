@@ -1,0 +1,26 @@
+# Local/private config goes in the include
+[include]
+  path = ~/.gitconfig.local
+[core]
+	excludesfile = /Users/thanhle/.gitignore_global
+  editor = nvim
+[difftool]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool]
+  keepBackup = false
+[rebase]
+	autosquash = true
+[alias]
+  pf = push --force-with-lease
+  pr = pull --rebase
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  ui = true
+[commit]
+	gpgsign = true
+	template = /Users/thanhle/.stCommitMsg
+[gpg]
+	program = /usr/local/bin/gpg
