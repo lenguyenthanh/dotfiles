@@ -38,6 +38,7 @@ cask 'telegram'
 cask 'intellij-idea'
 cask 'keybase'
 cask 'dash'
+cask 'iTerm2'
 
 # Mac App Store
 mas 'Keynote', id: 409183694
