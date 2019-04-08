@@ -2,15 +2,6 @@
 alias v="nvim"
 export VISUAL="nvim"
 
-# Alias for configs
-alias zshconfig="nvim ~/dotfiles/zshrc"
-alias aliasesconfig="nvim ~/dotfiles/aliases.zsh"
-alias nvimconfig="nvim ~/dotfiles/init.vim"
-alias vimconfig="nvim ~/dotfiles/vimrc"
-alias tmuxconfig="nvim ~/dotfiles/tmux.conf"
-alias ideavimconfig="nvim ~/dotfiles/ideavimrc"
-alias gitconfig="nvim ~/dotfiles/gitconfig"
-
 # git
 alias glr="git pull --rebase"
 alias gcount="git count"

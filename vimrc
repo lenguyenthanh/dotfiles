@@ -166,6 +166,10 @@ set shiftwidth=2  " when using the >> or << commands, shift lines by 4 spaces
 set cursorline    " show a visual line under the cursor's current line
 set nofixendofline
 
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
