@@ -2,6 +2,5 @@
 
 ## Install
 ```
-chmod +x ./install.sh
-./install.sh
+curl -sSL https://raw.githubusercontent.com/lenguyenthanh/dotfiles/master/install.sh | sh
 ```
