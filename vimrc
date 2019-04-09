@@ -162,7 +162,7 @@ set smarttab       " insert tabs on the start of a line according to shiftwidth,
 set incsearch      " show search matches as you type
 set nobackup	     " no backup
 set noswapfile	   " no swap files
-set hidden
+set hidden         " Avoid No write since last change message when open new files
 set ts=2 		       " set tabs to have 2 spaces
 set shiftwidth=2   " when using the >> or << commands, shift lines by 4 spaces
 set cursorline     " show a visual line under the cursor's current line
