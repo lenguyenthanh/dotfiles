@@ -11,7 +11,7 @@ ZSH_CUSTOM=$DOTFILES
 ZSH_THEME="nt9"
 
 # Plugins
-plugins=(fzf git fasd)
+plugins=(fzf fasd)
 
 . $DOTFILES/env.sh
 
