@@ -3,6 +3,7 @@ alias v="nvim"
 export VISUAL="nvim"
 
 # git
+alias g="git"
 alias glr="git pull --rebase"
 alias gcount="git count"
 
