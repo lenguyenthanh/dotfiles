@@ -44,3 +44,6 @@ cask 'iTerm2'
 mas 'Keynote', id: 409183694
 mas 'Spark', id: 1176895641
 mas 'OneDrive', id: 823766827
+
+# fonts
+cask 'font-fira-code'
