@@ -100,6 +100,9 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> <leader>c  :Commits<CR>
   nnoremap <silent> <leader>bc :BCommits<CR>
 
+Plug 'tommcdo/vim-lion'
+  let g:lion_squeeze_spaces = 1
+
 " LANGUAGE
 " Json
 Plug 'elzr/vim-json', { 'for' : 'json' }
@@ -147,24 +150,23 @@ nmap <Leader>p "+p
 " Binding paste mode
 set pastetoggle=<F2>
 
-" set nowrap        " don't wrap lines
-set expandtab	    " tab by spaces
-set autoindent    " always set auto indenting on
-set cindent		    " copy the previous indentation on auto indenting
-set smartindent   " smart indent
-set rnu           " show relative line numbers
-set nu            " show line numbers
-set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch     " set show matching parenthesis
-set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
-set incsearch     " show search matches as you type
-set nobackup	    " no backup
-set noswapfile	  " no swap files
+set expandtab	     " tab by spaces
+set autoindent     " always set auto indenting on
+set cindent		     " copy the previous indentation on auto indenting
+set smartindent    " smart indent
+set rnu            " show relative line numbers
+set nu             " show line numbers
+set shiftround     " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch      " set show matching parenthesis
+set smarttab       " insert tabs on the start of a line according to shiftwidth, not tabstop
+set incsearch      " show search matches as you type
+set nobackup	     " no backup
+set noswapfile	   " no swap files
 set hidden
-set ts=2 		      " set tabs to have 2 spaces
-set shiftwidth=2  " when using the >> or << commands, shift lines by 4 spaces
-set cursorline    " show a visual line under the cursor's current line
-set nofixendofline
+set ts=2 		       " set tabs to have 2 spaces
+set shiftwidth=2   " when using the >> or << commands, shift lines by 4 spaces
+set cursorline     " show a visual line under the cursor's current line
+set nofixendofline " Allow no end of line
 
 " Enable folding
 set foldmethod=indent
