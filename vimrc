@@ -113,7 +113,11 @@ Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
 " Toml Syntax
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
-Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'} " Kotlin
+" Kotlin
+Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
+
+" Haskel
+Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
 
 call plug#end()
 
