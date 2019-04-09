@@ -24,7 +24,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+# Install Haskell Stack
+curl -sSL https://get.haskellstack.org/ | sh
+
+# Symlink zshrc
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 
@@ -59,9 +62,3 @@ ln -s $HOME/.dotfiles/mackup.cfg $HOME/.mackup.cfg
 
 # https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
 touch ~/.android/repositories.cfg
-# Symlink the Mackup config file to the home directory
-#ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
-
-# Set macOS preferences
-# We will run this last because this will reload the shell
-#source .macos
