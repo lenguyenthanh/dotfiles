@@ -26,7 +26,7 @@ Plug 'SirVer/ultisnips'
   let g:UltiSnipsJumpForwardTrigger="<c-b>"
   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
   let g:UltiSnipsEditSplit="vertical"
-  let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+  let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/UltiSnips']
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
