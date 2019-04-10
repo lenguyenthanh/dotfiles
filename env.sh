@@ -7,11 +7,20 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Theme
+ZSH_THEME="nt9"
+
+# Oh-My-Zsh Plugins
+plugins=(fzf fasd)
+
+# Activate Oh-My-Zsh
+source $ZSH/oh-my-zsh.sh
+
 # Vim key binding
 bindkey -v
 
+# Fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
