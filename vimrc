@@ -91,7 +91,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
 Plug 'junegunn/fzf.vim'
   nnoremap <silent> <leader>f :Files <C-r>=expand("%:h")<CR>/<CR>
   nnoremap <C-p> :Files<CR>
-  nnoremap <C-b> :Buffers<CR>
+  nnoremap <C-u> :Buffers<CR>
   " Git commit
   let g:fzf_commits_log_options = '--graph --color=always
     \ --format="%C(yellow)%h%C(red)%d%C(reset)
