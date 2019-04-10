@@ -4,8 +4,6 @@ export VISUAL='nvim'
 
 # git
 alias g='git'
-alias glr='git pull --rebase'
-alias gcount='git count'
 
 # chess
 function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }

@@ -13,7 +13,8 @@
 	autosquash = true
 [alias]
   pf = push --force-with-lease
-  pr = pull --rebase
+  lr = pull --rebase
+  co = checkout
 [color]
   diff = auto
   status = auto
