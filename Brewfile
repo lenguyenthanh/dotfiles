@@ -34,7 +34,6 @@ cask 'android-sdk'
 cask 'android-studio'
 cask 'spotify'
 cask 'sourcetree'
-cask 'telegram'
 cask 'intellij-idea-ce'
 cask 'keybase'
 cask 'dash'
@@ -44,6 +43,7 @@ cask 'iTerm2'
 mas 'Keynote', id: 409183694
 mas 'Spark', id: 1176895641
 mas 'OneDrive', id: 823766827
+mas 'telegram', id: 747648890
 
 # fonts
 cask 'font-fira-code'
