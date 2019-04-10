@@ -9,7 +9,6 @@ tap 'homebrew/bundle'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
 brew 'gnupg2'
-brew 'mackup'
 brew 'mas'
 brew 'tree'
 brew 'zsh'
