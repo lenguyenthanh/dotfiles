@@ -39,6 +39,10 @@ ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 rm -rf $HOME/.gitconfig.local
 ln -s $HOME/.dotfiles/gitconfig.local $HOME/.gitconfig.local
 
+# Symlink gitconfig
+rm -rf $HOME/.gitignore_global
+ln -s $HOME/.dotfiles/gitignore_global $HOME/.gitignore_global
+
 # Symlink vimrc
 rm -rf $HOME/.vimrc
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
@@ -55,10 +59,6 @@ ln -s $HOME/.dotfiles/ideavimrc $HOME/.ideavimrc
 # Symlink tmux
 rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
-
-# Symlink mackup
-rm -rf $HOME/.mackup.cfg
-ln -s $HOME/.dotfiles/mackup.cfg $HOME/.mackup.cfg
 
 # https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
 touch ~/.android/repositories.cfg

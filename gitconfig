@@ -21,6 +21,5 @@
   ui = true
 [commit]
 	gpgsign = true
-	template = /Users/thanhle/.stCommitMsg
 [gpg]
 	program = /usr/local/bin/gpg
