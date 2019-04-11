@@ -1,4 +1,7 @@
 [alias]
+  # clone
+  cl = clone --recurse-submodules
+
   # push
   p = push
   pf = push --force-with-lease
@@ -9,11 +12,7 @@
 
   # checkout
   co = checkout
-
-  # log
-  lo = log --oneline --decorate --graph
-  lol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-  lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --stat
+  cb = checkout -b
 
   # status
   ss = status -s
@@ -27,3 +26,15 @@
   rba = rebase --abort
   rbd = rebase develop
   rbm = rebase master
+
+  # log
+  lo = log --oneline --decorate --graph
+  lol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --stat
+  lod = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
+  lods = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
+  lola = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
+  loga = log --oneline --decorate --graph --all
+
+  # misc
+  count = shortlog -sn
