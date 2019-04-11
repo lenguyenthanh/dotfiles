@@ -35,6 +35,8 @@
   lods = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
   lola = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
   loga = log --oneline --decorate --graph --all
+  logFor1week = shortlog --since=1.week
+  logFor2week = shortlog --since=2.week
 
   # misc
   count = shortlog -sn
