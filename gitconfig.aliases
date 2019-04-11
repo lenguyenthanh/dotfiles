@@ -1,5 +1,6 @@
 [alias]
   # push
+  p = push
   pf = push --force-with-lease
 
   # pull
@@ -14,3 +15,6 @@
 
   # status
   ss = status -s
+
+  # commit
+  cmsg = commit -m
