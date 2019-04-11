@@ -35,14 +35,6 @@ ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 rm -rf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 
-# Symlink gitconfig
-rm -rf $HOME/.gitconfig.local
-ln -s $HOME/.dotfiles/gitconfig.local $HOME/.gitconfig.local
-
-# Symlink gitconfig
-rm -rf $HOME/.gitignore_global
-ln -s $HOME/.dotfiles/gitignore_global $HOME/.gitignore_global
-
 # Symlink vimrc
 rm -rf $HOME/.vimrc
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc

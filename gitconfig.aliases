@@ -1,0 +1,16 @@
+[alias]
+  # push
+  pf = push --force-with-lease
+
+  # pull
+  l = pull
+  lr = pull --rebase
+
+  # checkout
+  co = checkout
+
+  # log
+  lol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+
+  # status
+  ss = status -s

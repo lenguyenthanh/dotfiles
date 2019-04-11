@@ -1,4 +1,4 @@
-# Vim alias
+# Vim
 alias v='nvim'
 export VISUAL='nvim'
 
@@ -21,17 +21,18 @@ alias installDebug='./gradlew :app:installDebug'
 
 function gradlewrapper() { ./gradlew wrapper --gradle-version $1 --distribution-type all}
 
-# FileSearch
+# File search
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
 
-# Basic commands
-# mkdir and cd
+# mkdir then cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
+
+# Force remove
 alias rmf='rm -rf'
 
 # Copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 
-# Always put back
+# Always enable put back
 alias trash='trash -F'
