@@ -5,9 +5,10 @@
 [core]
 	excludesfile = ~/.dotfiles/gitignore_global
   editor = nvim
+[diff]
+  tool = vimdiff
 [difftool]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
+  prompt = false
 [mergetool]
   keepBackup = false
 [rebase]
