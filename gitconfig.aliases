@@ -11,10 +11,19 @@
   co = checkout
 
   # log
+  lo = log --oneline --decorate --graph
   lol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --stat
 
   # status
   ss = status -s
 
   # commit
   cmsg = commit -m
+
+  # rebase
+  rbi = rebase --interactive
+  rbc = rebase --continue
+  rba = rebase --abort
+  rbd = rebase develop
+  rbm = rebase master
