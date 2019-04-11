@@ -103,6 +103,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'tommcdo/vim-lion'
   let g:lion_squeeze_spaces = 1
 
+" Vim syntastic
+Plug 'vim-syntastic/syntastic'
+
 " LANGUAGE
 " Json
 Plug 'elzr/vim-json', { 'for' : 'json' }
@@ -118,6 +121,9 @@ Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
 
 " Haskel
 Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
+
+" Swift
+Plug 'keith/swift.vim'
 
 call plug#end()
 
