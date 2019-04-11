@@ -27,6 +27,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Install Haskell Stack
 curl -sSL https://get.haskellstack.org/ | sh
 
+echo "Setting up symlink..."
+
 # Symlink zshrc
 rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
@@ -57,3 +59,5 @@ pip3 install --user neovim
 
 # https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
 touch ~/.android/repositories.cfg
+
+echo "Done!"
