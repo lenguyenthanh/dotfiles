@@ -21,10 +21,6 @@ alias installDebug='./gradlew :app:installDebug'
 
 function gradlewrapper() { ./gradlew wrapper --gradle-version $1 --distribution-type all}
 
-# File search
-function f() { find . -iname "*$1*" ${@:2} }
-function r() { grep "$1" ${@:2} -R . }
-
 # mkdir then cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
