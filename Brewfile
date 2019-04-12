@@ -8,6 +8,7 @@ tap 'homebrew/bundle'
 # Binaries
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
+brew 'hub' # github git wrapper
 brew 'gnupg2'
 brew 'mas'
 brew 'tree'
