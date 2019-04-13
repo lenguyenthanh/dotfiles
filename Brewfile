@@ -7,41 +7,41 @@ tap 'homebrew/bundle'
 
 # Binaries
 brew 'coreutils' # Those that come with macOS are outdated
-brew 'git'
-brew 'hub' # github git wrapper
-brew 'gnupg2'
-brew 'mas'
-brew 'tree'
-brew 'zsh'
-brew 'vim'
-brew 'neovim'
 brew 'fasd'
-brew 'fzf'
 brew 'fd'
-brew 'tmux'
+brew 'fzf'
+brew 'git'
+brew 'gnupg2'
+brew 'hub' # github git wrapper
+brew 'mas'
+brew 'neovim'
 brew 'the_silver_searcher'
+brew 'tmux'
 brew 'trash'
+brew 'tree'
+brew 'vim'
+brew 'zsh'
 
 # Apps
+cask 'android-sdk'
+cask 'android-studio'
+cask 'dash'
 cask 'docker'
 cask 'firefox'
 cask 'gpg-suite'
+cask 'iTerm2'
+cask 'intellij-idea-ce'
 cask 'java8'
+cask 'keybase'
+cask 'spotify'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
-cask 'android-sdk'
-cask 'android-studio'
-cask 'spotify'
-cask 'intellij-idea-ce'
-cask 'keybase'
-cask 'dash'
-cask 'iTerm2'
 
 # Mac App Store
 mas 'Keynote', id: 409183694
-mas 'Spark', id: 1176895641
 mas 'OneDrive', id: 823766827
+mas 'Spark', id: 1176895641
 mas 'telegram', id: 747648890
 
 # fonts
