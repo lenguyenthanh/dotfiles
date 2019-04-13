@@ -122,7 +122,7 @@ Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
 Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
 
 " Swift
-Plug 'keith/swift.vim'
+Plug 'keith/swift.vim', { 'for' : 'swift' }
 
 call plug#end()
 

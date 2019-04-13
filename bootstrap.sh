@@ -41,7 +41,7 @@ ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
 rm -rf $HOME/.vimrc
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
 
-# Symlink neovim config
+# Symlink neovim
 rm -rf $HOME/.config/nvim/init.vim
 mkdir -p .config/nvim
 ln -s $HOME/.dotfiles/init.vim $HOME/.config/nvim
