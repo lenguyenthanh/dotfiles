@@ -10,14 +10,6 @@ let mapleader=","
 " All plugins go here
 call plug#begin('~/.local/share/nvim/plugged')
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 " Track the engine.
 Plug 'SirVer/ultisnips'
   " Trigger configuration.
@@ -35,8 +27,8 @@ Plug 'scrooloose/nerdcommenter'
 
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-  nmap <leader>n ;NERDTreeToggle<CR>
-  nmap <leader>m ;NERDTreeFind<CR>
+  noremap <leader>n :NERDTreeToggle<CR>
+  noremap <leader>m :NERDTreeFind<CR>
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
 
@@ -99,8 +91,12 @@ Plug 'junegunn/fzf.vim'
   nnoremap <silent> <leader>c  :Commits<CR>
   nnoremap <silent> <leader>bc :BCommits<CR>
 
-Plug 'tommcdo/vim-lion'
-  let g:lion_squeeze_spaces = 1
+" Vim alignment plugin
+Plug 'junegunn/vim-easy-align'
+  " Start interactive EasyAlign in visual mode (e.g. vipga)
+  xmap ga <Plug>(EasyAlign)
+  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+  nmap ga <Plug>(EasyAlign)
 
 " Vim syntastic
 Plug 'vim-syntastic/syntastic'
@@ -156,26 +152,25 @@ vmap <Leader>d "+d
 nmap <Leader>yy "+yy
 nmap <Leader>p "+p
 
-" Binding paste mode
-set pastetoggle=<F2>
 
-set expandtab	     " tab by spaces
-set autoindent     " always set auto indenting on
-set cindent		     " copy the previous indentation on auto indenting
-set smartindent    " smart indent
-set rnu            " show relative line numbers
-set nu             " show line numbers
-set shiftround     " use multiple of shiftwidth when indenting with '<' and '>'
-set showmatch      " set show matching parenthesis
-set smarttab       " insert tabs on the start of a line according to shiftwidth, not tabstop
-set incsearch      " show search matches as you type
-set nobackup	     " no backup
-set noswapfile	   " no swap files
-set hidden         " Avoid No write since last change message when open new files
-set ts=2 		       " set tabs to have 2 spaces
-set shiftwidth=2   " when using the >> or << commands, shift lines by 4 spaces
-set cursorline     " show a visual line under the cursor's current line
-set nofixendofline " Allow no end of line
+set pastetoggle=<F2> " Binding paste mode
+set expandtab        " tab by spaces
+set autoindent       " always set auto indenting on
+set cindent          " copy the previous indentation on auto indenting
+set smartindent      " smart indent
+set rnu              " show relative line numbers
+set nu               " show line numbers
+set shiftround       " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch        " set show matching parenthesis
+set smarttab         " insert tabs on the start of a line according to shiftwidth, not tabstop
+set incsearch        " show search matches as you type
+set nobackup         " no backup
+set noswapfile       " no swap files
+set hidden           " Avoid No write since last change message when open new files
+set ts=2             " set tabs to have 2 spaces
+set shiftwidth=2     " when using the >> or << commands, shift lines by 4 spaces
+set cursorline       " show a visual line under the cursor's current line
+set nofixendofline   " Allow no end of line
 
 " Enable folding
 set foldmethod=indent
