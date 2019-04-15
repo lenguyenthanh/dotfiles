@@ -11,9 +11,6 @@
 
   # pull
   l = pull
-  lo = pull origin
-  lom = pull origin master
-  lod = pull origin develop
   lr = pull --rebase
   lrod = pull --rebase origin develop
   lrom = pull origin master
@@ -54,8 +51,6 @@
   ll = lo --stat
   lol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --stat
-  lod = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
-  lods = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
   lola = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
   loga = log --oneline --decorate --graph --all
   logFor1week = shortlog --since=1.week
