@@ -11,6 +11,8 @@
 
   # pull
   l = pull
+  lod = pull origin develop
+  lom = pull origin master
   lr = pull --rebase
   lrod = pull --rebase origin develop
   lrom = pull origin master
