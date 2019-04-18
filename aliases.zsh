@@ -13,6 +13,7 @@ alias cpu='top -o cpu'
 alias mem='top -o rsize' # memory
 
 # Gradle
+alias gr='./gradlew'
 alias grdcln='./gradlew clean'
 alias grdcheck='./gradlew clean check'
 alias grdclnb='./gradlew clean build'
