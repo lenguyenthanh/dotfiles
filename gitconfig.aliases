@@ -15,7 +15,7 @@
   lom = pull origin master
   lr = pull --rebase
   lrod = pull --rebase origin develop
-  lrom = pull origin master
+  lrom = pull --rebase origin master
 
   # checkout
   co = checkout
