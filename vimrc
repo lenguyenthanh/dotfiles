@@ -64,9 +64,6 @@ Plug 'tpope/vim-repeat'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-scripts/wombat256.vim'
 
-" Note taking
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
@@ -80,7 +77,7 @@ Plug 'rizzatti/dash.vim'
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
 Plug 'junegunn/fzf.vim'
-  nnoremap <silent> <leader>f :Files <C-r>=expand("%:h")<CR>/<CR>
+  nnoremap <C-y> :Files <C-r>=expand("%:h")<CR>/<CR>
   nnoremap <C-p> :Files<CR>
   nnoremap <C-u> :Buffers<CR>
   " Git commit
@@ -107,6 +104,8 @@ Plug 'elzr/vim-json', { 'for' : 'json' }
 
 " Markdown
 Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
+  " disable ge mappings
+  map <Plug> <Plug>Markdown_EditUrlUnderCursor
 
 " Toml Syntax
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
@@ -203,7 +202,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.o,*.obj,.git,*/vendor/*,*/targe
 
 " jk instead of Esc
 inoremap jk <esc>
-" inoremap <esc> <NOP>
 
 " Line text object
 xnoremap il $o^
