@@ -51,6 +51,7 @@
 
   # log
   lo = log --oneline --decorate --color
+  lop = lo -p
   ll = lo --stat
   lol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   lols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --stat
@@ -66,4 +67,3 @@
 
   # misc
   count = shortlog -sn
-  email = config user.email
