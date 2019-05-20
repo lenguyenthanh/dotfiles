@@ -170,6 +170,7 @@ set ts=2             " set tabs to have 2 spaces
 set shiftwidth=2     " when using the >> or << commands, shift lines by 4 spaces
 set cursorline       " show a visual line under the cursor's current line
 set nofixendofline   " Allow no end of line
+set history=200      " History in command line mode
 
 " Enable folding
 set foldmethod=indent
