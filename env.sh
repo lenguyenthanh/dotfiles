@@ -1,7 +1,7 @@
  #!/bin/zsh
 
 # PATH
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
+export PATH="/Users/thanhle/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
