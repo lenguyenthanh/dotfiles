@@ -21,6 +21,7 @@ brew 'trash'
 brew 'tree'
 brew 'vim'
 brew 'zsh'
+brew 'atool'
 
 # Apps
 cask 'android-sdk'
