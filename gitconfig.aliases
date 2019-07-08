@@ -7,7 +7,7 @@
   po = push origin
   pom = push origin master
   pod = push origin develop
-  pf = push --force-with-lease
+  pof = push origin --force-with-lease
 
   # pull
   l = pull
