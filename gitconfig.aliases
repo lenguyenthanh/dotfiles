@@ -64,6 +64,7 @@
   # diff
   d = diff
   dl = diff --cached HEAD^ # Show a diff last commit
+  dt = difftool
 
   # misc
   count = shortlog -sn
