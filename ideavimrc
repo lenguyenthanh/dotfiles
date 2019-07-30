@@ -50,3 +50,6 @@ nmap <a-k> 15gk
 " Won't work in visual mode (with vmap) for some reason.
 " Use default map of <c-/> for that.
 nmap gcc :action CommentByLineComment<cr>
+
+" https://github.com/JetBrains/ideavim/blob/master/doc/ideajoin-examples.md
+set ideajoin
