@@ -12,8 +12,7 @@ brew 'fd'
 brew 'fzf'
 brew 'git'
 brew 'gnupg2'
-brew 'hub' # github git wrapper
-brew 'mas'
+brew 'mas' # Mac App Store command-line
 brew 'neovim'
 brew 'the_silver_searcher'
 brew 'tmux'
