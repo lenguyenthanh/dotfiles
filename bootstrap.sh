@@ -44,7 +44,11 @@ ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
 # Symlink neovim
 rm -rf $HOME/.config/nvim/init.vim
 mkdir -p .config/nvim
-ln -s $HOME/.dotfiles/init.vim $HOME/.config/nvim
+ln -s $HOME/.dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+
+# Symlink coc.nvim config
+rm -rf $HOME/.config/nvim/coc-settings.json
+ln -s $HOME/.dotfiles/nvim/coc-settings.json $HOME/.config/nvim/coc-settings.json
 
 # Symlink ideavimrc
 rm -rf $HOME/.ideavimrc
