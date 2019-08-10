@@ -211,8 +211,6 @@ set guioptions-=r
 set guioptions-=L
 
 syntax enable
-color onedark
-set background=dark
 
 nnoremap ; :
 nnoremap : ;
@@ -263,6 +261,11 @@ set signcolumn=yes " always show signcolumns
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
+set termguicolors
+
+color onedark
+set background=dark
 
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)

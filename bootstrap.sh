@@ -56,7 +56,7 @@ ln -s $HOME/.dotfiles/ideavimrc $HOME/.ideavimrc
 
 # Symlink tmux
 rm -rf $HOME/.tmux.conf
-ln -s $HOME/.dotfiles/tmux.conf $HOME/.tmux.conf
+ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 
 # Install py3 for Neovim
 pip3 install --user neovim
