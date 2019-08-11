@@ -121,6 +121,10 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
   " Coc only does snippet and additional edit on confirm.
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+  " Use `[c` and `]c` to navigate diagnostics
+  nmap <silent> [c <Plug>(coc-diagnostic-prev)
+  nmap <silent> ]c <Plug>(coc-diagnostic-next)
+
   " Remap keys for gotos
   nmap <silent> gd <Plug>(coc-definition)
   nmap <silent> gy <Plug>(coc-type-definition)
@@ -196,7 +200,33 @@ Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
 
 " Haskel
 Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
-"Plug 'alx741/vim-stylishask', { 'for' : 'haskell' }
+  function! ApplyOneSuggestion()
+    let l = line(".")
+    let c = col(".")
+    let l:filter = "%! hlint - --refactor  --refactor-options=\"--pos ".l.','.c."\""
+    execute l:filter
+    silent if v:shell_error == 1| undo | endif
+    call cursor(l, c)
+  endfunction
+
+
+  function! ApplyAllSuggestions()
+    let l = line(".")
+    let c = col(".")
+    let l:filter = "%! hlint - --refactor"
+    execute l:filter
+    silent if v:shell_error == 1| undo | endif"
+    call cursor(l, c)
+  endfunction
+
+  " hlint
+  if ( ! exists('g:hlintRefactor#disableDefaultKeybindings') ||
+    \ ! g:hlintRefactor#disableDefaultKeybindings )
+
+    map <silent> to :call ApplyOneSuggestion()<CR>
+    map <silent> ta :call ApplyAllSuggestions()<CR>
+
+  endif
 
 " Swift
 Plug 'keith/swift.vim', { 'for' : 'swift' }
