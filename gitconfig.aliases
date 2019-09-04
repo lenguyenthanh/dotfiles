@@ -33,6 +33,7 @@
 
   # commit
   cmsg = commit -m
+  amended = commit --amend --no-edit
 
   # reset
   r = reset
