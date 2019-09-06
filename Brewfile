@@ -20,7 +20,7 @@ brew 'trash'
 brew 'tree'
 brew 'vim'
 brew 'zsh'
-brew 'atool'
+brew 'atool' # unzip tools
 
 # Apps
 cask 'android-sdk'
