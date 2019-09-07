@@ -33,3 +33,6 @@ alias cpwd='pwd|tr -d "\n"|pbcopy'
 
 # Always enable put back
 alias trash='trash -F'
+
+# python3 as default
+alias python='python3'
