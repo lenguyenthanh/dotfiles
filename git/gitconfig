@@ -1,10 +1,10 @@
 # Local/private config goes in the include
 [include]
-  path = ~/.dotfiles/gitconfig.local
-  path = ~/.dotfiles/gitconfig.aliases
+  path = ~/.dotfiles/git/gitconfig.local
+  path = ~/.dotfiles/git/gitconfig.aliases
 
 [core]
-	excludesfile = ~/.dotfiles/gitignore_global
+	excludesfile = ~/.dotfiles/git/gitignore.global
   editor = nvim
 
 [push]
@@ -59,3 +59,5 @@
 
 [gpg]
 	program = /usr/local/bin/gpg
+[includeIf "gitdir:~/source/techno/"]
+    path = ~/.dotfiles/git/gitconfig.tc

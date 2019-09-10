@@ -35,7 +35,7 @@ ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 
 # Symlink gitconfig
 rm -rf $HOME/.gitconfig
-ln -s $HOME/.dotfiles/gitconfig $HOME/.gitconfig
+ln -s $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
 
 # Symlink vimrc
 rm -rf $HOME/.vimrc

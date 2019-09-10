@@ -2,6 +2,9 @@
   # clone
   cl = clone --recurse-submodules
 
+  # init
+  it = !git init && git commit -m “root” --allow-empty
+
   # push
   p = push
   po = push origin
@@ -34,6 +37,7 @@
   # commit
   cmsg = commit -m
   amended = commit --amend --no-edit
+  amend = commit --amend
 
   # reset
   r = reset
