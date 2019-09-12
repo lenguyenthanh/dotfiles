@@ -98,6 +98,32 @@ Plug 'junegunn/vim-easy-align'
 " Vim syntastic
 Plug 'vim-syntastic/syntastic'
 
+" Deoplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+  let g:deoplete#enable_at_startup = 1
+
+" LSP
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': './install.sh'
+    \ }
+
+  let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+  map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
+  map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
+  map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
+  map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
+  map <Leader>lb :call LanguageClient#textDocument_references()<CR>
+  map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
+  map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+
 " LANGUAGE
 " Json
 Plug 'elzr/vim-json', { 'for' : 'json' }
@@ -196,6 +222,7 @@ set shiftwidth=2     " when using the >> or << commands, shift lines by 4 spaces
 set cursorline       " show a visual line under the cursor's current line
 set nofixendofline   " Allow no end of line
 set history=200      " History in command line mode
+set dictionary+=/usr/share/dict/words
 
 " Add after Cocvim
 set cmdheight=2 " Better display for messages
@@ -211,6 +238,7 @@ set termguicolors
 
 color onedark
 set background=dark
+
 
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
