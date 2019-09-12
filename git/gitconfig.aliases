@@ -3,7 +3,7 @@
   cl = clone --recurse-submodules
 
   # init
-  it = !git init && git commit -m “root” --allow-empty
+  it = !git init && git commit -m root --allow-empty
 
   # push
   p = push
