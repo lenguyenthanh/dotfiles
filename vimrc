@@ -176,11 +176,6 @@ call plug#end()
 
 filetype plugin indent on     " required!
 filetype on
-
-" Hide MacVim scrollbar
-set guioptions-=r
-set guioptions-=L
-
 syntax enable
 
 nnoremap ; :
@@ -190,18 +185,21 @@ nnoremap : ;
 nnoremap j gj
 nnoremap k gk
 
-" Easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 " Setting for quick copy & paste
 vmap <Leader>y "y
 vmap <Leader>d "+d
 nmap <Leader>yy "+yy
 nmap <Leader>p "+p
 
+
+" Easy exit from terminal mode
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-v><Esc> <Esc>
+
+" Quick open a terminal window
+nnoremap <Leader>t :vsp term://zsh<CR>
+command! -nargs=* T split | terminal <args>
+command! -nargs=* VT vsplit | terminal <args>
 
 set pastetoggle=<F2> " Binding paste mode
 set expandtab        " tab by spaces
@@ -258,7 +256,7 @@ au FileType gitcommit set tw=72
 set diffopt+=vertical
 
 " toggle spelling
-nnoremap <leader>s :set invspell<CR>
+nnoremap <Leader>s :set invspell<CR>
 
 set clipboard=unnamed
 
