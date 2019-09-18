@@ -11,7 +11,7 @@ export LANG=en_US.UTF-8
 ZSH_THEME="nt9"
 
 # Oh-My-Zsh Plugins
-plugins=(fzf fasd)
+plugins=(fzf fasd colored-man-pages)
 
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
