@@ -20,6 +20,8 @@
   lr = pull --rebase
   lrod = pull --rebase origin develop
   lrom = pull --rebase origin master
+  lum = pull upstream master
+  lu = pull upstream
 
   # checkout
   co = checkout
