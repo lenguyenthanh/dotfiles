@@ -1,0 +1,18 @@
+# Git completion
+
+function _git_po() {
+  _git_branch
+}
+
+function _git_pof() {
+  _git_branch
+}
+
+
+function _git_lo() {
+  _git_branch
+}
+
+function _git_lu() {
+  _git_branch
+}

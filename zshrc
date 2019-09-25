@@ -9,3 +9,6 @@ ZSH_CUSTOM=$DOTFILES
 
 # Active environment
 . $DOTFILES/env.sh
+
+# Active completion
+. $DOTFILES/zsh/completion
