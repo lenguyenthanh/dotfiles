@@ -8,7 +8,6 @@ function _git_pof() {
   _git_branch
 }
 
-
 function _git_lo() {
   _git_branch
 }

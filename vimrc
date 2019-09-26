@@ -79,7 +79,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
 Plug 'junegunn/fzf.vim'
   nnoremap <C-y> :Files <C-r>=expand("%:h")<CR>/<CR>
   nnoremap <C-p> :Files<CR>
-  nnoremap <C-u> :Buffers<CR>
+  nnoremap <C-e> :Buffers<CR>
   " Git commit
   let g:fzf_commits_log_options = '--graph --color=always
     \ --format="%C(yellow)%h%C(red)%d%C(reset)
@@ -114,7 +114,10 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': './install.sh'
     \ }
 
-  let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+  let g:LanguageClient_serverCommands = {
+    \ 'haskell': ['hie-wrapper'],
+    \ 'kotlin': ["kotlin-language-server"]
+    \ }
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
   map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
   map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
@@ -185,11 +188,9 @@ nnoremap : ;
 nnoremap j gj
 nnoremap k gk
 
-" Setting for quick copy & paste
-vmap <Leader>y "y
-vmap <Leader>d "+d
-nmap <Leader>yy "+yy
-nmap <Leader>p "+p
+" Paste from yank register
+nmap <Leader>p "0p
+nmap <Leader>P "0P
 
 
 " Easy exit from terminal mode
@@ -221,12 +222,6 @@ set cursorline       " show a visual line under the cursor's current line
 set nofixendofline   " Allow no end of line
 set history=200      " History in command line mode
 set dictionary+=/usr/share/dict/words
-
-" Add after Cocvim
-set cmdheight=2 " Better display for messages
-set updatetime=30 " You will have bad experience for diagnostic messages when it's default 4000.0
-set shortmess+=c
-set signcolumn=yes " always show signcolumns
 
 " Enable folding
 set foldmethod=indent

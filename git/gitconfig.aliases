@@ -16,13 +16,13 @@
   # pull
   l = pull
   lo = pull origin
-  lod = pull origin develop
   lom = pull origin master
+  lod = pull origin develop
   lr = pull --rebase
   lrod = pull --rebase origin develop
   lrom = pull --rebase origin master
-  lum = pull upstream master
   lu = pull upstream
+  lum = pull upstream master
 
   # checkout
   co = checkout
