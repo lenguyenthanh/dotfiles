@@ -26,6 +26,8 @@
 
   # checkout
   co = checkout
+  com = checkout master
+  cc = checkout -
   cb = checkout -b
 
   # branch

@@ -77,16 +77,15 @@ Plug 'rizzatti/dash.vim'
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
 Plug 'junegunn/fzf.vim'
-  nnoremap <C-y> :Files <C-r>=expand("%:h")<CR>/<CR>
-  nnoremap <C-p> :Files<CR>
-  nnoremap <C-e> :Buffers<CR>
+  nnoremap <silent> <Leader>y :Files <C-r>=expand("%:h")<CR>/<CR>
+  nnoremap <silent> <Leader>p :Files<CR>
+  nnoremap <silent> <Leader>e :Buffers<CR>
+  nnoremap <silent> <Leader>c  :Commits<CR>
+  nnoremap <silent> <Leader>bc :BCommits<CR>
   " Git commit
   let g:fzf_commits_log_options = '--graph --color=always
     \ --format="%C(yellow)%h%C(red)%d%C(reset)
     \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
-
-  nnoremap <silent> <leader>c  :Commits<CR>
-  nnoremap <silent> <leader>bc :BCommits<CR>
 
 " Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
@@ -187,11 +186,6 @@ nnoremap : ;
 " Re-map move around for wrapping line
 nnoremap j gj
 nnoremap k gk
-
-" Paste from yank register
-nmap <Leader>p "0p
-nmap <Leader>P "0P
-
 
 " Easy exit from terminal mode
 tnoremap <Esc> <C-\><C-n>
