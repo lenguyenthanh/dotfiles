@@ -39,6 +39,8 @@ Plug 'luochen1990/rainbow'
 
 " Writing focus mode
 Plug 'junegunn/goyo.vim'
+Plug 'vigoux/LanguageTool.nvim'
+  let g:languagetool_server='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -62,7 +64,6 @@ Plug 'tpope/vim-repeat'
 
 " Color Scheme
 Plug 'joshdick/onedark.vim'
-Plug 'vim-scripts/wombat256.vim'
 
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
@@ -130,11 +131,6 @@ Plug 'autozimu/LanguageClient-neovim', {
 " Json
 Plug 'elzr/vim-json', { 'for' : 'json' }
 
-" Markdown
-Plug 'plasticboy/vim-markdown', { 'for' : 'markdown' }
-  " disable ge mappings
-  map <Plug> <Plug>Markdown_EditUrlUnderCursor
-
 " Toml Syntax
 Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
@@ -180,22 +176,6 @@ filetype plugin indent on     " required!
 filetype on
 syntax enable
 
-nnoremap ; :
-nnoremap : ;
-
-" Re-map move around for wrapping line
-nnoremap j gj
-nnoremap k gk
-
-" Easy exit from terminal mode
-tnoremap <Esc> <C-\><C-n>
-tnoremap <C-v><Esc> <Esc>
-
-" Quick open a terminal window
-nnoremap <Leader>t :vsp term://zsh<CR>
-command! -nargs=* T split | terminal <args>
-command! -nargs=* VT vsplit | terminal <args>
-
 set pastetoggle=<F2> " Binding paste mode
 set expandtab        " tab by spaces
 set autoindent       " always set auto indenting on
@@ -217,18 +197,12 @@ set nofixendofline   " Allow no end of line
 set history=200      " History in command line mode
 set dictionary+=/usr/share/dict/words
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
 set termguicolors
 
 color onedark
 set background=dark
 
-
-highlight ColorColumn ctermbg=magenta
-call matchadd('ColorColumn', '\%81v', 100)
+set nofoldenable
 
 " Set search case insensitive
 set ic
@@ -238,22 +212,41 @@ set smartcase
 set splitbelow
 set splitright
 
-" Wrap git commit message
-au FileType gitcommit set tw=72
-
 " Gdiff vertically
 set diffopt+=vertical
-
-" toggle spelling
-nnoremap <Leader>s :set invspell<CR>
 
 set clipboard=unnamed
 
 " Ignore build, gen, lib directory in Ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.o,*.obj,.git,*/vendor/*,*/target/*,*/build/*,*/node_modules/*,*.a,*/lib/*,env,*/env/*
 
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+nnoremap ; :
+nnoremap : ;
+
+" Re-map move around for wrapping line
+nnoremap j gj
+nnoremap k gk
+
+" Easy exit from terminal mode
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-v><Esc> <Esc>
+
+" Quick open a terminal window
+nnoremap <Leader>t :vsp term://zsh<CR>
+command! -nargs=* T split | terminal <args>
+command! -nargs=* VT vsplit | terminal <args>
+
+" Wrap git commit message
+au FileType gitcommit set tw=72
+
+" toggle spelling
+nnoremap <Leader>s :set invspell<CR>
+
 " jk instead of Esc
-inoremap jk <esc>
+inoremap jk <Esc>
 
 " Line text object
 xnoremap il $o^
@@ -261,3 +254,10 @@ onoremap il :normal vil<CR>
 
 " Other files to consider as Ruby
 au BufRead,BufNewFile Vagrantfile set ft=ruby
+
+" Turn off syntax highlight for markdown files
+" Turn on spell checking
+augroup textfiles
+  autocmd!
+  autocmd filetype markdown :setlocal spell spelllang=en | syntax clear
+augroup end
