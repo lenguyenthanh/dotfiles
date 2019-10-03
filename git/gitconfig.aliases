@@ -18,9 +18,6 @@
   lo = pull origin
   lom = pull origin master
   lod = pull origin develop
-  lr = pull --rebase
-  lrod = pull --rebase origin develop
-  lrom = pull --rebase origin master
   lu = pull upstream
   lum = pull upstream master
 
