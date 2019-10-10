@@ -21,6 +21,7 @@ brew 'tree'
 brew 'vim'
 brew 'zsh'
 brew 'atool' # unzip tools
+brew 'sbt' # Scala
 
 # Apps
 cask 'android-sdk'
