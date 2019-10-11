@@ -116,8 +116,9 @@ Plug 'autozimu/LanguageClient-neovim', {
 
   let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper'],
-    \ 'kotlin': ["kotlin-language-server"]
+    \ 'scala' : ['metals-vim']
     \ }
+
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
   map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
   map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
@@ -169,6 +170,9 @@ Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
 
 " Swift
 Plug 'keith/swift.vim', { 'for' : 'swift' }
+
+" Scala
+Plug 'derekwyatt/vim-scala'
 
 call plug#end()
 
@@ -252,8 +256,10 @@ inoremap jk <Esc>
 xnoremap il $o^
 onoremap il :normal vil<CR>
 
-" Other files to consider as Ruby
+" Vagrantfile as Ruby
 au BufRead,BufNewFile Vagrantfile set ft=ruby
+" Sbt files as Scala
+au BufRead,BufNewFile *.spt set ft=scala
 
 " Turn off syntax highlight for markdown files
 " Turn on spell checking

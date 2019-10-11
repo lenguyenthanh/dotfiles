@@ -4,6 +4,7 @@ tap 'caskroom/eid'
 tap 'caskroom/fonts'
 tap 'caskroom/versions'
 tap 'homebrew/bundle'
+tap 'coursier/formulas'
 
 # Binaries
 brew 'coreutils' # Those that come with macOS are outdated
@@ -22,6 +23,7 @@ brew 'vim'
 brew 'zsh'
 brew 'atool' # unzip tools
 brew 'sbt' # Scala
+brew 'coursier/formulas/coursier' # Pure scala artifact Fetching
 
 # Apps
 cask 'android-sdk'

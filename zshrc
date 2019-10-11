@@ -12,3 +12,5 @@ ZSH_CUSTOM=$DOTFILES
 
 # Active completion
 . $DOTFILES/zsh/completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
