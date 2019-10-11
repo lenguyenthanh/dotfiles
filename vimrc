@@ -119,14 +119,34 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'scala' : ['metals-vim']
     \ }
 
-  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-  map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
-  map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
-  map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
-  map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
-  map <Leader>lb :call LanguageClient#textDocument_references()<CR>
-  map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
-  map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR>
+  function SetLSPShortcuts()
+    nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+    nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+    nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+    nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+    nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
+    nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+    nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+    nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+    nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
+    nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+  endfunction()
+
+  augroup LSP
+    autocmd!
+    autocmd FileType hs,sbt,scala call SetLSPShortcuts()
+  augroup END
+
+  " Always draw the signcolumn.
+  set signcolumn=yes
+
+" handle the function signatures displaying
+Plug 'Shougo/echodoc.vim'
+
+  set cmdheight=2
+  let g:echodoc#enable_at_startup = 1
+  let g:echodoc#type = 'signature'
 
 " LANGUAGE
 " Json
