@@ -116,6 +116,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 
   let g:LanguageClient_serverCommands = {
     \ 'haskell': ['hie-wrapper'],
+    \ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
     \ 'scala' : ['metals-vim']
     \ }
 
@@ -135,11 +136,13 @@ Plug 'autozimu/LanguageClient-neovim', {
 
   augroup LSP
     autocmd!
-    autocmd FileType hs,sbt,scala call SetLSPShortcuts()
+    autocmd FileType hs,sbt,scala,kotlin call SetLSPShortcuts()
   augroup END
 
   " Always draw the signcolumn.
   set signcolumn=yes
+
+  autocmd BufReadPost *.kt setlocal filetype=kotlin
 
 " handle the function signatures displaying
 Plug 'Shougo/echodoc.vim'
