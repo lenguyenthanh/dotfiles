@@ -283,8 +283,9 @@ onoremap il :normal vil<CR>
 
 " Vagrantfile as Ruby
 au BufRead,BufNewFile Vagrantfile set ft=ruby
+
 " Sbt files as Scala
-au BufRead,BufNewFile *.spt set ft=scala
+au BufRead,BufNewFile *.sbt set ft=scala
 
 " Turn off syntax highlight for markdown files
 " Turn on spell checking
