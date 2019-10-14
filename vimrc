@@ -120,6 +120,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'scala' : ['metals-vim']
     \ }
 
+  let g:LanguageClient_hoverPreview = 'Always'
+
   function SetLSPShortcuts()
     nnoremap <F5> :call LanguageClient_contextMenu()<CR>
     nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
