@@ -68,7 +68,6 @@
   rbmi = rebase master --interactive
 
   # log
-# oneline = log --oneline --decorate --color
   oneline = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d%x09% %Creset%s' --date=short
   lp = oneline -p
   ll = oneline --stat

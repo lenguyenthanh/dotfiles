@@ -101,4 +101,4 @@
 	program = /usr/local/bin/gpg
 
 [includeIf "gitdir:~/source/techno/"]
-    path = ~/.dotfiles/git/gitconfig.tc
+  path = ~/.dotfiles/git/gitconfig.tc
