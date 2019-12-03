@@ -61,6 +61,15 @@
   # rebase
   rb = rebase
   rbi = rebase --interactive
+  rbi2 = rebase --interactive HEAD~2
+  rbi3 = rebase --interactive HEAD~3
+  rbi4 = rebase --interactive HEAD~4
+  rbi5 = rebase --interactive HEAD~5
+  rbi6 = rebase --interactive HEAD~6
+  rbi7 = rebase --interactive HEAD~7
+  rbi8 = rebase --interactive HEAD~8
+  rbi9 = rebase --interactive HEAD~9
+  rbi10 = rebase --interactive HEAD~10
   rbc = rebase --continue
   rba = rebase --abort
   rbd = rebase develop
