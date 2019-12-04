@@ -43,6 +43,7 @@
   # add
   aa = add --all
   aav = add --all --verbose
+  ai = add --interactive
 
   # commit
   cmsg = commit -m
