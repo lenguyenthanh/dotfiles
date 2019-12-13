@@ -12,6 +12,8 @@
   pod = push origin develop
   pof = push origin --force-with-lease
   pf = push --force-with-lease
+  pt = push --tags
+  ptf = push --tags --force
 
   # pull
   l = pull
