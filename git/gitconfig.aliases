@@ -46,6 +46,8 @@
   aa = add --all
   aav = add --all --verbose
   ai = add --interactive
+  au = add -u
+  ad = add .
 
   # commit
   cmsg = commit -m
@@ -114,6 +116,9 @@
   stl = stash list
   stp = stash pop
   sts = stash show --text
+
+  # tag
+  t = tag
 
   # misc
   count = shortlog -sn
