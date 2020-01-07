@@ -1,5 +1,6 @@
 # Vim
 alias v='nvim'
+alias vs='nvim -S'
 export VISUAL='nvim'
 
 # git

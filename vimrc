@@ -62,6 +62,9 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
+" Auto save sessions
+Plug 'tpope/vim-obsession'
+
 " Color Scheme
 Plug 'joshdick/onedark.vim'
 
@@ -115,11 +118,11 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
   let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['hie-wrapper'],
     \ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
     \ 'scala' : ['metals-vim']
     \ }
 
+    "\ 'haskell': ['hie-wrapper'],
   let g:LanguageClient_hoverPreview = 'Always'
 
   function SetLSPShortcuts()
