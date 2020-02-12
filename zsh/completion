@@ -15,3 +15,11 @@ function _git_lo() {
 function _git_lu() {
   _git_branch
 }
+
+function _git_brd() {
+  _git_branch
+}
+
+function _git_brD() {
+  _git_branch
+}
