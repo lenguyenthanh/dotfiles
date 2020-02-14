@@ -268,6 +268,7 @@ nnoremap k gk
 " Easy exit from terminal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-v><Esc> <Esc>
+tnoremap jk <Esc>
 
 " Quick open a terminal window
 nnoremap <Leader>t :vsp term://zsh<CR>
