@@ -205,6 +205,9 @@ Plug 'derekwyatt/vim-scala'
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
+" Neo Format
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 filetype plugin indent on     " required!
@@ -260,6 +263,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 nnoremap ; :
 nnoremap : ;
+tnoremap ; :
+tnoremap : ;
+
 
 " Re-map move around for wrapping line
 nnoremap j gj
@@ -268,7 +274,7 @@ nnoremap k gk
 " Easy exit from terminal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap <C-v><Esc> <Esc>
-tnoremap jk <Esc>
+tnoremap jk <C-\><C-n>
 
 " Quick open a terminal window
 nnoremap <Leader>t :vsp term://zsh<CR>
