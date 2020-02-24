@@ -41,6 +41,8 @@
 
   # status
   ss = status -s
+  sa = status -uall
+  sas = status -uall -s
 
   # add
   aa = add --all
