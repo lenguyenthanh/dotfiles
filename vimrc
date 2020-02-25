@@ -101,6 +101,9 @@ Plug 'junegunn/vim-easy-align'
 " Vim syntastic
 Plug 'vim-syntastic/syntastic'
 
+" unimpaired
+Plug 'tpope/vim-unimpaired'
+
 " Deoplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -118,12 +121,14 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
   let g:LanguageClient_serverCommands = {
-    \ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
     \ 'scala' : ['metals-vim']
     \ }
 
+    "\ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
     "\ 'haskell': ['hie-wrapper'],
-  let g:LanguageClient_hoverPreview = 'Always'
+
+  "let g:LanguageClient_hoverPreview = 'Always'
 
   function SetLSPShortcuts()
     nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -136,24 +141,28 @@ Plug 'autozimu/LanguageClient-neovim', {
     nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
     nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
     nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-    nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+    nnoremap <leader>le :call LanguageClient#explainErrorAtPoint()<CR>
+    let g:LanguageClient_autoStart = 1
   endfunction()
 
   augroup LSP
     autocmd!
-    autocmd FileType hs,sbt,scala,kotlin call SetLSPShortcuts()
+    autocmd FileType hs,scala,kotlin,rust call SetLSPShortcuts()
   augroup END
 
   " Always draw the signcolumn.
   set signcolumn=yes
 
   autocmd BufReadPost *.kt setlocal filetype=kotlin
+  autocmd BufReadPost *.rs setlocal filetype=rust
+  au BufRead,BufNewFile Vagrantfile set ft=ruby
+  au BufRead,BufNewFile *.sbt set ft=scala
 
 " handle the function signatures displaying
 Plug 'Shougo/echodoc.vim'
 
   set cmdheight=2
-  let g:echodoc#enable_at_startup = 1
+  let g:echodoc#enable_at_startup = 0
   let g:echodoc#type = 'signature'
 
 " LANGUAGE
@@ -204,6 +213,9 @@ Plug 'derekwyatt/vim-scala'
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Rust
+Plug 'rust-lang/rust.vim'
 
 " Neo Format
 Plug 'sbdchd/neoformat'
@@ -294,11 +306,8 @@ inoremap jk <Esc>
 xnoremap il $o^
 onoremap il :normal vil<CR>
 
-" Vagrantfile as Ruby
-au BufRead,BufNewFile Vagrantfile set ft=ruby
-
-" Sbt files as Scala
-au BufRead,BufNewFile *.sbt set ft=scala
+" Hide preview window
+set completeopt-=preview
 
 " Turn off syntax highlight for markdown files
 " Turn on spell checking
