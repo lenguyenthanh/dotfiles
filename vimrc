@@ -121,7 +121,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
   let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['~/.cargo/bin/rust-analyzer'],
     \ 'scala' : ['metals-vim']
     \ }
 
@@ -137,7 +137,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
     nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
     nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-    nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+    nnoremap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
     nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
     nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
     nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
@@ -157,6 +157,7 @@ Plug 'autozimu/LanguageClient-neovim', {
   autocmd BufReadPost *.rs setlocal filetype=rust
   au BufRead,BufNewFile Vagrantfile set ft=ruby
   au BufRead,BufNewFile *.sbt set ft=scala
+  au BufRead,BufNewFile *.kts set ft=kotlin
 
 " handle the function signatures displaying
 Plug 'Shougo/echodoc.vim'
@@ -215,7 +216,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Rust
-Plug 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim', { 'for' : 'rust'}
 
 " Neo Format
 Plug 'sbdchd/neoformat'
