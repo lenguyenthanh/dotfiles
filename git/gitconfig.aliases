@@ -38,6 +38,7 @@
   br = branch
   brd = branch -d
   brD = branch -D
+  brm = branch -m # change branch name
 
   # status
   ss = status -s
@@ -84,7 +85,7 @@
   rbmi = rebase master --interactive
 
   # log
-  ol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d%x09% %Creset%s' --date=short #oneline
+  ol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d%x09% %Creset%s' --date=short
   lp = ol -p
   ll = ol --stat
   lol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
