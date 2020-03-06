@@ -45,6 +45,7 @@ Plug 'vigoux/LanguageTool.nvim'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'rbong/vim-flog'
+Plug 'rhysd/git-messenger.vim'
 
 " Ack
 Plug 'mileszs/ack.vim'
