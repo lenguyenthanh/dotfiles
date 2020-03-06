@@ -2,6 +2,9 @@
 alias v='nvim'
 alias vs='nvim -S'
 export VISUAL='nvim'
+alias vi='nvim'
+alias :q='exit'
+alias :e='nvim'
 
 # git
 alias g='git'
