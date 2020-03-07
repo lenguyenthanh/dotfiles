@@ -27,7 +27,7 @@ Plug 'scrooloose/nerdcommenter'
 
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-  noremap <leader>n :NERDTreeToggle<CR>
+  noremap <leader>nn :NERDTreeToggle<CR>
   noremap <leader>m :NERDTreeFind<CR>
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
@@ -222,6 +222,10 @@ Plug 'rust-lang/rust.vim', { 'for' : 'rust'}
 " Neo Format
 Plug 'sbdchd/neoformat'
 
+" fades inactive buffers
+Plug 'TaDaa/vimade'
+  nnoremap <Leader>vt :VimadeToggle<CR>
+
 call plug#end()
 
 filetype plugin indent on     " required!
@@ -301,6 +305,9 @@ au FileType gitcommit set tw=72
 " toggle spelling
 nnoremap <Leader>s :set invspell<CR>
 
+" No highlight
+nnoremap <Leader>nh :nohlsearch<CR>
+
 " jk instead of Esc
 inoremap jk <Esc>
 
@@ -317,3 +324,9 @@ augroup textfiles
   autocmd!
   autocmd filetype markdown :setlocal spell spelllang=en | syntax clear
 augroup end
+
+" Learn vim the hard way
+noremap h <NOP>
+noremap j <NOP>
+noremap k <NOP>
+noremap l <NOP>
