@@ -44,6 +44,10 @@ Plug 'vigoux/LanguageTool.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
+  nnoremap <leader>gd :Gvdiff<CR>
+  nnoremap gdh :diffget //2<CR>
+  nnoremap gdl :diffget //3<CR>
+
 Plug 'rbong/vim-flog'
 Plug 'rhysd/git-messenger.vim'
 
