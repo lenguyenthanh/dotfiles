@@ -41,10 +41,11 @@ Plug 'luochen1990/rainbow'
 Plug 'junegunn/goyo.vim'
 Plug 'vigoux/LanguageTool.nvim'
   let g:languagetool_server='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
+Plug 'ujihisa/neco-look'
 
 " Git
 Plug 'tpope/vim-fugitive'
-  nnoremap <leader>gd :Gvdiff<CR>
+  nnoremap <leader>gd :Gvdiffsplit!<CR>
   nnoremap gdh :diffget //2<CR>
   nnoremap gdl :diffget //3<CR>
 
