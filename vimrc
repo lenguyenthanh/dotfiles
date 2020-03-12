@@ -56,10 +56,14 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'mileszs/ack.vim'
   " Don't jump to the first result automatically
   cnoreabbrev Ack Ack!
-  " The silver search for Ack
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " Ripgrep for Ack
+  let g:ackprg = 'rg --vimgrep --no-heading'
   nnoremap <Leader>a :Ack!<Space>
+
+  " Search the word under the cursor using rg
+  nnoremap <Leader>A viw"ry:Ack <C-r>r<CR>
+
 
 " Destroy trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
