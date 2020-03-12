@@ -311,9 +311,6 @@ au FileType gitcommit set tw=72
 " toggle spelling
 nnoremap <Leader>s :set invspell<CR>
 
-" No highlight
-nnoremap <Leader>nh :nohlsearch<CR>
-
 " jk instead of Esc
 inoremap jk <Esc>
 
