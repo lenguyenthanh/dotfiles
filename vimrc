@@ -218,9 +218,6 @@ Plug 'keith/swift.vim', { 'for' : 'swift' }
 " Scala
 Plug 'derekwyatt/vim-scala'
 
-" Go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
 " Rust
 Plug 'rust-lang/rust.vim', { 'for' : 'rust'}
 
