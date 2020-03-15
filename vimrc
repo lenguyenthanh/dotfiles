@@ -27,7 +27,7 @@ Plug 'scrooloose/nerdcommenter'
 
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-  noremap <leader>nn :NERDTreeToggle<CR>
+  noremap <leader>n :NERDTreeToggle<CR>
   noremap <leader>m :NERDTreeFind<CR>
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
@@ -41,6 +41,7 @@ Plug 'luochen1990/rainbow'
 Plug 'junegunn/goyo.vim'
 Plug 'vigoux/LanguageTool.nvim'
   let g:languagetool_server='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
+" Auto complete from dictionary, using look
 Plug 'ujihisa/neco-look'
 
 " Git
@@ -129,7 +130,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': './install.sh'
     \ }
-
+  let g:LanguageClient_diagnosticsList = 'Location'
   let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rust-analyzer'],
     \ 'scala' : ['metals-vim']
@@ -225,9 +226,6 @@ Plug 'derekwyatt/vim-scala'
 " Rust
 Plug 'rust-lang/rust.vim', { 'for' : 'rust'}
 
-" Neo Format
-Plug 'sbdchd/neoformat'
-
 " fades inactive buffers
 Plug 'TaDaa/vimade'
   nnoremap <Leader>vt :VimadeToggle<CR>
@@ -308,9 +306,6 @@ command! -nargs=* VT vsplit | terminal <args>
 " Wrap git commit message
 au FileType gitcommit set tw=72
 
-" toggle spelling
-nnoremap <Leader>s :set invspell<CR>
-
 " jk instead of Esc
 inoremap jk <Esc>
 
@@ -333,3 +328,5 @@ noremap h <NOP>
 noremap j <NOP>
 noremap k <NOP>
 noremap l <NOP>
+nnoremap <C-p> <NOP>
+nnoremap <C-n> <NOP>
