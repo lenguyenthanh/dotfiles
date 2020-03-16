@@ -27,7 +27,7 @@ Plug 'scrooloose/nerdcommenter'
 
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-  noremap <leader>n :NERDTreeToggle<CR>
+  noremap yon :NERDTreeToggle<CR>
   noremap <leader>m :NERDTreeFind<CR>
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
@@ -228,7 +228,7 @@ Plug 'rust-lang/rust.vim', { 'for' : 'rust'}
 
 " fades inactive buffers
 Plug 'TaDaa/vimade'
-  nnoremap <Leader>vt :VimadeToggle<CR>
+  nnoremap yot :VimadeToggle<CR>
 
 call plug#end()
 
