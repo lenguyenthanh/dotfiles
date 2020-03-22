@@ -27,7 +27,7 @@ Plug 'scrooloose/nerdcommenter'
 
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
-  noremap yon :NERDTreeToggle<CR>
+  noremap yom :NERDTreeToggle<CR>
   noremap <leader>m :NERDTreeFind<CR>
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
@@ -42,7 +42,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vigoux/LanguageTool.nvim'
   let g:languagetool_server='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
 " Auto complete from dictionary, using look
-Plug 'ujihisa/neco-look'
+Plug 'ujihisa/neco-look', { 'for' : 'markdown' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -64,7 +64,6 @@ Plug 'mileszs/ack.vim'
 
   " Search the word under the cursor using rg
   nnoremap <Leader>A viw"ry:Ack <C-r>r<CR>
-
 
 " Destroy trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
@@ -133,11 +132,11 @@ Plug 'autozimu/LanguageClient-neovim', {
   let g:LanguageClient_diagnosticsList = 'Location'
   let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rust-analyzer'],
-    \ 'scala' : ['metals-vim']
     \ }
 
     "\ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
     "\ 'haskell': ['hie-wrapper'],
+    "\ 'haskell': ['ghcide', '--lsp'],
 
   "let g:LanguageClient_hoverPreview = 'Always'
 
@@ -158,7 +157,7 @@ Plug 'autozimu/LanguageClient-neovim', {
 
   augroup LSP
     autocmd!
-    autocmd FileType hs,scala,kotlin,rust call SetLSPShortcuts()
+    autocmd FileType haskell,rust call SetLSPShortcuts()
   augroup END
 
   " Always draw the signcolumn.
@@ -189,6 +188,7 @@ Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
 
 " Haskel
 Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
+
   function! ApplyOneSuggestion()
     let l = line(".")
     let c = col(".")
@@ -197,7 +197,6 @@ Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
     silent if v:shell_error == 1| undo | endif
     call cursor(l, c)
   endfunction
-
 
   function! ApplyAllSuggestions()
     let l = line(".")
@@ -217,6 +216,19 @@ Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
 
   endif
 
+  function! Haskell_snippets_module_name() " {{{
+    let l:path = substitute(expand('%:r'), '\%(\U[^/]*/\)*', '', '')
+    return substitute(l:path, '/', '.', 'g')
+  endfunction " }}}
+
+  nnoremap <leader>hs ms:%!stylish-haskell<cr>'s
+
+  " Search by hoogle
+  nnoremap <leader>h :!hoogle<Space>
+
+  " Search the word under the cursor using hoogle
+  nnoremap <Leader>H viw"ry:!hoogle <C-r>r<CR>
+
 " Swift
 Plug 'keith/swift.vim', { 'for' : 'swift' }
 
@@ -235,6 +247,9 @@ call plug#end()
 filetype plugin indent on     " required!
 filetype on
 syntax enable
+
+" support codex
+set tags=tags;/,codex.tags;/
 
 set pastetoggle=<F2> " Binding paste mode
 set expandtab        " tab by spaces
@@ -272,6 +287,10 @@ set smartcase
 set splitbelow
 set splitright
 
+" Increase, decrease width of a window by 30 pixels
+map <M-l> 30<C-w>>
+map <M-h> 30<C-w><
+
 " Gdiff vertically
 set diffopt+=vertical
 
@@ -288,7 +307,6 @@ nnoremap : ;
 tnoremap ; :
 tnoremap : ;
 
-
 " Re-map move around for wrapping line
 nnoremap j gj
 nnoremap k gk
@@ -298,10 +316,16 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap <C-v><Esc> <Esc>
 tnoremap jk <C-\><C-n>
 
+" Highlight terminal cursor
+if has('nvim')
+  highlight! link TermCursor Cursor
+  highlight! TermCursorNC guibg=green guifg=white ctermbg=1 ctermfg=15
+endif
+
 " Quick open a terminal window
 nnoremap <Leader>t :vsp term://zsh<CR>
-command! -nargs=* T split | terminal <args>
-command! -nargs=* VT vsplit | terminal <args>
+command! -nargs=* HT split | terminal <args>
+command! -nargs=* T vsplit | terminal <args>
 
 " Wrap git commit message
 au FileType gitcommit set tw=72
