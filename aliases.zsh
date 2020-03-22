@@ -9,6 +9,9 @@ alias :e='nvim'
 # git
 alias g='git'
 
+# hoogle
+alias h='hoogle'
+
 # chess
 function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
 
