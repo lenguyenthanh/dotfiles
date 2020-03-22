@@ -22,6 +22,7 @@
   lod = pull origin develop
   lu = pull upstream
   lum = pull upstream master
+  lrs = pull --recurse-submodules
 
   # checkout
   co = checkout
@@ -122,6 +123,13 @@
 
   # tag
   t = tag
+
+  # remote
+  rm = remote
+  rma = remote add
+  rmao = remote add origin
+  rmr = remote rename
+  rmv = remote -v
 
   # misc
   count = shortlog -sn
