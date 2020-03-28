@@ -35,14 +35,16 @@ Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 " Beautiful parent thesis
 Plug 'luochen1990/rainbow'
   noremap <leader>R :RainbowToggle<CR>
+  nnoremap yoR :RainbowToggle<CR>
   let g:rainbow_active = 0
 
 " Writing focus mode
 Plug 'junegunn/goyo.vim'
 Plug 'vigoux/LanguageTool.nvim'
-  let g:languagetool_server='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
+  let g:languagetool_server_jar='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
+
 " Auto complete from dictionary, using look
-Plug 'ujihisa/neco-look', { 'for' : 'markdown' }
+Plug 'ujihisa/neco-look', { 'for': 'markdown' }
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -132,11 +134,11 @@ Plug 'autozimu/LanguageClient-neovim', {
   let g:LanguageClient_diagnosticsList = 'Location'
   let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rust-analyzer'],
+    \ 'haskell': ['ghcide', '--lsp'],
     \ }
 
     "\ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
     "\ 'haskell': ['hie-wrapper'],
-    "\ 'haskell': ['ghcide', '--lsp'],
 
   "let g:LanguageClient_hoverPreview = 'Always'
 
