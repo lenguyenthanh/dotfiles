@@ -12,6 +12,8 @@ alias g='git'
 # hoogle
 alias h='hoogle'
 
+alias cat='bat'
+
 # chess
 function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
 
@@ -40,6 +42,9 @@ alias cpwd='pwd|tr -d "\n"|pbcopy'
 
 # Always enable put back
 alias trash='trash -F'
+
+# Show ip
+alias ip='ifconfig | rg inet'
 
 # python3 as default
 alias python='python3'
