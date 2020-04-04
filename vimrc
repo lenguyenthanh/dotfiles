@@ -350,9 +350,9 @@ augroup textfiles
 augroup end
 
 " Learn vim the hard way
-noremap h <NOP>
-noremap j <NOP>
-noremap k <NOP>
-noremap l <NOP>
-nnoremap <C-p> <NOP>
-nnoremap <C-n> <NOP>
+"noremap h <NOP>
+"noremap j <NOP>
+"noremap k <NOP>
+"noremap l <NOP>
+"nnoremap <C-p> <NOP>
+"nnoremap <C-n> <NOP>
