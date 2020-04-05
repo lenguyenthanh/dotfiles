@@ -14,6 +14,8 @@ alias h='hoogle'
 
 alias cat='bat'
 
+alias ghcid='stack exec ghcid'
+
 # chess
 function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
 
