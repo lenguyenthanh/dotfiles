@@ -37,6 +37,8 @@
 
   # branch
   br = branch
+  bra = branch -a
+  brl = branch -l
   brd = branch -d
   brD = branch -D
   brm = branch -m # change branch name
