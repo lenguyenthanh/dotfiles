@@ -138,7 +138,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
     "\ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
-    "\ 'haskell': ['hie-wrapper'],
 
   "let g:LanguageClient_hoverPreview = 'Always'
 
@@ -231,6 +230,9 @@ Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
   " Search the word under the cursor using hoogle
   nnoremap <Leader>H viw"ry:!hoogle <C-r>r<CR>
 
+" Dhall
+Plug 'vmchale/dhall-vim'
+
 " Swift
 Plug 'keith/swift.vim', { 'for' : 'swift' }
 
@@ -239,6 +241,9 @@ Plug 'derekwyatt/vim-scala'
 
 " Rust
 Plug 'rust-lang/rust.vim', { 'for' : 'rust'}
+
+  " Rust ctags
+  autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 
 " fades inactive buffers
 Plug 'TaDaa/vimade'
@@ -348,11 +353,3 @@ augroup textfiles
   autocmd!
   autocmd filetype markdown :setlocal spell spelllang=en | syntax clear
 augroup end
-
-" Learn vim the hard way
-"noremap h <NOP>
-"noremap j <NOP>
-"noremap k <NOP>
-"noremap l <NOP>
-"nnoremap <C-p> <NOP>
-"nnoremap <C-n> <NOP>

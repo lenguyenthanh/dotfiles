@@ -6,3 +6,4 @@ stack.yaml.lock
 Session.vim
 
 codex.tags
+rusty-tags.vi

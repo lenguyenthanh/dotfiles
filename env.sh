@@ -33,3 +33,6 @@ export FZF_DEFAULT_OPTS='
 
 # GPG signing
 export GPG_TTY=$(tty)
+
+# Rust src
+RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
