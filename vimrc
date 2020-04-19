@@ -230,6 +230,9 @@ Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
   " Search the word under the cursor using hoogle
   nnoremap <Leader>H viw"ry:!hoogle <C-r>r<CR>
 
+" Format
+Plug 'sdiehl/vim-ormolu'
+
 " Dhall
 Plug 'vmchale/dhall-vim'
 
