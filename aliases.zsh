@@ -36,14 +36,15 @@ function gradlewrapper() { ./gradlew wrapper --gradle-version $1 --distribution-
 # mkdir then cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
-# Force remove
-alias rmf='rm -rf'
 
 # Copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 
 # Always enable put back
 alias trash='trash -F'
+alias rm='trash'
+# Force remove
+alias rmf='trash -rf -F'
 
 # Show ip
 alias ip='ifconfig | rg inet'
