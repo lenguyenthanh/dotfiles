@@ -135,11 +135,14 @@ Plug 'autozimu/LanguageClient-neovim', {
   let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rust-analyzer'],
     \ 'haskell': ['ghcide', '--lsp'],
+    \ 'typescript': ['typescript-language-server', '--stdio', '--tsserver-path', 'node_modules/.bin/tsserver'],
+    \ 'elm': ['elm-language-server'],
+    \ 'scala' : ['metals-vim'],
     \ }
 
-    "\ 'kotlin': ["~/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"],
-
-  "let g:LanguageClient_hoverPreview = 'Always'
+  let g:LanguageClient_rootMarkers = {
+    \ 'elm': ['elm.json'],
+    \ }
 
   function SetLSPShortcuts()
     nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -158,17 +161,16 @@ Plug 'autozimu/LanguageClient-neovim', {
 
   augroup LSP
     autocmd!
-    autocmd FileType haskell,rust call SetLSPShortcuts()
+    autocmd FileType haskell,rust,typescript,elm,scala call SetLSPShortcuts()
   augroup END
 
   " Always draw the signcolumn.
   set signcolumn=yes
 
-  autocmd BufReadPost *.kt setlocal filetype=kotlin
   autocmd BufReadPost *.rs setlocal filetype=rust
+  au BufRead,BufNewFile *.elm set filetype=elm
   au BufRead,BufNewFile Vagrantfile set ft=ruby
   au BufRead,BufNewFile *.sbt set ft=scala
-  au BufRead,BufNewFile *.kts set ft=kotlin
 
 " handle the function signatures displaying
 Plug 'Shougo/echodoc.vim'
@@ -243,10 +245,13 @@ Plug 'keith/swift.vim', { 'for' : 'swift' }
 Plug 'derekwyatt/vim-scala'
 
 " Rust
-Plug 'rust-lang/rust.vim', { 'for' : 'rust'}
+Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
 
   " Rust ctags
   autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+
+" Javascript/Typescript
+Plug 'sheerun/vim-polyglot'
 
 " fades inactive buffers
 Plug 'TaDaa/vimade'

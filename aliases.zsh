@@ -5,6 +5,7 @@ export VISUAL='nvim'
 alias vi='nvim'
 alias :q='exit'
 alias :e='nvim'
+alias :c='clear'
 
 # git
 alias g='git'
@@ -51,3 +52,11 @@ alias ip='ifconfig | rg inet'
 
 # python3 as default
 alias python='python3'
+
+# Yarn
+alias y='yarn'
+alias yd='yarn add --dev'
+alias ya='yarn add'
+alias yg='yarn global add'
+
+alias usenvm='source $(brew --prefix nvm)/nvm.sh'

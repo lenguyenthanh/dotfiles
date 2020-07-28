@@ -36,3 +36,7 @@ export GPG_TTY=$(tty)
 
 # Rust src
 RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+#source $(brew --prefix nvm)/nvm.sh
