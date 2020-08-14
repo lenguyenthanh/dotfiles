@@ -135,7 +135,8 @@ Plug 'autozimu/LanguageClient-neovim', {
   let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rust-analyzer'],
     \ 'haskell': ['ghcide', '--lsp'],
-    \ 'typescript': ['typescript-language-server', '--stdio', '--tsserver-path', 'node_modules/.bin/tsserver'],
+    \ 'javascript': ['typescript-language-server', '--stdio'],
+    \ 'typescript': ['typescript-language-server', '--stdio'],
     \ 'elm': ['elm-language-server'],
     \ 'scala' : ['metals-vim'],
     \ }
