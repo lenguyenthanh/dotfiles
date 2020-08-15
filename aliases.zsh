@@ -60,3 +60,7 @@ alias ya='yarn add'
 alias yg='yarn global add'
 
 alias usenvm='source $(brew --prefix nvm)/nvm.sh'
+
+# docker
+alias dk='docker'
+alias dc='docker-compose'
