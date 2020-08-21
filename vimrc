@@ -286,6 +286,7 @@ set shiftwidth=2     " when using the >> or << commands, shift lines by 4 spaces
 set cursorline       " show a visual line under the cursor's current line
 set nofixendofline   " Allow no end of line
 set history=200      " History in command line mode
+set inccommand=split " Live Substitution
 set dictionary+=/usr/share/dict/words
 
 set termguicolors
@@ -302,6 +303,12 @@ set smartcase
 " Set natural split opening
 set splitbelow
 set splitright
+
+" Auto hightlight
+augroup LuaHighlight
+  autocmd!
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
+augroup END
 
 " Increase, decrease width of a window by 30 pixels
 map <M-l> 30<C-w>>
