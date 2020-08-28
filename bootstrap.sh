@@ -11,11 +11,15 @@ fi
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
+echo "Installing brewfile"
 brew tap homebrew/bundle
 brew bundle
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
+
+echo "Installing Rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -25,6 +29,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install Haskell Stack
+
+echo "Installiing Stack..."
 curl -sSL https://get.haskellstack.org/ | sh
 
 echo "Setting up symlink..."
@@ -58,6 +64,6 @@ ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 pip3 install --user neovim
 
 # https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
-touch ~/.android/repositories.cfg
+#touch ~/.android/repositories.cfg
 
-echo "Done!"
+echo "Done. Enjoy!"
