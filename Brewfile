@@ -12,18 +12,18 @@ brew 'ctags'
 brew 'fasd'
 brew 'fd'
 brew 'fzf'
+brew 'jq'
 brew 'git'
 brew 'ghc'
 brew 'gnupg2'
 brew 'mas' # Mac App Store command-line
+brew 'nvm'
+brew 'neovim', args: ['HEAD']
 brew 'tmux'
 brew 'trash'
 brew 'tree'
-brew 'jq'
 brew 'ripgrep'
 brew 'vim'
-brew 'nvm'
-brew 'neovim', args: ['HEAD']
 brew 'zsh'
 brew 'atool' # unzip tools
 brew 'sbt' # Scala
@@ -33,16 +33,17 @@ brew 'coursier/formulas/coursier' # Pure scala artifact Fetching
 #cask 'android-sdk'
 #cask 'android-studio'
 #cask 'dash'
+#cask 'intellij-idea-ce'
 cask 'docker'
 cask 'firefox-developer-edition'
 cask 'gpg-suite'
 cask 'iTerm2'
-cask 'intellij-idea-ce'
 cask 'java8'
 cask 'keybase'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'virtualbox-extension-pack'
+cask 'flux'
 
 # Mac App Store
 #mas 'Keynote', id: 409183694
