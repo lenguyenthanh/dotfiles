@@ -2,36 +2,37 @@
 
 echo "Setting up your Mac..."
 
+# Install Xcode
+xcode-select --install
+
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Update Homebrew recipes
-brew update
-
 # Install all our dependencies with bundle (See Brewfile)
 echo "Installing brewfile"
-brew tap homebrew/bundle
-brew bundle
+chmod +x brew.sh
+./brew.sh
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-echo "Installing Rust..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 # Install Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+cp $HOME/.dotfiles/themes/nt9.zsh-theme $HOME/.oh-my-zsh/themes/
 
 # Install VimPlug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install Haskell Stack
-
 echo "Installiing Stack..."
 curl -sSL https://get.haskellstack.org/ | sh
+
+echo "Installing Rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 echo "Setting up symlink..."
 
@@ -61,9 +62,14 @@ rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 
 # Install py3 for Neovim
-pip3 install --user neovim
+pip3 install pynvim
 
 # https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
-#touch ~/.android/repositories.cfg
+touch ~/.android/repositories.cfg
+
+# Default Mac settings
+
+chmod +x ./macos/setup.sh
+./macos/setup.sh
 
 echo "Done. Enjoy!"

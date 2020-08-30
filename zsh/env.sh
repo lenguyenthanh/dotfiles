@@ -1,8 +1,5 @@
  #!/bin/zsh
 
-# PATH
-export PATH="/Users/thanhle/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
-
 # You may need to manually set your language environment
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -33,9 +30,6 @@ export FZF_DEFAULT_OPTS='
 
 # GPG signing
 export GPG_TTY=$(tty)
-
-# Rust src
-RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

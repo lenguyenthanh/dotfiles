@@ -5,10 +5,10 @@ export DOTFILES=$HOME/.dotfiles
 export ZSH=$HOME/.oh-my-zsh
 
 # Use dotfile as ZSH custom directory
-ZSH_CUSTOM=$DOTFILES
+ZSH_CUSTOM=$DOTFILES/zsh
 
 # Active environment
-. $DOTFILES/env.sh
+. $DOTFILES/zsh/env.sh
 
 # Active completion
 . $DOTFILES/zsh/completion

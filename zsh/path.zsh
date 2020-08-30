@@ -1,3 +1,6 @@
+# PATH
+export PATH="~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
+
 # JAVA
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 export ANDROID_HOME="/usr/local/share/android-sdk"
@@ -8,3 +11,5 @@ export PATH="$JAVA_HOME/bin:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:
 
 # RUST
 export PATH="$HOME/.cargo/bin:$PATH"
+RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+
