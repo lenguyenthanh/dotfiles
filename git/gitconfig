@@ -97,5 +97,5 @@
 [commit]
 	gpgsign = true
 
-[includeIf "gitdir:~/source/techno/"]
-  path = ~/.dotfiles/git/gitconfig.tc
+[includeIf "gitdir:~/source/ttc/"]
+  path = ~/.dotfiles/git/gitconfig.ttc

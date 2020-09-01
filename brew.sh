@@ -1,6 +1,7 @@
 # Taps
 brew tap homebrew/cask
 brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 
 # Binaries
 brew install coreutils # Those that come with macOS are outdated
@@ -36,7 +37,7 @@ brew cask install docker
 brew cask install firefox-developer-edition
 brew cask install gpg-suite
 brew cask install iTerm2
-brew cask install java8
+brew cask install java
 brew cask install keybase
 brew cask install vagrant
 brew cask install virtualbox

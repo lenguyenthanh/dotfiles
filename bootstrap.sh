@@ -61,6 +61,9 @@ ln -s $HOME/.dotfiles/ideavimrc $HOME/.ideavimrc
 rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 
+# Install fzf key bindings and fuzzy compeletion:
+$(brew --prefix)/opt/fzf/install
+
 # Install py3 for Neovim
 pip3 install pynvim
 
