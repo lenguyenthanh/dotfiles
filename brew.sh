@@ -8,6 +8,7 @@ brew install coreutils # Those that come with macOS are outdated
 brew install git
 brew install bat
 brew install ctags
+brew install elixir
 brew install fasd
 brew install fd
 brew install fzf
@@ -19,6 +20,8 @@ brew install nvm
 brew install neovim --HEAD
 brew install tmux
 brew install python@3.8
+brew install sbt
+brew install coursier/formulas/coursier
 brew install trash
 brew install tree
 brew install ripgrep
