@@ -34,6 +34,9 @@ curl -sSL https://get.haskellstack.org/ | sh
 echo "Installing Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Tmux plugins Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "Setting up symlink..."
 
 # Symlink zshrc
