@@ -64,3 +64,6 @@ alias usenvm='source $(brew --prefix nvm)/nvm.sh'
 # docker
 alias dk='docker'
 alias dc='docker-compose'
+
+# vagrant
+alias vg='vagrant'
