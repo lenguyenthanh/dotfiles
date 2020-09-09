@@ -1,0 +1,73 @@
+snippet ip
+import $1 from $2;
+endsnippet
+
+
+###########################################################################
+#                            fp - ts																			#
+###########################################################################
+
+###################
+# 		Import 			#
+###################
+
+# Option
+snippet ipo
+import * as O from "fp-ts/lib/Option";
+endsnippet
+
+# Either
+snippet ipe
+import * as E from "fp-ts/lib/Either";
+endsnippet
+
+# TaskEither
+snippet ipte
+import * as TE from "fp-ts/lib/TaskEither";
+endsnippet
+
+# NonEmptyString
+snippet ipne
+import { NonEmptyString } from "io-ts-types/lib/NonEmptyString";
+endsnippet
+
+# NonEmptyString
+snippet ipuu
+import { UUID } from "io-ts-types/lib/UUID";
+endsnippet
+
+# TaskEither
+snippet tei
+TaskEither<$1, $2>$0
+endsnippet
+
+# Either
+snippet ei
+Either<$1, $2> $0
+endsnippet
+
+# Option
+snippet opt
+Option<$1>
+endsnippet
+
+# new io-ts type
+snippet iot
+const $1C = t.type({
+	$0
+});
+endsnippet
+
+# new io-ts type with export
+snippet iote
+const $1C = t.type({
+	$0
+});
+
+export type $1 = t.TypeOf<typeof $1C>;
+endsnippet
+
+# arrow function
+snippet fnc
+const $1 = ($0): $2 =>
+endsnippet
