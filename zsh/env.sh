@@ -33,4 +33,3 @@ export GPG_TTY=$(tty)
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-#source $(brew --prefix nvm)/nvm.sh

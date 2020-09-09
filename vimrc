@@ -62,6 +62,7 @@ Plug 'mileszs/ack.vim'
 
   " Ripgrep for Ack
   let g:ackprg = 'rg --vimgrep --no-heading'
+
   nnoremap <Leader>a :Ack!<Space>
 
   " Search the word under the cursor using rg
@@ -85,10 +86,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Auto Pair
 Plug 'jiangmiao/auto-pairs'
-
-" Dash
-Plug 'rizzatti/dash.vim'
-  nnoremap <Leader>d :Dash<Space>
 
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
@@ -225,15 +222,13 @@ Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
     return substitute(l:path, '/', '.', 'g')
   endfunction " }}}
 
-  nnoremap <leader>hs ms:%!stylish-haskell<cr>'s
-
   " Search by hoogle
   nnoremap <leader>h :!hoogle<Space>
 
   " Search the word under the cursor using hoogle
   nnoremap <Leader>H viw"ry:!hoogle <C-r>r<CR>
 
-" Format
+" Haskell Format
 Plug 'sdiehl/vim-ormolu'
 
 " Dhall
@@ -253,6 +248,9 @@ Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
 
 " Javascript/Typescript
 Plug 'sheerun/vim-polyglot'
+
+" GraphQL
+Plug 'jparise/vim-graphql'
 
 " fades inactive buffers
 Plug 'TaDaa/vimade'
