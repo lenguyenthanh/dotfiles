@@ -1,8 +1,9 @@
 # Vim
 alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
 alias vs='nvim -S'
 export VISUAL='nvim'
-alias vi='nvim'
 alias :q='exit'
 alias :e='nvim'
 alias :c='clear'
