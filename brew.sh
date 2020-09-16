@@ -6,6 +6,7 @@ brew tap homebrew/cask-versions
 # Binaries
 brew install coreutils # Those that come with macOS are outdated
 brew install git
+brew install git-delta
 brew install bat
 brew install ctags
 brew install elixir
@@ -25,7 +26,7 @@ brew install coursier/formulas/coursier
 brew install trash
 brew install tree
 brew install ripgrep
-brew install vim
+# brew install vim
 brew install yarn
 brew install zsh
 brew install atool # unzip tools

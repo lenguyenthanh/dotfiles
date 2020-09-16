@@ -2,6 +2,7 @@
 [include]
   path = ~/.dotfiles/git/gitconfig.local
   path = ~/.dotfiles/git/gitconfig.aliases
+  path = ~/.dotfiles/git/gitconfig.delta
 
 [core]
   excludesfile = ~/.dotfiles/git/gitignore.global
