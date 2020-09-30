@@ -70,6 +70,9 @@ $(brew --prefix)/opt/fzf/install
 # Install py3 for Neovim
 pip3 install pynvim
 
+# Install Ansible
+pip3 install ansible
+
 # https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
 touch ~/.android/repositories.cfg
 
