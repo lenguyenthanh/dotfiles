@@ -15,11 +15,9 @@ alias g='git'
 alias h='hoogle'
 
 alias cat='bat'
+alias sed='/usr/bin/sed -E'
 
 alias ghcid='stack exec ghcid'
-
-# chess
-function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
 
 # Top
 alias cpu='top -o cpu'
@@ -68,3 +66,16 @@ alias dc='docker-compose'
 
 # vagrant
 alias vg='vagrant'
+
+# curl
+alias weather='curl wttr.in'
+alias publicip='curl ifconfig.co'
+function shortlink() { curl --max-redirs 0 "https://tinyurl.com/api-create.php?url=$1" | pbcopy | echo "Copied!" }
+function cheatsheet() { curl "cheat.sh/$1" | cat }
+function qrcode() { curl "qrenco.de/$1" }
+function dict() { curl "dict.org/d:$1" | cat }
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+
+# chess
+function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
+
