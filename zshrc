@@ -1,3 +1,5 @@
+#zmodload zsh/zprof
+
 # Path to your dotfiles installation.
 export DOTFILES=$HOME/.dotfiles
 
@@ -12,3 +14,5 @@ ZSH_CUSTOM=$DOTFILES/zsh
 
 # Active completion
 . $DOTFILES/zsh/completion
+
+#zprof
