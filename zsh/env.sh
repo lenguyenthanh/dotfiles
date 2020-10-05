@@ -14,7 +14,7 @@ plugins=(fzf fasd colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
 # Vim key binding
-bindkey -v
+#bindkey -v
 
 # Fzf config
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
