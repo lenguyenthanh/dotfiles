@@ -284,8 +284,12 @@ set shiftwidth=2     " when using the >> or << commands, shift lines by 4 spaces
 set cursorline       " show a visual line under the cursor's current line
 set nofixendofline   " Allow no end of line
 set history=200      " History in command line mode
-set inccommand=split " Live Substitution
+
 set dictionary+=/usr/share/dict/words
+if has('nvim')
+  set inccommand=split " Live Substitution
+endif
+
 
 set termguicolors
 
@@ -313,7 +317,9 @@ map <M-l> 30<C-w>>
 map <M-h> 30<C-w><
 
 " Gdiff vertically
-set diffopt+=vertical
+if has('nvim')
+  set diffopt+=vertical
+endif
 
 set clipboard=unnamed
 
