@@ -26,11 +26,11 @@ brew install coursier/formulas/coursier
 brew install trash
 brew install tree
 brew install ripgrep
-# brew install vim
 brew install yarn
 brew install zsh
 brew install atool # unzip tools
 brew install reattach-to-user-namespace # tmux copy/paste
+brew install pass
 
 # Apps
 brew cask install android-sdk

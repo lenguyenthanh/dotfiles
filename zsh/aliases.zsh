@@ -78,4 +78,3 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 
 # chess
 function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
-
