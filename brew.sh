@@ -26,6 +26,7 @@ brew install coursier/formulas/coursier
 brew install trash
 brew install tree
 brew install ripgrep
+brew install gnu-sed
 brew install yarn
 brew install zsh
 brew install atool # unzip tools

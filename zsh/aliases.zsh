@@ -15,7 +15,7 @@ alias g='git'
 alias h='hoogle'
 
 alias cat='bat'
-alias sed='/usr/bin/sed -E'
+alias sed='gsed -E'
 
 alias ghcid='stack exec ghcid'
 
