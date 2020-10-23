@@ -1,4 +1,4 @@
-snippet ip
+snippet imp
 import $1 from $2;
 endsnippet
 
@@ -12,32 +12,37 @@ endsnippet
 ###################
 
 # Option
-snippet ipo
+snippet impo
 import * as O from "fp-ts/lib/Option";
 endsnippet
 
 # Either
-snippet ipe
+snippet impe
 import * as E from "fp-ts/lib/Either";
 endsnippet
 
 # TaskEither
-snippet ipte
+snippet impte
 import * as TE from "fp-ts/lib/TaskEither";
 endsnippet
 
-# NonEmptyString
-snippet ipne
-import { NonEmptyString } from "io-ts-types/lib/NonEmptyString";
+# Array
+snippet impa
+import * as A from "fp-ts/lib/Array";
 endsnippet
 
 # NonEmptyString
-snippet ipuu
+snippet impne
+import { NonEmptyString } from "io-ts-types/lib/NonEmptyString";
+endsnippet
+
+# UUID
+snippet impuu
 import { UUID } from "io-ts-types/lib/UUID";
 endsnippet
 
 # Pipe
-snippet ipp
+snippet impp
 import { pipe } from "fp-ts/lib/pipeable";
 endsnippet
 
@@ -74,5 +79,11 @@ endsnippet
 
 # arrow function
 snippet fnc
-const $1 = ($0): $2 =>
+const $1 = ($2): $3 =>
+	$0
+endsnippet
+
+# eslint disable
+snippet esl
+/* eslint-disable $0*/
 endsnippet
