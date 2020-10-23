@@ -47,6 +47,7 @@
   ss = status -s
   sa = status -uall
   sas = status -uall -s
+  sc = diff --name-only --diff-filter=U
 
   # add
   aa = add --all
