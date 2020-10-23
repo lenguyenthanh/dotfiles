@@ -321,8 +321,6 @@ if has('nvim')
   set diffopt+=vertical
 endif
 
-set clipboard=unnamed
-
 " Ignore build, gen, lib directory in Ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.o,*.obj,.git,*/vendor/*,*/target/*,*/build/*,*/node_modules/*,*.a,*/lib/*,env,*/env/*
 
@@ -359,6 +357,12 @@ au FileType gitcommit set tw=72
 
 " jk instead of Esc
 inoremap jk <Esc>
+
+" Setting for quick copy & paste
+nnoremap "y "+y
+nnoremap "yy "+yy
+nnoremap "p "+p
+nnoremap "P "+p
 
 " Line text object
 xnoremap il $o^
