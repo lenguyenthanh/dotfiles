@@ -1,3 +1,11 @@
+snippet try
+try {
+	$1
+} catch (e) {
+	$2
+};
+endsnippet
+
 snippet imp
 import $1 from $2;
 endsnippet
@@ -26,6 +34,11 @@ snippet impte
 import * as TE from "fp-ts/lib/TaskEither";
 endsnippet
 
+# ReaderTaskEither
+snippet imprte
+import * as RTE from "fp-ts/lib/ReaderTaskEither";
+endsnippet
+
 # Array
 snippet impa
 import * as A from "fp-ts/lib/Array";
@@ -43,7 +56,7 @@ endsnippet
 
 # Pipe
 snippet impp
-import { pipe } from "fp-ts/lib/pipeable";
+import { pipe } from "fp-ts/lib/function";
 endsnippet
 
 # TaskEither
@@ -86,4 +99,18 @@ endsnippet
 # eslint disable
 snippet esl
 /* eslint-disable $0*/
+endsnippet
+
+# test
+snippet tc
+test("$1", async () => {
+	$0
+});
+endsnippet
+
+# describe
+snippet des
+describe("$1", () => {
+	$0
+});
 endsnippet
