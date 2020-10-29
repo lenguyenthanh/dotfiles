@@ -331,6 +331,8 @@ nnoremap ; :
 nnoremap : ;
 tnoremap ; :
 tnoremap : ;
+vnoremap ; :
+vnoremap : ;
 
 " Re-map move around for wrapping line
 nnoremap j gj
