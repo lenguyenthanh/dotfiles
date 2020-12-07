@@ -77,4 +77,4 @@ function dict() { curl "dict.org/d:$1" | cat }
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
 # chess
-function downloadgames() { curl -L -o $1.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
+function dlgames() { curl -L -o $1_$2.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
