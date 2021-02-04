@@ -19,6 +19,11 @@ endsnippet
 # 		Import 			#
 ###################
 
+# io-ts
+snippet impio
+import * as t from "io-ts";
+endsnippet
+
 # Option
 snippet impo
 import * as O from "fp-ts/lib/Option";
@@ -118,4 +123,22 @@ snippet des
 describe("$1", () => {
 	$0
 });
+endsnippet
+
+# new type
+snippet nt
+
+export interface $1 extends Newtype<{ readonly $1: unique symbol}, $2> {};
+export const iso$1 = iso<$1>();
+$0
+endsnippet
+
+# new type
+
+snippet tee
+export type $1Error = {
+  readonly error_type: "$2_error";
+  readonly message: string;
+};
+
 endsnippet
