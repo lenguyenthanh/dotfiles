@@ -56,6 +56,7 @@ alias python='python3'
 alias y='yarn'
 alias yd='yarn add --dev'
 alias ya='yarn add'
+alias yt='yarn test'
 alias yg='yarn global add'
 
 alias usenvm='source $(brew --prefix nvm)/nvm.sh'
