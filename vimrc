@@ -79,7 +79,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
 
 " Color Scheme
-Plug 'joshdick/onedark.vim'
+"Plug 'joshdick/onedark.vim'
+Plug 'ayu-theme/ayu-vim'
 
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
@@ -292,9 +293,10 @@ endif
 
 
 set termguicolors
-
-color onedark
+let ayucolor="mirage"
+colorscheme ayu
 set background=dark
+"color onedark
 
 set nofoldenable
 
