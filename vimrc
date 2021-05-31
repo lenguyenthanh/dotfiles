@@ -71,6 +71,12 @@ Plug 'mileszs/ack.vim'
 " Destroy trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
 
+" Vim prettier
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+
 " Surround
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -129,6 +135,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': './install.sh'
     \ }
+
   let g:LanguageClient_diagnosticsList = 'Location'
   let g:LanguageClient_serverCommands = {
     \ 'rust': ['~/.cargo/bin/rust-analyzer'],
@@ -170,6 +177,11 @@ Plug 'autozimu/LanguageClient-neovim', {
   au BufRead,BufNewFile *.elm set filetype=elm
   au BufRead,BufNewFile Vagrantfile set ft=ruby
   au BufRead,BufNewFile *.sbt set ft=scala
+
+"Plug 'neovim/nvim-lspconfig'
+
+" Loads lua config
+"lua require('init')
 
 " handle the function signatures displaying
 Plug 'Shougo/echodoc.vim'
@@ -361,6 +373,7 @@ au FileType gitcommit set tw=72
 
 " jk instead of Esc
 inoremap jk <Esc>
+inoremap kl <Esc>
 
 " Setting for quick copy & paste
 nnoremap "y "+y

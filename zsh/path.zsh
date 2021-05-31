@@ -2,7 +2,11 @@
 export PATH="~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 
 # JAVA
-export JAVA_HOME="$(/usr/libexec/java_home)"
+export JAVA_16_HOME=$(/usr/libexec/java_home -v16)
+export JAVA_HOME="$(/usr/libexec/java_home -v15)"
+
+alias java16='export JAVA_HOME=$JAVA_16_HOME'
+
 export ANDROID_HOME="/usr/local/share/android-sdk"
 export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
 
