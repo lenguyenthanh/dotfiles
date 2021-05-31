@@ -23,8 +23,8 @@ vmap Q gq
 nmap Q gqap
 
 " These create newlines like o and O but stay in normal mode
-nmap zj o<Esc>k
-nmap zk O<Esc>j
+nmap ]<space> o<Esc>k
+nmap [<space> O<Esc>j
 
 " key bindings for quickly moving between windows
 " h left, l right, k up, j down
