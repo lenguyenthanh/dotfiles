@@ -51,6 +51,7 @@
 
   # add
   aa = add --all
+  aaa = !git add --all && git commit --amend --no-edit
   aav = add --all --verbose
   ai = add --interactive
   au = add -u
@@ -134,5 +135,5 @@
   rmr = remote rename
   rmv = remote -v
 
-  # misc
-  count = shortlog -sn
+  # count
+  count = rev-list --count HEAD ^master
