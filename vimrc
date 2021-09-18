@@ -75,7 +75,7 @@ Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'yaml', 'html'] }
 
 " Surround
 Plug 'tpope/vim-surround'
@@ -260,7 +260,7 @@ Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
   autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 
 " Javascript/Typescript
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 
 " GraphQL
 Plug 'jparise/vim-graphql'

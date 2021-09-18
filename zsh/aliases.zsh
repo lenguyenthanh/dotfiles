@@ -68,6 +68,9 @@ alias dc='docker-compose'
 # vagrant
 alias vg='vagrant'
 
+# scala
+alias scala='scala3-repl'
+
 # curl
 alias weather='curl wttr.in'
 alias publicip='curl ifconfig.co'

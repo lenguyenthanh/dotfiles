@@ -1511,6 +1511,8 @@
 	<array>
 		<string>Profiles</string>
 	</array>
+	<key>Use background pattern indicator</key>
+	<true/>
 	<key>UseVirtualKeyCodesForDetectingDigits</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>

@@ -25,7 +25,7 @@
   lrs = pull --recurse-submodules
 
   # checkout
-  co = checkout
+  co = checkout # not restore
   com = checkout master
   cc = checkout -
   cb = checkout -b
