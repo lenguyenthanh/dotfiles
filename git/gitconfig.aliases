@@ -8,7 +8,7 @@
   # push
   p = push
   po = push origin
-  pom = push origin master
+  pom = push origin main
   pod = push origin develop
   pof = push origin --force-with-lease
   pf = push --force-with-lease
@@ -18,15 +18,15 @@
   # pull
   l = pull
   lo = pull origin
-  lom = pull origin master
+  lom = pull origin main
   lod = pull origin develop
   lu = pull upstream
-  lum = pull upstream master
+  lum = pull upstream main
   lrs = pull --recurse-submodules
 
   # checkout
   co = checkout # not restore
-  com = checkout master
+  com = checkout main
   cc = checkout -
   cb = checkout -b
 
@@ -86,8 +86,8 @@
   rbc = rebase --continue
   rba = rebase --abort
   rbd = rebase develop
-  rbm = rebase master
-  rbmi = rebase master --interactive
+  rbm = rebase main
+  rbmi = rebase main --interactive
 
   # log
   ol = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d%x09% %Creset%s' --date=short
@@ -132,8 +132,9 @@
   rm = remote
   rma = remote add
   rmao = remote add origin
+  rmau = remote add upstream
   rmr = remote rename
   rmv = remote -v
 
   # count
-  count = rev-list --count HEAD ^master
+  count = rev-list --count HEAD ^main
