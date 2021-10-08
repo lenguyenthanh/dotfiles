@@ -4,8 +4,12 @@ augroup myvimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 
+lua require('basic')
+lua require('plugins')
+lua require('lsp')
+
 " Change the leader key
-let mapleader=","
+" let mapleader="," => lua
 
 " All plugins go here
 call plug#begin('~/.local/share/nvim/plugged')
@@ -120,68 +124,63 @@ Plug 'vim-syntastic/syntastic'
 " unimpaired
 Plug 'tpope/vim-unimpaired'
 
-" Deoplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-  let g:deoplete#enable_at_startup = 1
+"" Deoplete
+"if has('nvim')
+  "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"else
+  "Plug 'Shougo/deoplete.nvim'
+  "Plug 'roxma/nvim-yarp'
+  "Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+  "let g:deoplete#enable_at_startup = 1
 
 " LSP
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': './install.sh'
-    \ }
+"Plug 'autozimu/LanguageClient-neovim', {
+    "\ 'branch': 'next',
+    "\ 'do': './install.sh'
+    "\ }
 
-  let g:LanguageClient_diagnosticsList = 'Location'
-  let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rust-analyzer'],
-    \ 'haskell': ['ghcide', '--lsp'],
-    \ 'javascript': ['typescript-language-server', '--stdio'],
-    \ 'typescript': ['typescript-language-server', '--stdio'],
-    \ 'elm': ['elm-language-server'],
-    \ 'scala' : ['metals-vim'],
-    \ }
+  "let g:LanguageClient_diagnosticsList = 'Location'
+  "let g:LanguageClient_serverCommands = {
+    "\ 'rust': ['~/.cargo/bin/rust-analyzer'],
+    "\ 'haskell': ['ghcide', '--lsp'],
+    "\ 'javascript': ['typescript-language-server', '--stdio'],
+    "\ 'typescript': ['typescript-language-server', '--stdio'],
+    "\ 'elm': ['elm-language-server'],
+    "\ 'scala' : ['metals-vim'],
+    "\ }
 
-  let g:LanguageClient_rootMarkers = {
-    \ 'elm': ['elm.json'],
-    \ }
+  "let g:LanguageClient_rootMarkers = {
+    "\ 'elm': ['elm.json'],
+    "\ }
 
-  function SetLSPShortcuts()
-    nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-    nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-    nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-    nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-    nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-    nnoremap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
-    nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-    nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-    nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-    nnoremap <leader>le :call LanguageClient#explainErrorAtPoint()<CR>
-    let g:LanguageClient_autoStart = 1
-  endfunction()
+  "function SetLSPShortcuts()
+    "nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+    "nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+    "nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+    "nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+    "nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+    "nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
+    "nnoremap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
+    "nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+    "nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+    "nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
+    "nnoremap <leader>le :call LanguageClient#explainErrorAtPoint()<CR>
+    "let g:LanguageClient_autoStart = 1
+  "endfunction()
 
-  augroup LSP
-    autocmd!
-    autocmd FileType haskell,rust,typescript,elm,scala call SetLSPShortcuts()
-  augroup END
+  "augroup LSP
+    "autocmd!
+    "autocmd FileType haskell,rust,typescript,elm,scala call SetLSPShortcuts()
+  "augroup END
 
-  " Always draw the signcolumn.
-  set signcolumn=yes
+  "" Always draw the signcolumn.
+  "set signcolumn=yes
 
-  autocmd BufReadPost *.rs setlocal filetype=rust
-  au BufRead,BufNewFile *.elm set filetype=elm
-  au BufRead,BufNewFile Vagrantfile set ft=ruby
-  au BufRead,BufNewFile *.sbt set ft=scala
-
-"Plug 'neovim/nvim-lspconfig'
-
-" Loads lua config
-"lua require('init')
+  "autocmd BufReadPost *.rs setlocal filetype=rust
+  "au BufRead,BufNewFile *.elm set filetype=elm
+  "au BufRead,BufNewFile Vagrantfile set ft=ruby
+  "au BufRead,BufNewFile *.sbt set ft=scala
 
 " handle the function signatures displaying
 Plug 'Shougo/echodoc.vim'
