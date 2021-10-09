@@ -8,9 +8,6 @@ lua require('basic')
 lua require('plugins')
 lua require('lsp')
 
-" Change the leader key
-" let mapleader="," => lua
-
 " All plugins go here
 call plug#begin('~/.local/share/nvim/plugged')
 

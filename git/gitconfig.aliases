@@ -134,6 +134,7 @@
   rmao = remote add origin
   rmau = remote add upstream
   rmr = remote rename
+  rmrou = remote rename origin upstream
   rmv = remote -v
 
   # count
