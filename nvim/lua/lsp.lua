@@ -50,7 +50,7 @@ vim.cmd([[hi! link LspReferenceWrite CursorColumn]])
 
 metals_config = require("metals").bare_config
 
- metals_config.init_options.statusBarProvider = "on"
+metals_config.init_options.statusBarProvider = "on"
 metals_config.settings = {
   showImplicitArguments = true,
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
