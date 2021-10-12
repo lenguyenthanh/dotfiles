@@ -98,15 +98,20 @@ Plug 'jiangmiao/auto-pairs'
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
 Plug 'junegunn/fzf.vim'
-  nnoremap <silent> <Leader>y :Files <C-r>=expand("%:h")<CR>/<CR>
-  nnoremap <silent> <Leader>p :Files<CR>
-  nnoremap <silent> <Leader>e :Buffers<CR>
-  nnoremap <silent> <Leader>c  :Commits<CR>
-  nnoremap <silent> <Leader>bc :BCommits<CR>
+  nnoremap <silent> <Leader>fy :Files <C-r>=expand("%:h")<CR>/<CR>
+  nnoremap <silent> <Leader>fp :Files<CR>
+  nnoremap <silent> <Leader>fe :Buffers<CR>
+  nnoremap <silent> <Leader>fg  :Commits<CR>
+  nnoremap <silent> <Leader>fbc :BCommits<CR>
+  nnoremap <silent> <Leader>fm :Maps<CR>
+  nnoremap <silent> <Leader>fs :Snippets<CR>
+  nnoremap <silent> <Leader>fc :Commands<CR>
+
   " Git commit
   let g:fzf_commits_log_options = '--graph --color=always
     \ --format="%C(yellow)%h%C(red)%d%C(reset)
     \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
+  nnoremap <silent> <Leader>fg :GFiles<CR>
 
 " Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
@@ -120,64 +125,6 @@ Plug 'vim-syntastic/syntastic'
 
 " unimpaired
 Plug 'tpope/vim-unimpaired'
-
-"" Deoplete
-"if has('nvim')
-  "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"else
-  "Plug 'Shougo/deoplete.nvim'
-  "Plug 'roxma/nvim-yarp'
-  "Plug 'roxma/vim-hug-neovim-rpc'
-"endif
-  "let g:deoplete#enable_at_startup = 1
-
-" LSP
-"Plug 'autozimu/LanguageClient-neovim', {
-    "\ 'branch': 'next',
-    "\ 'do': './install.sh'
-    "\ }
-
-  "let g:LanguageClient_diagnosticsList = 'Location'
-  "let g:LanguageClient_serverCommands = {
-    "\ 'rust': ['~/.cargo/bin/rust-analyzer'],
-    "\ 'haskell': ['ghcide', '--lsp'],
-    "\ 'javascript': ['typescript-language-server', '--stdio'],
-    "\ 'typescript': ['typescript-language-server', '--stdio'],
-    "\ 'elm': ['elm-language-server'],
-    "\ 'scala' : ['metals-vim'],
-    "\ }
-
-  "let g:LanguageClient_rootMarkers = {
-    "\ 'elm': ['elm.json'],
-    "\ }
-
-  "function SetLSPShortcuts()
-    "nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-    "nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
-    "nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
-    "nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
-    "nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
-    "nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
-    "nnoremap <leader>la :call LanguageClient#textDocument_codeAction()<CR>
-    "nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
-    "nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
-    "nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
-    "nnoremap <leader>le :call LanguageClient#explainErrorAtPoint()<CR>
-    "let g:LanguageClient_autoStart = 1
-  "endfunction()
-
-  "augroup LSP
-    "autocmd!
-    "autocmd FileType haskell,rust,typescript,elm,scala call SetLSPShortcuts()
-  "augroup END
-
-  "" Always draw the signcolumn.
-  "set signcolumn=yes
-
-  "autocmd BufReadPost *.rs setlocal filetype=rust
-  "au BufRead,BufNewFile *.elm set filetype=elm
-  "au BufRead,BufNewFile Vagrantfile set ft=ruby
-  "au BufRead,BufNewFile *.sbt set ft=scala
 
 " handle the function signatures displaying
 Plug 'Shougo/echodoc.vim'
@@ -360,7 +307,6 @@ if has('nvim')
 endif
 
 " Quick open a terminal window
-nnoremap <Leader>t :vsp term://zsh<CR>
 command! -nargs=* HT split | terminal <args>
 command! -nargs=* T vsplit | terminal <args>
 
