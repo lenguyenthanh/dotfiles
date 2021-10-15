@@ -5,8 +5,8 @@ local g = vim.g      -- a table to access global variables
 cmd 'packadd paq-nvim'               -- load the package manager
 local paq = require('paq-nvim').paq  -- a convenient alias
 paq {'savq/paq-nvim', opt = true}    -- paq-nvim manages itself
-paq {'shougo/deoplete-lsp'}
-paq {'shougo/deoplete.nvim', run = fn['remote#host#UpdateRemotePlugins']}
+--paq {'shougo/deoplete-lsp'}
+--paq {'shougo/deoplete.nvim', run = fn['remote#host#UpdateRemotePlugins']}
 paq {'nvim-treesitter/nvim-treesitter'}
 paq {'neovim/nvim-lspconfig'}
 --paq {'junegunn/fzf', run = fn['fzf#install']}

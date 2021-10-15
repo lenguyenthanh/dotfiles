@@ -47,6 +47,11 @@ Plug 'vigoux/LanguageTool.nvim'
 " Auto complete from dictionary, using look
 Plug 'ujihisa/neco-look', { 'for': 'markdown' }
 
+" Autocomplete
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/nvim-cmp'
 " Git
 Plug 'tpope/vim-fugitive'
   nnoremap <leader>gd :Gvdiffsplit!<CR>
