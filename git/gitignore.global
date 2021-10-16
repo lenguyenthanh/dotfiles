@@ -7,3 +7,8 @@ Session.vim
 
 codex.tags
 rusty-tags.vi
+
+
+**/.metals/
+**/.bloop/
+**/.bsp/
