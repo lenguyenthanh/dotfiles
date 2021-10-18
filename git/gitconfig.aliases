@@ -129,13 +129,19 @@
   t = tag
 
   # remote
-  rm = remote
   rma = remote add
   rmao = remote add origin
   rmau = remote add upstream
   rmr = remote rename
+  rmrm = remote remove
   rmrou = remote rename origin upstream
   rmv = remote -v
 
   # count
   count = rev-list --count HEAD ^main
+
+  # subtree
+  str = subtree
+  stra = subtree add
+  strl = subtree pull
+  strp = subtree push
