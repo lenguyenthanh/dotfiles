@@ -2,11 +2,10 @@
 augroup myvimrc
     au!
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
-augroup END
+  augroup END
 
 lua require('basic')
 lua require('plugins')
-lua require('lsp')
 
 " All plugins go here
 call plug#begin('~/.local/share/nvim/plugged')
@@ -47,11 +46,13 @@ Plug 'vigoux/LanguageTool.nvim'
 " Auto complete from dictionary, using look
 Plug 'ujihisa/neco-look', { 'for': 'markdown' }
 
-" Autocomplete
+" nvim-cmp autocompletion
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
 " Git
 Plug 'tpope/vim-fugitive'
   nnoremap <leader>gd :Gvdiffsplit!<CR>
@@ -218,6 +219,12 @@ Plug 'TaDaa/vimade'
   nnoremap yot :VimadeToggle<CR>
 
 call plug#end()
+
+lua require('settings.cmp').setup()
+lua require('lsp')
+
+
+"lua require('init')
 
 filetype plugin indent on     " required!
 filetype on

@@ -62,3 +62,10 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 metals_config.capabilities = capabilities
+
+lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
+    handlers = {
+      ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
+    },
+    capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
+  })
