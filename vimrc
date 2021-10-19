@@ -139,15 +139,18 @@ Plug 'Shougo/echodoc.vim'
   let g:echodoc#enable_at_startup = 0
   let g:echodoc#type = 'signature'
 
+" treesister
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 " LANGUAGE
 " Json
-Plug 'elzr/vim-json', { 'for' : 'json' }
+"Plug 'elzr/vim-json', { 'for' : 'json' }
 
 " Toml Syntax
-Plug 'cespare/vim-toml', { 'for' : 'toml' }
+"Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
 " Kotlin
-Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
+"Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
 
 " Haskel
 Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
