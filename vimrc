@@ -50,6 +50,7 @@ Plug 'ujihisa/neco-look', { 'for': 'markdown' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
@@ -226,8 +227,6 @@ call plug#end()
 lua require('settings.cmp').setup()
 lua require('lsp')
 
-
-"lua require('init')
 
 filetype plugin indent on     " required!
 filetype on
