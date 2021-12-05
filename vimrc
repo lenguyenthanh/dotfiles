@@ -4,8 +4,8 @@ augroup myvimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
   augroup END
 
-lua require('basic')
 lua require('plugins')
+lua require('basic')
 
 " All plugins go here
 call plug#begin('~/.local/share/nvim/plugged')
@@ -47,7 +47,6 @@ Plug 'vigoux/LanguageTool.nvim'
 Plug 'ujihisa/neco-look', { 'for': 'markdown' }
 
 " nvim-cmp autocompletion
-Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'

@@ -1,3 +1,5 @@
+######### Tests #############
+
 snippet catsuite "CatsEffectSuite" !b
 import munit.CatsEffectSuite
 
@@ -6,8 +8,30 @@ class $1 extends CatsEffectSuite {
 }
 endsnippet
 
+snippet checksuite "ScalaCheckSuite" !b
+import munit.ScalaCheckSuite
+
+class $1 extends ScalaCheckSuite {
+	$0
+}
+endsnippet
+
 snippet	tc "test case" !b
-test($1) {
+test("$1") {
+	$0
+}
+endsnippet
+
+snippet	tp "test property" !b
+property("$1") {
+	forAll { $2 =>
+		$0
+	}
+}
+endsnippet
+
+snippet fcc "final case class" !b
+final case class $1 {
 	$0
 }
 endsnippet
