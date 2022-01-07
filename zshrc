@@ -16,3 +16,5 @@ ZSH_CUSTOM=$DOTFILES/zsh
 . $DOTFILES/zsh/completion
 
 #zprof
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

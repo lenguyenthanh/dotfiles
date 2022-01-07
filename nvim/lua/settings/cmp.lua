@@ -10,8 +10,7 @@ M.setup = function()
     },
     snippet = {
       expand = function(args)
-        -- Comes from vsnip
-        vim.fn["vsnip#anonymous"](args.body)
+        vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
     mapping = {

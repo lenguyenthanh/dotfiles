@@ -70,16 +70,16 @@ lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
     capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
   })
 
-require("nvim-treesitter.configs").setup({
-  playground = { enable = true },
-  query_linter = {
-    enable = true,
-    use_virtual_text = true,
-    lint_events = { "BufWrite", "CursorHold" },
-  },
-  ensure_installed = "maintained",
-  highlight = {
-    enable = true,
-    disable = { "scala" },
-  },
-})
+--require("nvim-treesitter.configs").setup({
+  --playground = { enable = true },
+  --query_linter = {
+    --enable = true,
+    --use_virtual_text = true,
+    --lint_events = { "BufWrite", "CursorHold" },
+  --},
+  --ensure_installed = "maintained",
+  --highlight = {
+    --enable = true,
+    --disable = { "scala" },
+  --},
+--})
