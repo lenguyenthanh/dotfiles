@@ -27,15 +27,15 @@ brew install trash
 brew install tree
 brew install ripgrep
 brew install gnu-sed
-#brew install yarn
+brew install yarn
 brew install zsh
 brew install atool # unzip tools
 brew install reattach-to-user-namespace # tmux copy/paste
 brew install pass
 
 # Apps
-#brew cask install android-sdk
-#brew cask install android-studio
+brew cask install android-sdk
+brew cask install android-studio
 brew cask install intellij-idea
 brew cask install appcleaner
 brew cask install docker
