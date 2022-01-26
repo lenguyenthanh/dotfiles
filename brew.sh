@@ -34,21 +34,20 @@ brew install reattach-to-user-namespace # tmux copy/paste
 brew install pass
 
 # Apps
-brew cask install android-sdk
-brew cask install android-studio
-brew cask install intellij-idea
-brew cask install appcleaner
-brew cask install docker
-brew cask install firefox-developer-edition
-brew cask install gpg-suite
-brew cask install iTerm2
-brew cask install java
-brew cask install keybase
-brew cask install vagrant
-brew cask install virtualbox
-brew cask install virtualbox-extension-pack
-brew cask install flux
-brew install --cask temurin
+brew install android-sdk --cask
+brew install android-studio --cask
+brew install intellij-idea --cask
+brew install appcleaner --cask
+brew install docker --cask
+brew install firefox-developer-edition --cask
+brew install gpg-suite --cask
+brew install iTerm2 --cask
+brew install keybase --cask
+brew install vagrant --cask
+brew install virtualbox --cask
+brew install virtualbox-extension-pack --cask
+brew install flux --cask
+brew install temurin --cask
 
 # Mac App Store
 mas install 823766827 # OneDrive
