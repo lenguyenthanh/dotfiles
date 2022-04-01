@@ -150,7 +150,7 @@ Plug 'Shougo/echodoc.vim'
 "Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
 " Kotlin
-"Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
+Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
 
 " Haskel
 Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }

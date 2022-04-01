@@ -10,7 +10,7 @@ if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-# Install all our dependencies with bundle (See Brewfile)
+# Install dependencies using brew
 echo "Installing brewfile"
 chmod +x brew.sh
 ./brew.sh

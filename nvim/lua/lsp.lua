@@ -12,6 +12,7 @@ end
 local lsp = require 'lspconfig'
 local lspfuzzy = require 'lspfuzzy'
 
+lsp.kotlin_language_server.setup{}
 lsp.rust_analyzer.setup{}
 lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
 

@@ -45,10 +45,10 @@ alias cpwd='pwd|tr -d "\n"|pbcopy'
 
 # Always enable put back
 #alias trash='trash -F'
-#alias rm='trash'
+alias rm='trash'
 
 # Force remove
-#alias rmf='trash -rf -F'
+alias rmf='trash -rf -F'
 
 # Show ip
 alias ip='ifconfig | rg inet'

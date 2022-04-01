@@ -32,6 +32,7 @@ brew install zsh
 brew install atool # unzip tools
 brew install reattach-to-user-namespace # tmux copy/paste
 brew install pass
+brew install pinentry-mac
 
 # Apps
 brew install android-sdk --cask

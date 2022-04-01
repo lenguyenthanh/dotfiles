@@ -3,13 +3,12 @@ export PATH="~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/loca
 
 export JAVA_HOME="$(/usr/libexec/java_home -v17)"
 
-export ANDROID_HOME="/usr/local/share/android-sdk"
-export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
-
 # JAVA & ANDROID
-export PATH="$JAVA_HOME/bin:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # RUST
 export PATH="$HOME/.cargo/bin:$PATH"
 RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
+# Coursier
+export PATH="$PATH:/Users/thanhle/Library/Application Support/Coursier/bin"

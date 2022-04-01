@@ -4,6 +4,10 @@
   path = ~/.dotfiles/git/gitconfig.aliases
   path = ~/.dotfiles/git/gitconfig.delta
 
+[user]
+  name = Thanh Le
+  email = lenguyenthanh@hotmail.com
+
 [core]
   excludesfile = ~/.dotfiles/git/gitignore.global
   editor = nvim
@@ -96,7 +100,7 @@
   untracked = cyan
 
 [commit]
-	gpgsign = true
+  gpgsign = true
 
 [includeIf "gitdir:~/source/ttc/"]
   path = ~/.dotfiles/git/gitconfig.ttc
