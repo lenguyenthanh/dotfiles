@@ -3,7 +3,7 @@ local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g      -- a table to access global variables
 
 cmd 'packadd paq-nvim'               -- load the package manager
-local paq = require('paq-nvim').paq  -- a convenient alias
+local paq = require('paq').paq  -- a convenient alias
 paq {'savq/paq-nvim', opt = true}    -- paq-nvim manages itself
 paq {'neovim/nvim-lspconfig'}
 paq {'ojroques/nvim-lspfuzzy'}

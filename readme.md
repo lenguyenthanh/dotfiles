@@ -16,10 +16,15 @@ curl -sSL https://raw.githubusercontent.com/lenguyenthanh/dotfiles/master/instal
 - Vim
 - NeoVim
 - Git
-- Haskell
 - Mac
 - Brew
 - Iterm2
+- Tmux
 - Zsh
 - Oh-My-Zsh
-- Tmux
+
+## Languages
+
+- Haskell
+- Scala
+- Rust

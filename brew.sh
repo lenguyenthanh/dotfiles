@@ -9,7 +9,7 @@ brew install git
 brew install git-delta
 brew install bat
 brew install ctags
-#brew install elixir
+brew install elixir
 brew install fasd
 brew install fd
 brew install fzf
@@ -40,6 +40,7 @@ brew install intellij-idea --cask
 brew install appcleaner --cask
 brew install docker --cask
 brew install firefox-developer-edition --cask
+brew install firefox --cask
 brew install gpg-suite --cask
 brew install iTerm2 --cask
 brew install keybase --cask
@@ -51,13 +52,11 @@ brew install temurin --cask
 
 # Mac App Store
 mas install 823766827 # OneDrive
-mas install 1176895641 # 'Spark'
-mas install 747648890 # 'telegram'
 mas install 497799835 # Xcode
 mas install 425955336 # Skitch
 
 # fonts
-brew cask install font-fira-code
+brew install font-fira-code --cask
 
 # brew clean up
 brew cleanup

@@ -7,7 +7,7 @@ xcode-select --install
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Install all our dependencies with bundle (See Brewfile)
