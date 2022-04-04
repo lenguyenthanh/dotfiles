@@ -35,7 +35,7 @@ Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 " Beautiful parent thesis
 Plug 'luochen1990/rainbow'
   noremap <leader>R :RainbowToggle<CR>
-  nnoremap yoR :RainbowToggle<CR>
+  nnoremap yor :RainbowToggle<CR>
   let g:rainbow_active = 0
 
 " Writing focus mode
