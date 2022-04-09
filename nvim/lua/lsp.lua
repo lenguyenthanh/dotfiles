@@ -8,12 +8,16 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-
 local lsp = require 'lspconfig'
 local lspfuzzy = require 'lspfuzzy'
 
+require('telescope').load_extension('fzf')
+require('telescope').load_extension('scaladex')
+require('telescope').load_extension('metals')
+
+vim.api.nvim_set_keymap('n', '<leader>si', [[<cmd>lua require('telescope').extensions.scaladex.scaladex.search()<cr>]], { noremap = true, silent = true })
 lsp.rust_analyzer.setup{}
-lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
+-- lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
 lsp.elixirls.setup{
     cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
 }
@@ -28,11 +32,12 @@ map('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 map('n', '<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>')
 map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>')
 map('n', '<leader>lx', '<cmd>lua vim.lsp.buf.references()<CR>')
-map('n', '<leader>lds', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
-map("n", "<leader>lws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>")
 map('n', '<leader>ls', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
 map("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]])
 map("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]])
+
+map("n", "<leader>lds", [[<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>]])
+map("n", "<leader>lws", [[<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>]])
 
 -- nvim-metals
 vim.opt_global.shortmess:remove("F") -- nvim-metals
@@ -59,7 +64,6 @@ metals_config.settings = {
   excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
 }
 
-
 -- Example if you are including snippets
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -72,17 +76,3 @@ lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
     },
     capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
   })
-
---require("nvim-treesitter.configs").setup({
-  --playground = { enable = true },
-  --query_linter = {
-    --enable = true,
-    --use_virtual_text = true,
-    --lint_events = { "BufWrite", "CursorHold" },
-  --},
-  --ensure_installed = "maintained",
-  --highlight = {
-    --enable = true,
-    --disable = { "scala" },
-  --},
---})

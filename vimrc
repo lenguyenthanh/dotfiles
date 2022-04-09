@@ -1,7 +1,7 @@
 " automatically reload vim config(s)
 augroup myvimrc
     au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC |endif
   augroup END
 
 lua require('plugins')
@@ -102,22 +102,48 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 
 " Fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
-Plug 'junegunn/fzf.vim'
-  nnoremap <silent> <Leader>fy :Files <C-r>=expand("%:h")<CR>/<CR>
-  nnoremap <silent> <Leader>fp :Files<CR>
-  nnoremap <silent> <Leader>fe :Buffers<CR>
-  nnoremap <silent> <Leader>fg  :Commits<CR>
-  nnoremap <silent> <Leader>fbc :BCommits<CR>
-  nnoremap <silent> <Leader>fm :Maps<CR>
-  nnoremap <silent> <Leader>fs :Snippets<CR>
-  nnoremap <silent> <Leader>fc :Commands<CR>
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
+"Plug 'junegunn/fzf.vim'
+  "nnoremap <silent> <Leader>fy :Files <C-r>=expand("%:h")<CR>/<CR>
+  "nnoremap <silent> <Leader>fp :Files<CR>
+  "nnoremap <silent> <Leader>fe :Buffers<CR>
+  "nnoremap <silent> <Leader>fg  :Commits<CR>
+  "nnoremap <silent> <Leader>fbc :BCommits<CR>
+  "nnoremap <silent> <Leader>fm :Maps<CR>
+  "nnoremap <silent> <Leader>fs :Snippets<CR>
+  "nnoremap <silent> <Leader>fc :Commands<CR>
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+  " telescope
+  nnoremap <leader>fp <cmd>Telescope find_files<cr>
+  nnoremap <leader>fe <cmd>Telescope buffers<cr>
+  nnoremap <leader>fr <cmd>Telescope live_grep<cr>
+  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+  nnoremap <leader>fc <cmd>Telescope commands<cr>
+  nnoremap <leader>fq <cmd>Telescope quickfix<cr>
+  nnoremap <leader>fm <cmd>Telescope keymaps<cr>
+  nnoremap <leader>fsp <cmd>Telescope spell_suggest<cr>
+  nnoremap <leader>fg <cmd>Telescope git_commits<cr>
+  nnoremap <leader>fbc <cmd>Telescope git_bcommits<cr>
 
-  " Git commit
-  let g:fzf_commits_log_options = '--graph --color=always
-    \ --format="%C(yellow)%h%C(red)%d%C(reset)
-    \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
-  nnoremap <silent> <Leader>fg :GFiles<CR>
+Plug 'sudormrfbin/cheatsheet.nvim'
+Plug 'softinio/scaladex.nvim'
+
+lua << EOF
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+
+
+EOF
 
 " Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
