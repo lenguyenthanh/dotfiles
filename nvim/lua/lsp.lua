@@ -12,9 +12,11 @@ end
 local lsp = require 'lspconfig'
 local lspfuzzy = require 'lspfuzzy'
 
-lsp.kotlin_language_server.setup{}
 lsp.rust_analyzer.setup{}
 lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
+lsp.elixirls.setup{
+    cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
+}
 
 map('n', '<leader>[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
 map('n', '<leader>]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
