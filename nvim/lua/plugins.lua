@@ -4,7 +4,7 @@ local g = vim.g      -- a table to access global variables
 
 cmd 'packadd paq-nvim'               -- load the package manager
 local paq = require('paq').paq  -- a convenient alias
-paq {'savq/paq-nvim', opt = true}    -- paq-nvim manages itself
-paq {'neovim/nvim-lspconfig'}
-paq {'nvim-lua/plenary.nvim'}
-paq {'scalameta/nvim-metals'}
+--paq {'savq/paq-nvim', opt = true}    -- paq-nvim manages itself
+--paq {'neovim/nvim-lspconfig'}
+--paq {'nvim-lua/plenary.nvim'}
+--paq {'scalameta/nvim-metals'}

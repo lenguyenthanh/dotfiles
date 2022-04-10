@@ -9,15 +9,15 @@ local function map(mode, lhs, rhs, opts)
 end
 
 local lsp = require 'lspconfig'
-local lspfuzzy = require 'lspfuzzy'
+local telescope = require 'telescope'
 
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('scaladex')
-require('telescope').load_extension('metals')
+telescope.load_extension('fzf')
+telescope.load_extension('scaladex')
+telescope.load_extension('metals')
 
-vim.api.nvim_set_keymap('n', '<leader>si', [[<cmd>lua require('telescope').extensions.scaladex.scaladex.search()<cr>]], { noremap = true, silent = true })
+map('n', '<leader>si', '<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>')
+
 lsp.rust_analyzer.setup{}
--- lspfuzzy.setup {}  -- Make the LSP client use FZF instead of the quickfix list
 lsp.elixirls.setup{
     cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
 }

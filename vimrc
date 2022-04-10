@@ -4,7 +4,7 @@ augroup myvimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC |endif
   augroup END
 
-lua require('plugins')
+"lua require('plugins')
 lua require('basic')
 
 " All plugins go here
@@ -101,17 +101,9 @@ Plug 'editorconfig/editorconfig-vim'
 " Auto Pair
 Plug 'jiangmiao/auto-pairs'
 
-" Fzf
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
-"Plug 'junegunn/fzf.vim'
-  "nnoremap <silent> <Leader>fy :Files <C-r>=expand("%:h")<CR>/<CR>
-  "nnoremap <silent> <Leader>fp :Files<CR>
-  "nnoremap <silent> <Leader>fe :Buffers<CR>
-  "nnoremap <silent> <Leader>fg  :Commits<CR>
-  "nnoremap <silent> <Leader>fbc :BCommits<CR>
-  "nnoremap <silent> <Leader>fm :Maps<CR>
-  "nnoremap <silent> <Leader>fs :Snippets<CR>
-  "nnoremap <silent> <Leader>fc :Commands<CR>
+Plug 'nvim-lua/plenary.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'scalameta/nvim-metals'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   " telescope
@@ -128,22 +120,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'sudormrfbin/cheatsheet.nvim'
 Plug 'softinio/scaladex.nvim'
-
-lua << EOF
-require('telescope').setup {
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
-    }
-  }
-}
-
-
-EOF
 
 " Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
@@ -248,6 +224,20 @@ Plug 'TaDaa/vimade'
   nnoremap yot :VimadeToggle<CR>
 
 call plug#end()
+
+lua << EOF
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+EOF
 
 lua require('settings.cmp').setup()
 lua require('lsp')
