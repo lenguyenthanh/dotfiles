@@ -16,10 +16,14 @@ telescope.load_extension('scaladex')
 telescope.load_extension('metals')
 
 map('n', '<leader>si', '<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>')
+map('n', '<leader>fy', '<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>')
 
 lsp.rust_analyzer.setup{}
 lsp.elixirls.setup{
     cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
+}
+lsp.kotlin_language_server.setup{
+  cmd = { "/Users/thanhle/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server" }
 }
 
 map('n', '<leader>[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
