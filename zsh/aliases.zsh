@@ -45,7 +45,7 @@ alias cpwd='pwd|tr -d "\n"|pbcopy'
 
 # Always enable put back
 #alias trash='trash -F'
-alias rm='trash'
+alias rm='trash -F'
 
 # Force remove
 alias rmf='trash -rf -F'
