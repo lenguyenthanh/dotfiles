@@ -4,7 +4,6 @@ augroup myvimrc
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC |endif
   augroup END
 
-"lua require('plugins')
 lua require('basic')
 
 " All plugins go here
@@ -106,6 +105,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'scalameta/nvim-metals'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'aloussase/telescope-gradle.nvim'
   " telescope
   nnoremap <leader>fp <cmd>Telescope find_files<cr>
   nnoremap <leader>fe <cmd>Telescope buffers<cr>
@@ -117,6 +117,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
   nnoremap <leader>fsp <cmd>Telescope spell_suggest<cr>
   nnoremap <leader>fg <cmd>Telescope git_commits<cr>
   nnoremap <leader>fbc <cmd>Telescope git_bcommits<cr>
+  nnoremap <leader>gr <cmd>Telescope gradle<cr>
 
 Plug 'sudormrfbin/cheatsheet.nvim'
 Plug 'softinio/scaladex.nvim'
