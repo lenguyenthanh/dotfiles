@@ -43,6 +43,8 @@ map("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]])
 
 map("n", "<leader>lds", [[<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>]])
 map("n", "<leader>lws", [[<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>]])
+map("n", "<leader>lm", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
+
 
 -- nvim-metals
 vim.opt_global.shortmess:remove("F") -- nvim-metals
