@@ -8,6 +8,15 @@ M.setup = function()
       { name = "path" },
       { name = "nvim_lsp" },
       { name = "ultisnips" },
+      {
+            name = 'look',
+            keyword_length = 2,
+            option = {
+                convert_case = true,
+                loud = true,
+                dict = '/usr/share/dict/words',
+            }
+      },
     },
     snippet = {
       expand = function(args)

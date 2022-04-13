@@ -42,15 +42,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'vigoux/LanguageTool.nvim'
   let g:languagetool_server_jar='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
 
-" Auto complete from dictionary, using look
-Plug 'ujihisa/neco-look', { 'for': 'markdown' }
-
 " nvim-cmp autocompletion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'octaltree/cmp-look'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -276,7 +274,6 @@ set cursorline       " show a visual line under the cursor's current line
 set nofixendofline   " Allow no end of line
 set history=200      " History in command line mode
 
-set dictionary+=/usr/share/dict/words
 if has('nvim')
   set inccommand=split " Live Substitution
 endif
