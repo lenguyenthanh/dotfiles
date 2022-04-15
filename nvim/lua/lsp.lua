@@ -32,23 +32,10 @@ M.setup = function()
 
   map("n", "<leader>lds", [[<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>]])
   map("n", "<leader>lws", [[<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>]])
-  map("n", "<leader>lm", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
 
 
   -- nvim-metals
   vim.opt_global.shortmess:remove("F") -- nvim-metals
-
-  -- COMMANDS ----------------------
-
-  cmd [[augroup lsp]]
-  cmd [[au!]]
-  cmd([[au FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
-  cmd [[augroup end]]
-
-  -- Need for symbol highlights to work correctly
-  vim.cmd([[hi! link LspReferenceText CursorColumn]])
-  vim.cmd([[hi! link LspReferenceRead CursorColumn]])
-  vim.cmd([[hi! link LspReferenceWrite CursorColumn]])
 
 end
 

@@ -27,13 +27,12 @@ Plug 'scrooloose/nerdcommenter'
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
   noremap yom :NERDTreeToggle<CR>
-  noremap <leader>m :NERDTreeFind<CR>
+  noremap <leader>t :NERDTreeFind<CR>
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
 
 " Beautiful parent thesis
 Plug 'luochen1990/rainbow'
-  noremap <leader>R :RainbowToggle<CR>
   nnoremap yor :RainbowToggle<CR>
   let g:rainbow_active = 0
 
@@ -99,6 +98,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'scalameta/nvim-metals'
+Plug 'mfussenegger/nvim-dap'
+
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'aloussase/telescope-gradle.nvim'
