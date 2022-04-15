@@ -4,9 +4,9 @@ M.setup = function()
   local cmp = require("cmp")
   cmp.setup({
     sources = {
+      { name = "nvim_lsp", priority = 10 },
       { name = "buffer" },
       { name = "path" },
-      { name = "nvim_lsp" },
       { name = "ultisnips" },
       {
             name = 'look',

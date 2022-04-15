@@ -1,4 +1,4 @@
-require("basic")
-require("plugins")
-require("lsp")
-require("settings.cmp")
+require("lsp").setup()
+require("plugins.cmp").setup()
+require("plugins.telescope").setup()
+require("plugins.metals").setup()

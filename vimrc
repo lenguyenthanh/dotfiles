@@ -39,14 +39,12 @@ Plug 'luochen1990/rainbow'
 
 " Writing focus mode
 Plug 'junegunn/goyo.vim'
-Plug 'vigoux/LanguageTool.nvim'
-  let g:languagetool_server_jar='/Users/thanhle/.local/bin/language-tool/languagetool-server.jar'
 
 " nvim-cmp autocompletion
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'octaltree/cmp-look'
 
@@ -224,27 +222,7 @@ Plug 'TaDaa/vimade'
 
 call plug#end()
 
-lua << EOF
-require('telescope').setup {
-  pickers = {
-    buffers = {
-      sort_lastused = true
-    }
-  },
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
-    }
-  }
-}
-EOF
-
-lua require('settings.cmp').setup()
-lua require('lsp')
+lua require('init')
 
 
 filetype plugin indent on     " required!
@@ -358,6 +336,8 @@ nnoremap "P "+p
 " Line text object
 xnoremap il $o^
 onoremap il :normal vil<CR>
+
+nnoremap<leader>js :%!jq '.'<cr>
 
 " Hide preview window
 set completeopt-=preview
