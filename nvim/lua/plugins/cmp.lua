@@ -9,13 +9,13 @@ M.setup = function()
       { name = "path" },
       { name = "ultisnips" },
       {
-            name = 'look',
-            keyword_length = 2,
-            option = {
-                convert_case = true,
-                loud = true,
-                dict = '/usr/share/dict/words',
-            }
+        name = 'look',
+        keyword_length = 2,
+        option = {
+            convert_case = true,
+            loud = true,
+            dict = '/usr/share/dict/words',
+        }
       },
     },
     snippet = {
@@ -23,7 +23,7 @@ M.setup = function()
         vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
       -- None of this made sense to me when first looking into this since there
       -- is no vim docs, but you can't have select = true here _unless_ you are
       -- also using the snippet stuff. So keep in mind that if you remove
@@ -43,7 +43,7 @@ M.setup = function()
           fallback()
         end
       end,
-    },
+    }),
   })
 end
 

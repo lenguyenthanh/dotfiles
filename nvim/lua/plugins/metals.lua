@@ -50,9 +50,9 @@ M.setup = function()
       metals = {
         runType = "runOrTestFile",
         args = function()
-            local args_string = vim.fn.input('Arguments: ')
-              return vim.split(args_string, " +")
-            end
+          local args_string = vim.fn.input('Arguments: ')
+          return vim.split(args_string, " +")
+        end
       },
     },
     {
@@ -66,7 +66,7 @@ M.setup = function()
   }
 
   map("n", "<leader>dc", [[<cmd>lua require("dap").continue()<CR>]])
-  map("n", "<leader>dt", [[<cmd>lua require("dap").repl.toggle()<CR>]])
+  map("n", "<leader>dt", [[<cmd>lua require("dap").repl.toggle({}, 'vsplit')<CR>]])
   map("n", "<leader>dK", [[<cmd>lua require("dap.ui.widgets").hover()<CR>]])
   map("n", "<leader>db", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
   map("n", "<leader>dso", [[<cmd>lua require("dap").step_over()<CR>]])
@@ -76,10 +76,14 @@ M.setup = function()
 
   map("n", "<leader>mc", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
 
-  cmd [[augroup lsp]]
-  cmd [[au!]]
-  cmd([[au FileType scala,sbt lua require("metals").initialize_or_attach(metals_config)]])
-  cmd [[augroup end]]
+  local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "scala", "sbt", "java" },
+    callback = function()
+      require("metals").initialize_or_attach({})
+    end,
+    group = nvim_metals_group,
+  })
 
   -- Need for symbol highlights to work correctly
   vim.cmd([[hi! link LspReferenceText CursorColumn]])
