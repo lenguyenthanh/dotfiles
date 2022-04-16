@@ -27,7 +27,7 @@ Plug 'scrooloose/nerdcommenter'
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
   noremap yom :NERDTreeToggle<CR>
-  noremap <leader>t :NERDTreeFind<CR>
+  noremap <leader>tf :NERDTreeFind<CR>
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
 
