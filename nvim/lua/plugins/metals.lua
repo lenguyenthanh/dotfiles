@@ -8,7 +8,7 @@ local cmd = vim.cmd
 local lsp = require("lspconfig")
 
 M.setup = function()
-  metals_config = require("metals").bare_config()
+  local metals_config = require("metals").bare_config()
 
   metals_config.init_options.statusBarProvider = "on"
   metals_config.settings = {

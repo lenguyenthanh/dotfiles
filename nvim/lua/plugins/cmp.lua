@@ -43,6 +43,7 @@ M.setup = function()
           fallback()
         end
       end,
+      ['<C-e>'] = cmp.mapping.close(),
     }),
   })
 end

@@ -206,10 +206,11 @@ Plug 'keith/swift.vim', { 'for' : 'swift' }
 Plug 'derekwyatt/vim-scala'
 
 " Rust
-Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
+"Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
 
-  " Rust ctags
-  autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+" To enable more of the features of rust-analyzer, such as inlay hints and more!
+Plug 'simrat39/rust-tools.nvim'
+
 
 " Javascript/Typescript
 "Plug 'sheerun/vim-polyglot'
@@ -344,13 +345,24 @@ nnoremap<leader>js :%!jq '.'<cr>
 
 " Hide preview window
 set completeopt-=preview
+set completeopt=menuone,noinsert,noselect
 
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
+" have a fixed column for the diagnostics to appear in
+" this removes the jitter when warnings/errors flow in
+set signcolumn=yes
+
+" Set updatetime for CursorHold
+" 300ms of no cursor movement to trigger CursorHold
+set updatetime=300
+" Show diagnostic popup on cursor hover
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 " Turn off syntax highlight for markdown files
 " Turn on spell checking
+
 augroup textfiles
   autocmd!
   autocmd filetype markdown :setlocal spell spelllang=en | syntax clear
