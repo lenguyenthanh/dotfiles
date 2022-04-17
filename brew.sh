@@ -19,6 +19,7 @@ brew install git-delta
 brew install gnu-sed
 brew install gnupg2
 brew install jq
+brew install lua-language-server
 brew install mas # Mac App Store command-line
 brew install neovim
 brew install nvm

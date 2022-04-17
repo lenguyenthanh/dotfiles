@@ -1,7 +1,6 @@
 -- https://oroques.dev/notes/neovim-init
 local M = {}
 
-local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
 local f = require("functions")
 local map = f.map
 local lsp = require("lspconfig")
@@ -16,6 +15,9 @@ M.setup = function()
     cmd = { "/Users/thanhle/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server" }
   }
 
+  lsp.sumneko_lua.setup{}
+
+  -- mappings
   map('n', '<leader>[', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
   map('n', '<leader>]', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
   map('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>')
