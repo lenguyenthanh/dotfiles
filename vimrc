@@ -344,6 +344,10 @@ nnoremap<leader>js :%!jq '.'<cr>
 " Hide preview window
 set completeopt-=preview
 
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
 " Turn off syntax highlight for markdown files
 " Turn on spell checking
 augroup textfiles
