@@ -1,6 +1,7 @@
 require("lsp").setup()
 require("mappings").setup()
 require("plugins.cmp").setup()
+require("plugins.dap").setup()
 require("plugins.indent").setup()
 require("plugins.metals").setup()
 require("plugins.rust").setup()
