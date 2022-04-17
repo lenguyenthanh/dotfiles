@@ -73,7 +73,6 @@ Plug 'mileszs/ack.vim'
 Plug 'bronson/vim-trailing-whitespace'
 
 " Vim prettier
-
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'yaml', 'html'] }
@@ -106,7 +105,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'aloussase/telescope-gradle.nvim'
   " telescope
   nnoremap <leader>fp <cmd>Telescope find_files<cr>
-  nnoremap <leader>fe <cmd>Telescope buffers<cr>
+  nnoremap <leader>fb <cmd>Telescope buffers<cr>
   nnoremap <leader>fr <cmd>Telescope live_grep<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
   nnoremap <leader>fc <cmd>Telescope commands<cr>
@@ -221,6 +220,8 @@ Plug 'jparise/vim-graphql'
 " fades inactive buffers
 Plug 'TaDaa/vimade'
   nnoremap yot :VimadeToggle<CR>
+
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 
