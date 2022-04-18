@@ -8,6 +8,7 @@ M.setup = function()
 
   require("indent_blankline").setup {
     filetype_exclude = {
+      "vim",
       "markdown",
       "man",
       "gitmessengerpopup",
