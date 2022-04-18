@@ -47,6 +47,11 @@ Plug 'hrsh7th/cmp-path'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'octaltree/cmp-look'
 
+" dictionary
+Plug 'skywind3000/vim-quickui'
+Plug 'xfyuan/vim-mac-dictionary'
+  nnoremap <silent><leader>ww :MacDictPopup<CR>
+
 " Git
 Plug 'tpope/vim-fugitive'
   nnoremap <leader>gd :Gvdiffsplit!<CR>
@@ -329,7 +334,6 @@ au FileType gitcommit set tw=72
 
 " jk instead of Esc
 inoremap jk <Esc>
-inoremap kl <Esc>
 
 " Setting for quick copy & paste
 nnoremap "y "+y
