@@ -139,7 +139,7 @@
   rmao = remote add origin
   rmau = remote add upstream
   rmr = remote rename
-  rmrm = remote remove
+  rmd = remote remove
   rmrou = remote rename origin upstream
   rmv = remote -v
 

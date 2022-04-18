@@ -3,17 +3,29 @@ local M = {}
 M.setup = function()
 
   vim.opt.list = true
-  vim.opt.listchars:append("space:⋅")
-  vim.opt.listchars:append("eol:↴")
-
-  vim.g.indent_blankline_char = '┊'
-  vim.g.indent_blankline_filetype_exclude = { 'help' }
-  vim.g.indent_blankline_buftype_exclude = { 'terminal', 'nofile' }
-  vim.g.indent_blankline_show_trailing_blankline_indent = false
+  --vim.opt.listchars:append("space:⋅")
+  --vim.opt.listchars:append("eol:↴")
 
   require("indent_blankline").setup {
-      show_end_of_line = true,
-      space_char_blankline = " ",
+    filetype_exclude = {
+      "markdown",
+      "man",
+      "gitmessengerpopup",
+      "diagnosticpopup",
+      "lspinfo",
+      "packer",
+      "checkhealth",
+      "TelescopePrompt",
+      "TelescopeResults",
+    },
+    buftype_exclude = { "terminal" },
+    show_end_of_line = true,
+    char_list = {'|', '¦', '┆', '┊'},
+    space_char_blankline = '⋅',
+    show_foldtext = false,
+    strict_tabs = true,
+    disable_with_nolist = true,
+    max_indent_increase = 1,
   }
 end
 

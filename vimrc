@@ -112,8 +112,8 @@ Plug 'aloussase/telescope-gradle.nvim'
   nnoremap <leader>fq <cmd>Telescope quickfix<cr>
   nnoremap <leader>fm <cmd>Telescope keymaps<cr>
   nnoremap <leader>fsp <cmd>Telescope spell_suggest<cr>
-  nnoremap <leader>fg <cmd>Telescope git_commits<cr>
-  nnoremap <leader>fbc <cmd>Telescope git_bcommits<cr>
+  nnoremap <leader>fgc <cmd>Telescope git_commits<cr>
+  nnoremap <leader>fgb <cmd>Telescope git_bcommits<cr>
   nnoremap <leader>gr <cmd>Telescope gradle<cr>
 
 Plug 'sudormrfbin/cheatsheet.nvim'
