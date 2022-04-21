@@ -108,6 +108,7 @@ Plug 'kevinhwang91/nvim-bqf'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'aloussase/telescope-gradle.nvim'
+Plug 'crispgm/telescope-heading.nvim'
   " telescope
   nnoremap <leader>fp <cmd>Telescope find_files<cr>
   nnoremap <leader>fb <cmd>Telescope buffers<cr>

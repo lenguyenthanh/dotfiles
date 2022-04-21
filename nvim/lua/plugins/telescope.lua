@@ -10,9 +10,12 @@ M.setup = function()
   telescope.load_extension('scaladex')
   telescope.load_extension('metals')
   telescope.load_extension('gradle')
+  telescope.load_extension('heading')
 
   map('n', '<leader>si', '<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>')
   map('n', '<leader>fy', '<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>')
+  map('n', '<leader>rl', '<cmd>lua require("telescope.builtin").reloader()<cr>')
+  map('n', '<leader>fh', '<cmd>lua require("telescope").extensions.heading.heading()<cr>')
 
   telescope.setup({
     pickers = {
