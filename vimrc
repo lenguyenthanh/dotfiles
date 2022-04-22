@@ -46,6 +46,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'octaltree/cmp-look'
+Plug 'ray-x/lsp_signature.nvim'
 
 " dictionary
 Plug 'skywind3000/vim-quickui'

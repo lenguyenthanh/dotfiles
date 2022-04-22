@@ -1,10 +1,8 @@
 local M = {}
 
+local api = vim.api
 local f = require("functions")
 local map = f.map
-
--- https://github.com/scalameta/nvim-metals/discussions/39
-local lsp = require("lspconfig")
 
 M.setup = function()
   local metals_config = require("metals").bare_config()
@@ -22,22 +20,48 @@ M.setup = function()
 
   metals_config.capabilities = capabilities
 
-  lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
-      handlers = {
-        ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
-      },
-      capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
+  local lsp_group = api.nvim_create_augroup("lsp_metals", { clear = true })
+
+  metals_config.on_attach = function (client, bufnr)
+
+    require("plugins.lsp").on_attach(client, bufnr)
+
+    map("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]])
+    map("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]])
+    map("n", "<leader>mc", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
+
+    api.nvim_create_autocmd("CursorHold", {
+      callback = vim.lsp.buf.document_highlight,
+      buffer = bufnr,
+      group = lsp_group,
+    })
+    api.nvim_create_autocmd("CursorMoved", {
+      callback = vim.lsp.buf.clear_references,
+      buffer = bufnr,
+      group = lsp_group,
+    })
+    api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+      callback = vim.lsp.codelens.refresh,
+      buffer = bufnr,
+      group = lsp_group,
+    })
+    api.nvim_create_autocmd("FileType", {
+      pattern = { "dap-repl" },
+      callback = function()
+        require("dap.ext.autocompl").attach()
+      end,
+      group = lsp_group,
     })
 
-  require("metals").setup_dap()
+    require("metals").setup_dap()
 
-  map("n", "<leader>mc", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
+  end
 
   local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
   vim.api.nvim_create_autocmd("FileType", {
     pattern = { "scala", "sbt", "java" },
     callback = function()
-      require("metals").initialize_or_attach({})
+      require("metals").initialize_or_attach(metals_config)
     end,
     group = nvim_metals_group,
   })
@@ -46,6 +70,9 @@ M.setup = function()
   vim.cmd([[hi! link LspReferenceText CursorColumn]])
   vim.cmd([[hi! link LspReferenceRead CursorColumn]])
   vim.cmd([[hi! link LspReferenceWrite CursorColumn]])
+
+  -- nvim-metals
+  vim.opt_global.shortmess:remove("F") -- nvim-metals
 
 end
 

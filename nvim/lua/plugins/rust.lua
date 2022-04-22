@@ -1,7 +1,5 @@
 local M = {}
 
-local lsp = require("lspconfig")
-
 M.setup = function ()
  local opts = {
     tools = {
@@ -23,6 +21,7 @@ M.setup = function ()
     server = {
         -- on_attach is a callback called when the language server attachs to the buffer
         -- on_attach = on_attach,
+        on_attach = require("plugins.lsp").on_attach ,
         settings = {
             -- to enable rust-analyzer settings visit:
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
@@ -36,7 +35,7 @@ M.setup = function ()
     },
   }
 
-require('rust-tools').setup(opts) 
+require('rust-tools').setup(opts)
 
 end
 
