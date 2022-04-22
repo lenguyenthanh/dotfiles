@@ -8,6 +8,7 @@ M.setup = function()
       { name = "buffer" },
       { name = "path" },
       { name = "ultisnips" },
+      { name = "nvim_lua" },
       {
         name = 'look',
         keyword_length = 2,

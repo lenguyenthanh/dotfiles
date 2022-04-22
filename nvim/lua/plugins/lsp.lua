@@ -1,4 +1,3 @@
--- https://oroques.dev/notes/neovim-init
 local M = {}
 
 local f = require("functions")

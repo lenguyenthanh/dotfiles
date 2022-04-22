@@ -46,7 +46,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'octaltree/cmp-look'
-Plug 'ray-x/lsp_signature.nvim'
+Plug 'hrsh7th/cmp-nvim-lua'
 
 " dictionary
 Plug 'skywind3000/vim-quickui'
@@ -92,7 +92,8 @@ Plug 'tpope/vim-obsession'
 
 " Color Scheme
 "Plug 'joshdick/onedark.vim'
-Plug 'ayu-theme/ayu-vim'
+"Plug 'ayu-theme/ayu-vim'
+Plug 'rebelot/kanagawa.nvim'
 
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
@@ -105,6 +106,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'scalameta/nvim-metals'
 Plug 'mfussenegger/nvim-dap'
 Plug 'kevinhwang91/nvim-bqf'
+Plug 'ray-x/lsp_signature.nvim'
 
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
@@ -269,10 +271,12 @@ endif
 
 
 set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
-set background=dark
+"let ayucolor="mirage"
+"colorscheme ayu
 "color onedark
+set background=dark
+
+colorscheme kanagawa
 
 set nofoldenable
 
