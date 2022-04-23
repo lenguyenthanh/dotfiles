@@ -365,6 +365,10 @@ nnoremap J mzJ`z
 " this removes the jitter when warnings/errors flow in
 set signcolumn=yes
 
+" Global status line
+set laststatus=3
+highlight WinSeparator guibg=None
+
 " Set updatetime for CursorHold
 " 300ms of no cursor movement to trigger CursorHold
 set updatetime=300
@@ -375,7 +379,7 @@ autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 " Turn on spell checking
 augroup textfiles
   autocmd!
-  autocmd filetype markdown :setlocal spell spelllang=en | syntax clear
+  autocmd filetype markdown :setlocal spell spelllang=en " | syntax clear
 augroup end
 
 " Ensure changes to buffers are saved when you navigate away from that buffer
