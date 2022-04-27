@@ -4,8 +4,14 @@ let &packpath = &runtimepath
 " automatically reload vim config(s)
 augroup myvimrc
     au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC |endif
+    au BufWritePost .vim so $MYVIMRC
 augroup END
+
+" reload packer
+augroup packer_user_config
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
 
 lua require('basic')
 
@@ -23,9 +29,6 @@ Plug 'SirVer/ultisnips'
 
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
-
-" Commenter
-Plug 'scrooloose/nerdcommenter'
 
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
@@ -111,25 +114,6 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'kevinhwang91/nvim-bqf'
 Plug 'ray-x/lsp_signature.nvim'
 
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'aloussase/telescope-gradle.nvim'
-Plug 'crispgm/telescope-heading.nvim'
-  " telescope
-  nnoremap <leader>fp <cmd>Telescope find_files<cr>
-  nnoremap <leader>fb <cmd>Telescope buffers<cr>
-  nnoremap <leader>fr <cmd>Telescope live_grep<cr>
-  nnoremap <leader>fc <cmd>Telescope commands<cr>
-  nnoremap <leader>fq <cmd>Telescope quickfix<cr>
-  nnoremap <leader>fm <cmd>Telescope keymaps<cr>
-  nnoremap <leader>fsp <cmd>Telescope spell_suggest<cr>
-  nnoremap <leader>fgc <cmd>Telescope git_commits<cr>
-  nnoremap <leader>fgb <cmd>Telescope git_bcommits<cr>
-  nnoremap <leader>gr <cmd>Telescope gradle<cr>
-
-
-Plug 'sudormrfbin/cheatsheet.nvim'
-Plug 'softinio/scaladex.nvim'
 
 " Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
@@ -150,16 +134,6 @@ Plug 'Shougo/echodoc.vim'
   set cmdheight=2
   let g:echodoc#enable_at_startup = 0
   let g:echodoc#type = 'signature'
-
-" treesister
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" LANGUAGE
-" Json
-"Plug 'elzr/vim-json', { 'for' : 'json' }
-
-" Toml Syntax
-"Plug 'cespare/vim-toml', { 'for' : 'toml' }
 
 " Kotlin
 Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
@@ -217,15 +191,9 @@ Plug 'keith/swift.vim', { 'for' : 'swift' }
 " Scala
 Plug 'derekwyatt/vim-scala'
 
-" Rust
-"Plug 'rust-lang/rust.vim', { 'for' : 'rust' }
-
 " To enable more of the features of rust-analyzer, such as inlay hints and more!
 Plug 'simrat39/rust-tools.nvim'
 
-
-" Javascript/Typescript
-"Plug 'sheerun/vim-polyglot'
 
 " GraphQL
 Plug 'jparise/vim-graphql'

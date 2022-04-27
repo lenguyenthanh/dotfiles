@@ -7,6 +7,8 @@ local map = f.map
 M.setup = function()
   local metals_config = require("metals").bare_config()
 
+  metals_config.metals_use_global_executable = true
+
   metals_config.init_options.statusBarProvider = "on"
   metals_config.settings = {
     showImplicitArguments = true,
@@ -14,7 +16,6 @@ M.setup = function()
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
   }
 
-  -- Example if you are including snippets
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -29,7 +30,7 @@ M.setup = function()
     map("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]])
     map("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]])
     map("n", "<leader>mc", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
-      map('n', '<leader>si', [[<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>]])
+    map('n', '<leader>si', [[<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>]])
 
     api.nvim_create_autocmd("CursorHold", {
       callback = vim.lsp.buf.document_highlight,

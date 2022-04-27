@@ -12,7 +12,17 @@ M.setup = function()
   telescope.load_extension('gradle')
   telescope.load_extension('heading')
 
-  map('n', '<leader>fy', [[<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>])
+  map('n', '<leader>fp', [[<cmd>lua require("telescope.builtin").find_files()<cr>]])
+  map('n', '<leader>fy', [[<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>]])
+  map('n', '<leader>fb', [[<cmd>lua require("telescope.builtin").buffers()<cr>]])
+  map('n', '<leader>fr', [[<cmd>lua require("telescope.builtin").live_grep()<cr>]])
+  map('n', '<leader>fc', [[<cmd>lua require("telescope.builtin").commands()<cr>]])
+  map('n', '<leader>fq', [[<cmd>lua require("telescope.builtin").quickfix()<cr>]])
+  map('n', '<leader>fm', [[<cmd>lua require("telescope.builtin").keymaps()<cr>]])
+  map('n', '<leader>fsp', [[<cmd>lua require("telescope.builtin").spell_suggest()<cr>]])
+  map('n', '<leader>fgc', [[<cmd>lua require("telescope.builtin").git_commits()<cr>]])
+  map('n', '<leader>fgb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
+
   map('n', '<leader>rl', [[<cmd>lua require("telescope.builtin").reloader()<cr>]])
   map('n', '<leader>fh', [[<cmd>lua require("telescope").extensions.heading.heading()<cr>]])
 
