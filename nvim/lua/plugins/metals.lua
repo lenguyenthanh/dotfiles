@@ -29,6 +29,7 @@ M.setup = function()
     map("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]])
     map("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]])
     map("n", "<leader>mc", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
+      map('n', '<leader>si', [[<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>]])
 
     api.nvim_create_autocmd("CursorHold", {
       callback = vim.lsp.buf.document_highlight,

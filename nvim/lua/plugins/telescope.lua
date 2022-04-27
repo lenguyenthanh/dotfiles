@@ -12,10 +12,9 @@ M.setup = function()
   telescope.load_extension('gradle')
   telescope.load_extension('heading')
 
-  map('n', '<leader>si', '<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>')
-  map('n', '<leader>fy', '<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>')
-  map('n', '<leader>rl', '<cmd>lua require("telescope.builtin").reloader()<cr>')
-  map('n', '<leader>fh', '<cmd>lua require("telescope").extensions.heading.heading()<cr>')
+  map('n', '<leader>fy', [[<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>])
+  map('n', '<leader>rl', [[<cmd>lua require("telescope.builtin").reloader()<cr>]])
+  map('n', '<leader>fh', [[<cmd>lua require("telescope").extensions.heading.heading()<cr>]])
 
   telescope.setup({
     pickers = {
@@ -32,6 +31,13 @@ M.setup = function()
                                         -- the default case_mode is "smart_case"
       }
     }
+  })
+
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "groovy" },
+    callback = function()
+      map('n', '<leader>gr', [[<cmd>lua require("telescope").extensions.gradle.tasks()<cr>]])
+    end,
   })
 
 end
