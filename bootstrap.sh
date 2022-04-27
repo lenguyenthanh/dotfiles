@@ -47,10 +47,6 @@ ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 rm -rf $HOME/.gitconfig
 ln -s $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
 
-# Symlink vimrc
-rm -rf $HOME/.vimrc
-ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
-
 # Symlink neovim
 rm -rf $HOME/.config/nvim/init.vim
 mkdir -p .config/nvim
