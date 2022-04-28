@@ -2,7 +2,7 @@ local api = vim.api
 
 local M = {}
 
-M.map = function (mode, lhs, rhs, opts)
+M.map = function(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
   if opts then
     options = vim.tbl_extend("force", options, opts)
@@ -11,19 +11,19 @@ M.map = function (mode, lhs, rhs, opts)
 end
 
 M.search_dotfiles = function()
-	require("telescope.builtin").find_files({
-		prompt_title = "< Dotfiles >",
-		cwd = vim.env.DOTFILES,
-		hidden = false,
-	})
+  require("telescope.builtin").find_files({
+    prompt_title = "< Dotfiles >",
+    cwd = vim.env.DOTFILES,
+    hidden = false,
+  })
 end
 
 M.search_notes = function()
-	require("telescope.builtin").find_files({
-		prompt_title = "< Notes >",
-		cwd = "~/source/personal/notes",
-		hidden = false,
-	})
+  require("telescope.builtin").find_files({
+    prompt_title = "< Notes >",
+    cwd = "~/source/personal/notes",
+    hidden = false,
+  })
 end
 
 return M

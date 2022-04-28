@@ -13,13 +13,122 @@ g.mapleader = ','
 
 local f = require("functions")
 local map = f.map
-local opt = vim.opt
-local global_opt = vim.opt_global
-local wo = vim.wo -- Gets or sets window-scoped options.
-local bo = vim.bo -- Gets or sets buffer-scoped options.
+local set = vim.opt
+local go = vim.opt_global
 
 -- Load all plugins with packer
 require("plugins")
+
+--================================
+-- OPTIONS -----------------------
+--================================
+
+local indent = 2
+
+-- nvim-metals needs this
+go.shortmess:remove("F"):append("c")
+
+go.termguicolors = true
+go.background = "dark"
+go.hidden = true
+go.showtabline = 1
+go.updatetime = 300
+go.showmatch = true
+go.wildignore = { ".git", "*/node_modules/*", "*/target/*", ".metals", ".bloop" }
+go.ignorecase = true
+go.smartcase = true
+go.completeopt = { "menu", "menuone", "noinsert", "noselect" }
+go.scrolloff = 5
+go.laststatus = 3
+go.pastetoggle = '<F2>'
+go.inccommand = 'split'
+go.shiftround = true
+go.incsearch = true
+go.ignorecase = true
+go.smartcase = true
+go.backup = false
+go.splitbelow = true
+go.splitright = true
+
+set.diffopt:append("vertical")
+set.relativenumber = true
+set.number = true
+set.cursorline = true
+set.fixendofline = false
+
+set.tabstop = indent
+set.shiftwidth = indent
+set.softtabstop = indent
+set.expandtab = true
+set.fileformat = "unix"
+set.modeline = false
+
+-- have a fixed column for the diagnostics to appear in
+-- this removes the jitter when warnings/errors flow in
+set.signcolumn = "yes"
+
+-- MAPPINGS -----------------------
+map("i", "jk", "<ESC>")
+
+-- Re-map move around for wrapping line
+map("n", "j", "gj")
+map("n", "k", "gk")
+
+-- switch : ;
+map("n", ";", ":")
+map("n", ":", ";")
+map("t", ";", ":")
+map("t", ":", ";")
+map("v", ";", ":")
+map("v", ":", ";")
+
+-- reverse search
+-- map("n", ">", ",")
+
+-- Setting for quick copy & paste
+map("n", "\"y", "\"+y")
+map("n", "\"yy", "\"+yy")
+map("n", "\"p", "\"+p")
+map("n", "\"pp", "\"+pp")
+
+-- Easy exit from terminal mode
+map("t", "<Esc>", "<C-\\><C-n>")
+map("t", "jk", "<C-\\><C-n>")
+map("t", "<C-v><Esc>", "<Esc>")
+
+-- quick vim help
+map("n", "<leader>vh", "viw\"ry:help <C-r>r<CR>")
+
+-- Increase, decrease width of a window by 30 pixels with option key
+map("", "<M-l>", "30<C-w>>")
+map("", "<M-h>", "30<C-w><")
+
+-- format json
+map("n", "<leader>js", ":%!jq '.'<CR>")
+
+
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+map("n", "J", "mzJ`z")
+
+-- PLUGIN MAPPINGS -----------------------
+
+-- NerdTree
+map("n", "yom", ":NERDTreeToggle<CR>")
+map("n", "<leader>tf", ":NERDTreeFind<CR>")
+g["NERDTreeRespectWildIgnore"] = 1
+
+-- UltiSnips
+g['UltiSnipsJumpForwardTrigger'] = '<c-b>'
+g['UltiSnipsJumpBackwardTrigger'] = '<c-z>'
+g['UltiSnipsEditSplit'] = 'vertical'
+g["UltiSnipsSnippetDirectories"] = { "~/.dotfiles/UltiSnips" }
+
+-- Ack
+g["ackprg"] = "rg --vimgrep --no-heading"
+map("n", "<leader>A", "viw\"ry:Ack <C-r>r<CR>")
+
+-- COMMANDS -----------------------
 
 -- setup highlight on yank
 local lua_highlight = api.nvim_create_augroup("lua_highlight", { clear = true })
@@ -31,45 +140,8 @@ api.nvim_create_autocmd("TextYankPost", {
   group = lua_highlight,
 })
 
--- Mappings for UltiSnips
-g['UltiSnipsJumpForwardTrigger'] = '<c-b>'
-g['UltiSnipsJumpBackwardTrigger'] = '<c-z>'
-g['UltiSnipsEditSplit'] = 'vertical'
-g["UltiSnipsSnippetDirectories"] = { "~/.dotfiles/UltiSnips" }
 
---================================
--- OPTIONS -----------------------
---================================
-local indent = 2
-
--- nvim-metals needs this
-global_opt.shortmess:remove("F"):append("c")
-
-global_opt.termguicolors = true
-global_opt.background = "dark"
-global_opt.hidden = true
-global_opt.showtabline = 1
-global_opt.updatetime = 300
-global_opt.showmatch = true
-global_opt.wildignore = { ".git", "*/node_modules/*", "*/target/*", ".metals", ".bloop" }
-global_opt.ignorecase = true
-global_opt.smartcase = true
-global_opt.completeopt = { "menu", "menuone", "noinsert", "noselect" }
-global_opt.scrolloff = 5
-global_opt.laststatus = 3
-global_opt.pastetoggle = '<F2>'
-global_opt.inccommand = 'split'
-global_opt.shiftround = true
-global_opt.incsearch = true
-global_opt.ignorecase = true
-global_opt.smartcase = true
-global_opt.backup = false
-global_opt.splitbelow = true
-global_opt.splitright = true
-global_opt.diffopt = global_opt.diffopt + "vertical"
-
-wo.relativenumber = true
-wo.number = true
-wo.cursorline = true
-
-bo.fixendofline = false
+cmd([[hi! link StatusLineNC Comment]])
+cmd([[hi! link StatusError DiagnosticError]])
+cmd([[hi! link StatusWarn DiagnosticWarn]])
+cmd([[hi! link WinSeparator Comment]])
