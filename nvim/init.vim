@@ -1,18 +1,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after runtimepath+=./nvim runtimepath+=~/.dotfiles/nvim
 let &packpath = &runtimepath
 
-" automatically reload vim config(s)
-augroup myvimrc
-    au!
-    au BufWritePost .vim so $MYVIMRC
-augroup END
-
-" reload packer
-augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-augroup end
-
 lua require('basic')
 
 " All plugins go here
@@ -27,9 +15,6 @@ Plug 'SirVer/ultisnips'
   let g:UltiSnipsEditSplit="vertical"
   let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/UltiSnips']
 
-" Tmux
-Plug 'christoomey/vim-tmux-navigator'
-
 " Better file browser
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
   noremap yom :NERDTreeToggle<CR>
@@ -37,42 +22,7 @@ Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
   " Nerdtree config for wildignore
   let NERDTreeRespectWildIgnore=1
 
-" Beautiful parent thesis
-Plug 'luochen1990/rainbow'
-  nnoremap yor :RainbowToggle<CR>
-  let g:rainbow_active = 0
-
-" Writing focus mode
-Plug 'junegunn/goyo.vim'
-
-" nvim-cmp autocompletion
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-Plug 'octaltree/cmp-look'
-Plug 'hrsh7th/cmp-nvim-lua'
-
-" dictionary
-Plug 'skywind3000/vim-quickui'
-Plug 'xfyuan/vim-mac-dictionary'
-  nnoremap <silent><leader>ww :MacDictPopup<CR>
-
-" Git
-Plug 'tpope/vim-fugitive'
-  nnoremap <leader>gd :Gvdiffsplit!<CR>
-  nnoremap gdh :diffget //2<CR>
-  nnoremap gdl :diffget //3<CR>
-
-Plug 'rbong/vim-flog'
-Plug 'rhysd/git-messenger.vim'
-
-" Ack
 Plug 'mileszs/ack.vim'
-  " Don't jump to the first result automatically
-  cnoreabbrev Ack Ack!
-
   " Ripgrep for Ack
   let g:ackprg = 'rg --vimgrep --no-heading'
 
@@ -83,11 +33,6 @@ Plug 'mileszs/ack.vim'
 
 " Destroy trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
-
-" Vim prettier
-"Plug 'prettier/vim-prettier', {
-  "\ 'do': 'yarn install',
-  "\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'yaml', 'html'] }
 
 " Surround
 Plug 'tpope/vim-surround'
@@ -101,20 +46,6 @@ Plug 'tpope/vim-obsession'
 "Plug 'ayu-theme/ayu-vim'
 Plug 'rebelot/kanagawa.nvim'
 
-" Editor config
-Plug 'editorconfig/editorconfig-vim'
-
-" Auto Pair
-Plug 'jiangmiao/auto-pairs'
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'neovim/nvim-lspconfig'
-Plug 'scalameta/nvim-metals'
-Plug 'mfussenegger/nvim-dap'
-Plug 'kevinhwang91/nvim-bqf'
-Plug 'ray-x/lsp_signature.nvim'
-
-
 " Vim alignment plugin
 Plug 'junegunn/vim-easy-align'
   " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -123,7 +54,7 @@ Plug 'junegunn/vim-easy-align'
   nmap ga <Plug>(EasyAlign)
 
 " Vim syntastic
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 " unimpaired
 Plug 'tpope/vim-unimpaired'
@@ -188,21 +119,6 @@ Plug 'vmchale/dhall-vim'
 " Swift
 Plug 'keith/swift.vim', { 'for' : 'swift' }
 
-" Scala
-Plug 'derekwyatt/vim-scala'
-
-" To enable more of the features of rust-analyzer, such as inlay hints and more!
-Plug 'simrat39/rust-tools.nvim'
-
-
-" GraphQL
-Plug 'jparise/vim-graphql'
-
-" fades inactive buffers
-Plug 'TaDaa/vimade'
-  nnoremap yot :VimadeToggle<CR>
-
-Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 

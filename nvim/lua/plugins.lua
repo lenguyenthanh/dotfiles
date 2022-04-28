@@ -1,7 +1,18 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
+local f = require("functions")
+local map = f.map
+
 return require('packer').startup(function()
+
+  -- PackerSync after save
+  vim.cmd([[
+    augroup packer_user_config
+      autocmd!
+      autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup end
+  ]])
 
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -19,14 +30,10 @@ return require('packer').startup(function()
       requires = {
         'nvim-lua/popup.nvim',
         'nvim-lua/plenary.nvim',
-        'telescope-frecency.nvim',
+        'vim-telescope/telescope-frecency.nvim',
         'telescope-fzf-native.nvim',
-        'aloussase/telescope-gradle.nvim',
-        'crispgm/telescope-heading.nvim',
-        'sudormrfbin/cheatsheet.nvim',
-        'softinio/scaladex.nvim',
       },
-      config = [[require("plugins.telescope").setup()]],
+      config = require("plugins.telescope").setup(),
     },
     {
       'nvim-telescope/telescope-frecency.nvim',
@@ -37,12 +44,93 @@ return require('packer').startup(function()
       'nvim-telescope/telescope-fzf-native.nvim',
       run = 'make',
     },
+    'aloussase/telescope-gradle.nvim',
+    'crispgm/telescope-heading.nvim',
+    'sudormrfbin/cheatsheet.nvim',
+    'softinio/scaladex.nvim',
+  }
+
+  -- nvim-cmp autocompletion
+  use {
+    'hrsh7th/nvim-cmp',
+    config = require("plugins.cmp").setup(),
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'quangnguyen30192/cmp-nvim-ultisnips',
+    'octaltree/cmp-look',
+    'hrsh7th/cmp-nvim-lua',
+  }
+
+  -- lsp
+  use {
+    'neovim/nvim-lspconfig',
+    require = 'nvim-lua/plenary.nvim',
+    config = require("plugins.lsp").setup(),
+    'kevinhwang91/nvim-bqf', -- better quickfix
+    'ray-x/lsp_signature.nvim',
+  }
+
+  -- dap
+  use {
+    'mfussenegger/nvim-dap',
+    config = require("plugins.dap").setup(),
+  }
+
+  -- scala metals
+  use {
+    'scalameta/nvim-metals',
+    'derekwyatt/vim-scala',
+    config = require("plugins.metals").setup(),
+  }
+
+  use {
+    'simrat39/rust-tools.nvim',
+    config = require("plugins.rust").setup(),
   }
 
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-      config = [[require("plugins.treesister").setup()]],
+    config = require("plugins.treesister").setup(),
+  }
+
+  -- git
+  use {
+    'tpope/vim-fugitive',
+    'rbong/vim-flog',
+    'rhysd/git-messenger.vim',
+    config = function()
+      map('n', '<leader>gd', [[<cmd>lua vim.fn.Gvdiffsplig!()<CR>]])
+    end,
+  }
+
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = require("plugins.indent").setup(),
+  }
+
+  -- Tmux
+  use 'christoomey/vim-tmux-navigator'
+
+  -- Writing focus mode
+  use 'junegunn/goyo.vim'
+
+  -- dictionary
+  use {
+    'xfyuan/vim-mac-dictionary',
+    requires = 'skywind3000/vim-quickui',
+    config = function()
+      vim.cmd [[nnoremap <leader>ww :MacDictPopup<CR>]]
+    end,
+  }
+
+  -- fades inactive buffers
+  use {
+    "TaDaa/vimade",
+    config = function()
+      vim.cmd [[nnoremap yot :VimadeToggle<CR>]]
+    end,
   }
 
 end)

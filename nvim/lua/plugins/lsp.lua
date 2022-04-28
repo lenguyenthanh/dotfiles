@@ -36,6 +36,7 @@ M.setup = function()
   lsp.sumneko_lua.setup {
     on_attach = M.on_attach,
   }
+
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
