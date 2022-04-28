@@ -20,7 +20,7 @@ return require('packer').startup(function()
   -- comment
   use {
     'numToStr/Comment.nvim',
-    config = [[require('plugins.comment').setup()]]
+    config = require('plugins.comment').setup()
   }
 
   -- telescope
@@ -110,11 +110,12 @@ return require('packer').startup(function()
     config = require("plugins.indent").setup(),
   }
 
-  -- Tmux
-  use 'christoomey/vim-tmux-navigator'
-
   -- Writing focus mode
   use 'junegunn/goyo.vim'
+
+  -- Destroy trailing whitespace
+  use 'bronson/vim-trailing-whitespace'
+
 
   -- dictionary
   use {
@@ -131,6 +132,47 @@ return require('packer').startup(function()
     config = function()
       vim.cmd [[nnoremap yot :VimadeToggle<CR>]]
     end,
+  }
+
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-unimpaired'
+  use 'jiangmiao/auto-pairs'
+
+  use {
+    'junegunn/vim-easy-align',
+    config = function()
+      vim.cmd [[xmap ga <Plug>(EasyAlign)]]
+      vim.cmd [[nmap ga <Plug>(EasyAlign)]]
+    end,
+  }
+
+  -- Tmux
+  use 'christoomey/vim-tmux-navigator'
+
+  -- theme
+  use {
+    disable = false,
+    'rebelot/kanagawa.nvim',
+    config = function ()
+      vim.cmd('colorscheme kanagawa')
+    end
+  }
+
+  use {
+    disable = true,
+    'joshdick/onedark.vim',
+    config = function ()
+      vim.cmd('colorscheme onedark')
+    end
+  }
+
+  use {
+    disable = true,
+    'ayu-theme/ayu-vim',
+    config = function ()
+      vim.cmd('colorscheme ayu')
+    end
   }
 
 end)

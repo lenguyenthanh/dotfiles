@@ -25,105 +25,70 @@ Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'mileszs/ack.vim'
   " Ripgrep for Ack
   let g:ackprg = 'rg --vimgrep --no-heading'
-
   nnoremap <Leader>a :Ack!<Space>
-
-  " Search the word under the cursor using rg
   nnoremap <Leader>A viw"ry:Ack <C-r>r<CR>
 
-" Destroy trailing whitespace
-Plug 'bronson/vim-trailing-whitespace'
-
-" Surround
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-
-" Auto save sessions
-Plug 'tpope/vim-obsession'
-
-" Color Scheme
-"Plug 'joshdick/onedark.vim'
-"Plug 'ayu-theme/ayu-vim'
-Plug 'rebelot/kanagawa.nvim'
-
-" Vim alignment plugin
-Plug 'junegunn/vim-easy-align'
-  " Start interactive EasyAlign in visual mode (e.g. vipga)
-  xmap ga <Plug>(EasyAlign)
-  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-  nmap ga <Plug>(EasyAlign)
-
-" Vim syntastic
-" Plug 'vim-syntastic/syntastic'
-
-" unimpaired
-Plug 'tpope/vim-unimpaired'
-
 " handle the function signatures displaying
-Plug 'Shougo/echodoc.vim'
-
-  set cmdheight=2
-  let g:echodoc#enable_at_startup = 0
-  let g:echodoc#type = 'signature'
-
-" Kotlin
-Plug 'udalov/kotlin-vim', { 'for' : 'kotlin'}
+" Plug 'Shougo/echodoc.vim'
+"
+"   set cmdheight=2
+"   let g:echodoc#enable_at_startup = 0
+"   let g:echodoc#type = 'signature'
 
 " Haskel
-Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
-
-  function! ApplyOneSuggestion()
-    let l = line(".")
-    let c = col(".")
-    let l:filter = "%! hlint - --refactor  --refactor-options=\"--pos ".l.','.c."\""
-    execute l:filter
-    silent if v:shell_error == 1| undo | endif
-    call cursor(l, c)
-  endfunction
-
-  function! ApplyAllSuggestions()
-    let l = line(".")
-    let c = col(".")
-    let l:filter = "%! hlint - --refactor"
-    execute l:filter
-    silent if v:shell_error == 1| undo | endif"
-    call cursor(l, c)
-  endfunction
-
-  " hlint
-  if ( ! exists('g:hlintRefactor#disableDefaultKeybindings') ||
-    \ ! g:hlintRefactor#disableDefaultKeybindings )
-
-    map <silent> to :call ApplyOneSuggestion()<CR>
-    map <silent> ta :call ApplyAllSuggestions()<CR>
-
-  endif
-
-  function! Haskell_snippets_module_name() " {{{
-    let l:path = substitute(expand('%:r'), '\%(\U[^/]*/\)*', '', '')
-    return substitute(l:path, '/', '.', 'g')
-  endfunction " }}}
-
-  " Search by hoogle
-  nnoremap <leader>h :!hoogle<Space>
-
-  " Search the word under the cursor using hoogle
-  nnoremap <Leader>H viw"ry:!hoogle <C-r>r<CR>
-
+" Plug 'neovimhaskell/haskell-vim', { 'for' : 'haskell' }
+"
+"   function! ApplyOneSuggestion()
+"     let l = line(".")
+"     let c = col(".")
+"     let l:filter = "%! hlint - --refactor  --refactor-options=\"--pos ".l.','.c."\""
+"     execute l:filter
+"     silent if v:shell_error == 1| undo | endif
+"     call cursor(l, c)
+"   endfunction
+"
+"   function! ApplyAllSuggestions()
+"     let l = line(".")
+"     let c = col(".")
+"     let l:filter = "%! hlint - --refactor"
+"     execute l:filter
+"     silent if v:shell_error == 1| undo | endif"
+"     call cursor(l, c)
+"   endfunction
+"
+"   " hlint
+"   if ( ! exists('g:hlintRefactor#disableDefaultKeybindings') ||
+"     \ ! g:hlintRefactor#disableDefaultKeybindings )
+"
+"     map <silent> to :call ApplyOneSuggestion()<CR>
+"     map <silent> ta :call ApplyAllSuggestions()<CR>
+"
+"   endif
+"
+"   function! Haskell_snippets_module_name() " {{{
+"     let l:path = substitute(expand('%:r'), '\%(\U[^/]*/\)*', '', '')
+"     return substitute(l:path, '/', '.', 'g')
+"   endfunction " }}}
+"
+"   " Search by hoogle
+"   nnoremap <leader>h :!hoogle<Space>
+"
+"   " Search the word under the cursor using hoogle
+"   nnoremap <Leader>H viw"ry:!hoogle <C-r>r<CR>
+"
 " Haskell Format
-Plug 'sdiehl/vim-ormolu'
+" Plug 'sdiehl/vim-ormolu'
 
 " Dhall
-Plug 'vmchale/dhall-vim'
+" Plug 'vmchale/dhall-vim'
 
 " Swift
-Plug 'keith/swift.vim', { 'for' : 'swift' }
+" Plug 'keith/swift.vim', { 'for' : 'swift' }
 
 
 call plug#end()
 
 lua require('init')
-
 
 filetype plugin indent on     " required!
 filetype on
@@ -161,7 +126,6 @@ set termguicolors
 "color onedark
 set background=dark
 
-colorscheme kanagawa
 
 set nofoldenable
 

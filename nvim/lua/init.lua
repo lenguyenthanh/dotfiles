@@ -4,4 +4,3 @@ if require("pre")() then
 end
 
 require("plugins")
-require("mappings").setup()

@@ -12,7 +12,7 @@ M.setup = function()
       use_virtual_text = true,
       lint_events = { "BufWrite", "CursorHold" },
     },
-    ensure_installed = { "scala", "lua", "rust", "kotlin", "markdown" },
+    ensure_installed = { "scala", "lua", "rust", "kotlin", "markdown", "java" },
     highlight = {
       enable = true,
       disable = { "scala" },
