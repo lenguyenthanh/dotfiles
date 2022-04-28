@@ -37,7 +37,6 @@ return require('packer').startup(function()
     },
     {
       'nvim-telescope/telescope-frecency.nvim',
-      after = 'telescope.nvim',
       requires = 'tami5/sqlite.lua',
     },
     {
