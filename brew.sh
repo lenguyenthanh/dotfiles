@@ -57,6 +57,7 @@ mas install 425955336 # Skitch
 
 # fonts
 brew install font-fira-code --cask
+brew install font-fira-mono-nerd-font --cask
 
 # brew clean up
 brew cleanup

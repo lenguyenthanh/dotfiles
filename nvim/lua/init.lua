@@ -55,6 +55,7 @@ set.relativenumber = true
 set.number = true
 set.cursorline = true
 set.fixendofline = false
+set.swapfile = false
 
 set.tabstop = indent
 set.shiftwidth = indent

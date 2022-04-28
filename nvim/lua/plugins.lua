@@ -139,6 +139,8 @@ return require('packer').startup(function()
   use 'tpope/vim-unimpaired'
   use 'jiangmiao/auto-pairs'
 
+  use "kyazdani42/nvim-web-devicons"
+
   use {
     'junegunn/vim-easy-align',
     config = function()
