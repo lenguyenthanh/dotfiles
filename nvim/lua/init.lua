@@ -16,9 +16,6 @@ local map = f.map
 local set = vim.opt
 local go = vim.opt_global
 
--- Load all plugins with packer
-require("plugins")
-
 --================================
 -- OPTIONS -----------------------
 --================================
@@ -107,18 +104,18 @@ map("", "<M-h>", "30<C-w><")
 -- format json
 map("n", "<leader>js", ":%!jq '.'<CR>")
 
-
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 map("n", "J", "mzJ`z")
 
+-- Load all plugins with packer
+require("plugins")
+
 -- PLUGIN MAPPINGS -----------------------
 
--- NerdTree
-map("n", "yom", ":NERDTreeToggle<CR>")
-map("n", "<leader>tf", ":NERDTreeFind<CR>")
-g["NERDTreeRespectWildIgnore"] = 1
-
+-- nvim-tree
+map("n", "<leader>tm", ":NvimTreeToggle<CR>")
+map("n", "<leader>tf", ":NvimTreeFindFile<CR>")
 -- UltiSnips
 g['UltiSnipsJumpForwardTrigger'] = '<c-b>'
 g['UltiSnipsJumpBackwardTrigger'] = '<c-z>'

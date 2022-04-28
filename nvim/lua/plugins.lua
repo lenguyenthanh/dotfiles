@@ -95,13 +95,15 @@ return require('packer').startup(function()
   }
 
   -- git
+  use 'rbong/vim-flog'
+  use 'rhysd/git-messenger.vim'
   use {
     'tpope/vim-fugitive',
-    'rbong/vim-flog',
-    'rhysd/git-messenger.vim',
     config = function()
-      map('n', '<leader>gd', [[<cmd>lua vim.fn.Gvdiffsplig!()<CR>]])
+      vim.cmd [[nnoremap gdh :diffget //2<CR>]]
+      vim.cmd [[nnoremap gdl :diffget //3<CR>]]
     end,
+    cmd = { 'Git', 'Gwrite', 'Gvdiffsplit' },
   }
 
   use {
@@ -153,18 +155,20 @@ return require('packer').startup(function()
 
   use 'SirVer/ultisnips'
 
-	use {
-		'scrooloose/nerdtree',
-		cmd = { 'NERDTreeToggle',  'NERDTreeFind' }
-	}
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' },
+    config = [[require("plugins.tree").setup()]],
+  }
 
-	use 'mileszs/ack.vim'
+  use 'mileszs/ack.vim'
 
   -- theme
   use {
     disable = false,
     'rebelot/kanagawa.nvim',
-    config = function ()
+    config = function()
       vim.cmd('colorscheme kanagawa')
     end
   }
@@ -172,7 +176,7 @@ return require('packer').startup(function()
   use {
     disable = true,
     'joshdick/onedark.vim',
-    config = function ()
+    config = function()
       vim.cmd('colorscheme onedark')
     end
   }
@@ -180,7 +184,7 @@ return require('packer').startup(function()
   use {
     disable = true,
     'ayu-theme/ayu-vim',
-    config = function ()
+    config = function()
       vim.cmd('colorscheme ayu')
     end
   }
