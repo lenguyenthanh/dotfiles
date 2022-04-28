@@ -73,9 +73,6 @@ M.setup = function()
   vim.cmd([[hi! link LspReferenceRead CursorColumn]])
   vim.cmd([[hi! link LspReferenceWrite CursorColumn]])
 
-  -- nvim-metals
-  vim.opt_global.shortmess:remove("F") -- nvim-metals
-
 end
 
 return M

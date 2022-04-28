@@ -150,6 +150,15 @@ return require('packer').startup(function()
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
 
+  use 'SirVer/ultisnips'
+
+	use {
+		'scrooloose/nerdtree',
+		cmd = { 'NERDTreeToggle',  'NERDTreeFind' }
+	}
+
+	use 'mileszs/ack.vim'
+
   -- theme
   use {
     disable = false,
