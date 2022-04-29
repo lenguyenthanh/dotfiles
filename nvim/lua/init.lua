@@ -114,13 +114,8 @@ require("plugins")
 -- PLUGIN MAPPINGS -----------------------
 
 -- nvim-tree
-map("n", "<leader>tm", ":NvimTreeToggle<CR>")
+map("n", "<leader>to", ":NvimTreeToggle<CR>")
 map("n", "<leader>tf", ":NvimTreeFindFile<CR>")
--- UltiSnips
-g['UltiSnipsJumpForwardTrigger'] = '<c-b>'
-g['UltiSnipsJumpBackwardTrigger'] = '<c-z>'
-g['UltiSnipsEditSplit'] = 'vertical'
-g["UltiSnipsSnippetDirectories"] = { "~/.dotfiles/UltiSnips" }
 
 -- Ack
 g["ackprg"] = "rg --vimgrep --no-heading"

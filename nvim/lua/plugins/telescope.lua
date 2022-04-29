@@ -12,6 +12,7 @@ M.setup = function()
   telescope.load_extension('gradle')
   telescope.load_extension('heading')
   telescope.load_extension('frecency')
+  telescope.load_extension('luasnip')
 
   map('n', '<leader>fp', [[<cmd>lua require("telescope.builtin").find_files()<cr>]])
   map('n', '<leader>fy', [[<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>]])

@@ -23,6 +23,24 @@ return require('packer').startup(function()
     config = require('plugins.comment').setup()
   }
 
+  use {
+    'L3MON4D3/LuaSnip',
+    requires = "rafamadriz/friendly-snippets",
+    config = require("plugins.snippets").setup()
+  }
+
+  -- nvim-cmp autocompletion
+  use {
+    'hrsh7th/nvim-cmp',
+    config = require("plugins.cmp").setup(),
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'saadparwaiz1/cmp_luasnip',
+    'octaltree/cmp-look',
+    'hrsh7th/cmp-nvim-lua',
+  }
+
   -- telescope
   use {
     {
@@ -43,22 +61,11 @@ return require('packer').startup(function()
       'nvim-telescope/telescope-fzf-native.nvim',
       run = 'make',
     },
+    "benfowler/telescope-luasnip.nvim",
     'aloussase/telescope-gradle.nvim',
     'crispgm/telescope-heading.nvim',
     'sudormrfbin/cheatsheet.nvim',
     'softinio/scaladex.nvim',
-  }
-
-  -- nvim-cmp autocompletion
-  use {
-    'hrsh7th/nvim-cmp',
-    config = require("plugins.cmp").setup(),
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'quangnguyen30192/cmp-nvim-ultisnips',
-    'octaltree/cmp-look',
-    'hrsh7th/cmp-nvim-lua',
   }
 
   -- lsp
@@ -152,8 +159,6 @@ return require('packer').startup(function()
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
-
-  use 'SirVer/ultisnips'
 
   use {
     'kyazdani42/nvim-tree.lua',
