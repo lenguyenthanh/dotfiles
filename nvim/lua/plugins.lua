@@ -1,9 +1,6 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
-local f = require("functions")
-local map = f.map
-
 return require('packer').startup(function()
 
   -- PackerSync after save
@@ -23,9 +20,10 @@ return require('packer').startup(function()
     config = require('plugins.comment').setup()
   }
 
+  -- todo write my own luasnip functions
   use {
     'L3MON4D3/LuaSnip',
-    requires = "rafamadriz/friendly-snippets",
+    requires = "rafamadriz/friendly-snippets", -- TODO remove when I have my own snippets
     config = require("plugins.snippets").setup()
   }
 
@@ -61,7 +59,7 @@ return require('packer').startup(function()
       'nvim-telescope/telescope-fzf-native.nvim',
       run = 'make',
     },
-    "benfowler/telescope-luasnip.nvim",
+    "benfowler/telescope-luasnip.nvim", -- TODO remove when I have my own snippets
     'aloussase/telescope-gradle.nvim',
     'crispgm/telescope-heading.nvim',
     'sudormrfbin/cheatsheet.nvim',
@@ -102,7 +100,12 @@ return require('packer').startup(function()
   }
 
   -- git
-  use 'rbong/vim-flog'
+  use {
+    'rbong/vim-flog',
+    requires = 'tpope/vim-fugitive',
+  }
+
+  -- Todo think away to make vim-fugitive lazy loading
   use 'rhysd/git-messenger.vim'
   use {
     'tpope/vim-fugitive',
@@ -110,7 +113,7 @@ return require('packer').startup(function()
       vim.cmd [[nnoremap gdh :diffget //2<CR>]]
       vim.cmd [[nnoremap gdl :diffget //3<CR>]]
     end,
-    cmd = { 'Git', 'Gwrite', 'Gvdiffsplit' },
+    -- cmd = { 'Git', 'Gwrite', 'Gvdiffsplit', 'Flog', 'FlogSplit' },
   }
 
   use {
@@ -126,11 +129,14 @@ return require('packer').startup(function()
 
 
   -- dictionary
+  -- Add shortcut for vim motion
   use {
     'xfyuan/vim-mac-dictionary',
     requires = 'skywind3000/vim-quickui',
     config = function()
       vim.cmd [[nnoremap <leader>ww :MacDictPopup<CR>]]
+      vim.cmd [[nnoremap <leader>wd :MacDictWord<CR>]]
+      vim.cmd [[nnoremap <leader>wq :MacDictQuery<CR>]]
     end,
   }
 
@@ -159,7 +165,15 @@ return require('packer').startup(function()
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
-
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      { 'nvim-telescope/telescope.nvim' },
+    },
+    config = function()
+      require('neoclip').setup()
+    end,
+  }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',

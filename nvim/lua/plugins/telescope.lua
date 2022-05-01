@@ -13,6 +13,7 @@ M.setup = function()
   telescope.load_extension('heading')
   telescope.load_extension('frecency')
   telescope.load_extension('luasnip')
+  telescope.load_extension('neoclip')
 
   map('n', '<leader>fp', [[<cmd>lua require("telescope.builtin").find_files()<cr>]])
   map('n', '<leader>fy', [[<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>]])
@@ -32,6 +33,8 @@ M.setup = function()
   map('n', '<leader>sd', [[<cmd>lua require("functions").search_dotfiles()<CR>]])
   map('n', '<leader>sn', [[<cmd>lua require("functions").search_notes()<CR>]])
 
+  map('n', '<leader>f"', [[<cmd>lua require("telescope").extensions.neoclip.neoclip()<cr>]])
+
   telescope.setup({
     pickers = {
       buffers = {
@@ -40,11 +43,11 @@ M.setup = function()
     },
     extensions = {
       fzf = {
-        fuzzy = true,                    -- false will only do exact matching
-        override_generic_sorter = true,  -- override the generic sorter
-        override_file_sorter = true,     -- override the file sorter
-        case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                        -- the default case_mode is "smart_case"
+        fuzzy = true, -- false will only do exact matching
+        override_generic_sorter = true, -- override the generic sorter
+        override_file_sorter = true, -- override the file sorter
+        case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+        -- the default case_mode is "smart_case"
       }
     }
   })

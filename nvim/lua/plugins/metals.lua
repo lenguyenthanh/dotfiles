@@ -7,8 +7,6 @@ local map = f.map
 M.setup = function()
   local metals_config = require("metals").bare_config()
 
-  metals_config.metals_use_global_executable = true
-
   metals_config.init_options.statusBarProvider = "on"
   metals_config.settings = {
     showImplicitArguments = true,

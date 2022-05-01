@@ -29,3 +29,6 @@ augroup end
 
 " Ensure changes to buffers are saved when you navigate away from that buffer
 autocmd FileType markdown set autowriteall
+
+" unfold all when open files
+" autocmd BufReadPost,FileReadPost * normal zR

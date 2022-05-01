@@ -23,7 +23,6 @@ end
 return function()
   if not pcall(require, "packer") then
     download_packer()
-
     return true
   end
 
