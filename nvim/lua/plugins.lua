@@ -17,20 +17,20 @@ return require('packer').startup(function()
   -- comment
   use {
     'numToStr/Comment.nvim',
-    config = require('plugins.comment').setup()
+    config = [[require('plugins.comment').setup()]]
   }
 
   -- todo write my own luasnip functions
   use {
     'L3MON4D3/LuaSnip',
     requires = "rafamadriz/friendly-snippets", -- TODO remove when I have my own snippets
-    config = require("plugins.snippets").setup()
+    config = [[require("plugins.snippets").setup()]]
   }
 
   -- nvim-cmp autocompletion
   use {
     'hrsh7th/nvim-cmp',
-    config = require("plugins.cmp").setup(),
+    config = [[require("plugins.cmp").setup()]],
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
@@ -49,10 +49,10 @@ return require('packer').startup(function()
         'vim-telescope/telescope-frecency.nvim',
         'telescope-fzf-native.nvim',
       },
-      config = require("plugins.telescope").setup(),
+      config = [[require("plugins.telescope").setup()]],
     },
     {
-      'nvim-telescope/telescope-frecency.nvim',
+     'nvim-telescope/telescope-frecency.nvim',
       requires = 'tami5/sqlite.lua',
     },
     {
@@ -70,7 +70,7 @@ return require('packer').startup(function()
   use {
     'neovim/nvim-lspconfig',
     require = 'nvim-lua/plenary.nvim',
-    config = require("plugins.lsp").setup(),
+    config = [[require("plugins.lsp").setup()]],
     'kevinhwang91/nvim-bqf', -- better quickfix
     'ray-x/lsp_signature.nvim',
   }
@@ -78,25 +78,25 @@ return require('packer').startup(function()
   -- dap
   use {
     'mfussenegger/nvim-dap',
-    config = require("plugins.dap").setup(),
+    config = [[require("plugins.dap").setup()]],
   }
 
   -- scala metals
   use {
     'scalameta/nvim-metals',
     'derekwyatt/vim-scala',
-    config = require("plugins.metals").setup(),
+    config = [[require("plugins.metals").setup()]],
   }
 
   use {
     'simrat39/rust-tools.nvim',
-    config = require("plugins.rust").setup(),
+    config = [[require("plugins.rust").setup()]],
   }
 
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = require("plugins.treesister").setup(),
+    config = [[require("plugins.treesister").setup()]],
   }
 
   -- git
@@ -118,7 +118,7 @@ return require('packer').startup(function()
 
   use {
     'lukas-reineke/indent-blankline.nvim',
-    config = require("plugins.indent").setup(),
+    config = [[require("plugins.indent").setup()]],
   }
 
   -- Writing focus mode
@@ -154,7 +154,7 @@ return require('packer').startup(function()
 
   use {
     "windwp/nvim-autopairs",
-    config = require('nvim-autopairs').setup({ })
+    config = [[require('nvim-autopairs').setup({ })]],
   }
 
   use "kyazdani42/nvim-web-devicons"
@@ -174,9 +174,7 @@ return require('packer').startup(function()
     requires = {
       { 'nvim-telescope/telescope.nvim' },
     },
-    config = function()
-      require('neoclip').setup()
-    end,
+    config = [[require('neoclip').setup()]],
   }
   use {
     'kyazdani42/nvim-tree.lua',

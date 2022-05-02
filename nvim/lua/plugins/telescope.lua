@@ -26,7 +26,7 @@ M.setup = function()
 
   map('n', '<leader>rl', [[<cmd>lua require("telescope.builtin").reloader()<cr>]])
   map('n', '<leader>fh', [[<cmd>lua require("telescope").extensions.heading.heading()<cr>]])
-  map('n', '<leader>ff', [[<cmd>lua require("telescope").extensions.frecency.frecency()<cr>]])
+  -- map('n', '<leader>ff', [[<cmd>lua require("telescope").extensions.frecency.frecency()<cr>]])
 
   map('n', '<leader>sd', [[<cmd>lua require("functions").search_dotfiles()<CR>]])
   map('n', '<leader>sn', [[<cmd>lua require("functions").search_notes()<CR>]])
