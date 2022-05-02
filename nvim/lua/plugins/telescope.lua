@@ -23,8 +23,6 @@ M.setup = function()
   map('n', '<leader>fq', [[<cmd>lua require("telescope.builtin").quickfix()<cr>]])
   map('n', '<leader>fm', [[<cmd>lua require("telescope.builtin").keymaps()<cr>]])
   map('n', '<leader>fsp', [[<cmd>lua require("telescope.builtin").spell_suggest()<cr>]])
-  map('n', '<leader>fgc', [[<cmd>lua require("telescope.builtin").git_commits()<cr>]])
-  map('n', '<leader>fgb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
 
   map('n', '<leader>rl', [[<cmd>lua require("telescope.builtin").reloader()<cr>]])
   map('n', '<leader>fh', [[<cmd>lua require("telescope").extensions.heading.heading()<cr>]])
@@ -34,6 +32,9 @@ M.setup = function()
   map('n', '<leader>sn', [[<cmd>lua require("functions").search_notes()<CR>]])
 
   map('n', '<leader>f"', [[<cmd>lua require("telescope").extensions.neoclip.neoclip()<cr>]])
+
+  map('n', '<leader>gc', [[<cmd>lua require("telescope.builtin").git_commits()<cr>]])
+  map('n', '<leader>gb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
 
   telescope.setup({
     pickers = {

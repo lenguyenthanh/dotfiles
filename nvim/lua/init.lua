@@ -104,9 +104,13 @@ map("", "<M-h>", "30<C-w><")
 -- format json
 map("n", "<leader>js", ":%!jq '.'<CR>")
 
+-- keep things where they're
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
 map("n", "J", "mzJ`z")
+
+-- say the word under the cursor
+map("n", "<leader>ws", "\"ryiw:!say <C-r>r<CR><CR>")
 
 -- Load all plugins with packer
 require("plugins")
@@ -118,8 +122,10 @@ map("n", "<leader>to", ":NvimTreeToggle<CR>")
 map("n", "<leader>tf", ":NvimTreeFindFile<CR>")
 
 -- Ack
-g["ackprg"] = "rg --vimgrep --no-heading"
-map("n", "<leader>A", "viw\"ry:Ack <C-r>r<CR>")
+g["ackprg"] = "rg --vimgrep --no-heading --ignore-case"
+map("n", "<leader>sw", "\"ryiw:Ack! <C-r>r<CR>")
+map("n", "<leader>sW", "\"ryiW:Ack! <C-r>r<CR>")
+map("n", "<leader>si", "T*\"ryt*:Ack! \'<C-r>r\'<CR>")
 
 -- COMMANDS -----------------------
 
