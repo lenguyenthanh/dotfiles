@@ -151,7 +151,11 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'tpope/vim-unimpaired'
-  use 'jiangmiao/auto-pairs'
+
+  use {
+    "windwp/nvim-autopairs",
+    config = require('nvim-autopairs').setup({ })
+  }
 
   use "kyazdani42/nvim-web-devicons"
 
@@ -178,7 +182,7 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' },
-    config = [[require("plugins.tree").setup()]],
+    config = [[require("plugins.tree").setup()]], -- we need [[]] because we want to lazy loading the config
   }
 
   use 'mileszs/ack.vim'

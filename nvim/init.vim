@@ -30,9 +30,6 @@ augroup end
 " Ensure changes to buffers are saved when you navigate away from that buffer
 autocmd FileType markdown set autowriteall
 
-" unfold all when open files
-" autocmd BufReadPost,FileReadPost * normal zR
-
 " More text objects
 for char in [ '_', '.', ':', ',', ';', '/', '<bslash>', '*', '+', '%', '-', '#' ]
     execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'
