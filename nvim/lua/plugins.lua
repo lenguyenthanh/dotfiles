@@ -27,18 +27,6 @@ return require('packer').startup(function()
     config = [[require("plugins.snippets").setup()]]
   }
 
-  -- nvim-cmp autocompletion
-  use {
-    'hrsh7th/nvim-cmp',
-    config = [[require("plugins.cmp").setup()]],
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'saadparwaiz1/cmp_luasnip',
-    'octaltree/cmp-look',
-    'hrsh7th/cmp-nvim-lua',
-  }
-
   -- telescope
   use {
     {
@@ -52,7 +40,7 @@ return require('packer').startup(function()
       config = [[require("plugins.telescope").setup()]],
     },
     {
-     'nvim-telescope/telescope-frecency.nvim',
+      'nvim-telescope/telescope-frecency.nvim',
       requires = 'tami5/sqlite.lua',
     },
     {
@@ -62,17 +50,32 @@ return require('packer').startup(function()
     "benfowler/telescope-luasnip.nvim", -- TODO remove when I have my own snippets
     'aloussase/telescope-gradle.nvim',
     'crispgm/telescope-heading.nvim',
-    'sudormrfbin/cheatsheet.nvim',
     'softinio/scaladex.nvim',
+  }
+
+  -- nvim-cmp autocompletion
+  use {
+    'hrsh7th/nvim-cmp',
+    config = [[require("plugins.cmp").setup()]],
+    requires = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
+      'octaltree/cmp-look',
+      'hrsh7th/cmp-nvim-lua',
+    }
   }
 
   -- lsp
   use {
     'neovim/nvim-lspconfig',
-    require = 'nvim-lua/plenary.nvim',
     config = [[require("plugins.lsp").setup()]],
-    'kevinhwang91/nvim-bqf', -- better quickfix
-    'ray-x/lsp_signature.nvim',
+    require = {
+      'nvim-lua/plenary.nvim',
+      'kevinhwang91/nvim-bqf', -- better quickfix
+      'ray-x/lsp_signature.nvim',
+    }
   }
 
   -- dap
@@ -84,8 +87,8 @@ return require('packer').startup(function()
   -- scala metals
   use {
     'scalameta/nvim-metals',
-    'derekwyatt/vim-scala',
     config = [[require("plugins.metals").setup()]],
+    requires = 'derekwyatt/vim-scala',
   }
 
   use {
