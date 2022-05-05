@@ -55,27 +55,29 @@ return require('packer').startup(function()
 
   -- nvim-cmp autocompletion
   use {
-    'hrsh7th/nvim-cmp',
-    config = [[require("plugins.cmp").setup()]],
-    requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'saadparwaiz1/cmp_luasnip',
-      'octaltree/cmp-look',
-      'hrsh7th/cmp-nvim-lua',
-    }
+    {
+      'hrsh7th/nvim-cmp',
+      config = [[require("plugins.cmp").setup()]],
+    },
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'saadparwaiz1/cmp_luasnip',
+    'octaltree/cmp-look',
+    'hrsh7th/cmp-nvim-lua',
   }
 
   -- lsp
   use {
-    'neovim/nvim-lspconfig',
-    config = [[require("plugins.lsp").setup()]],
-    require = {
-      'nvim-lua/plenary.nvim',
-      'kevinhwang91/nvim-bqf', -- better quickfix
-      'ray-x/lsp_signature.nvim',
-    }
+    {
+      'neovim/nvim-lspconfig',
+      config = [[require("plugins.lsp").setup()]],
+      require = {
+        'nvim-lua/plenary.nvim',
+      }
+    },
+    'kevinhwang91/nvim-bqf', -- better quickfix
+    'ray-x/lsp_signature.nvim',
   }
 
   -- dap
@@ -86,9 +88,11 @@ return require('packer').startup(function()
 
   -- scala metals
   use {
-    'scalameta/nvim-metals',
-    config = [[require("plugins.metals").setup()]],
-    requires = 'derekwyatt/vim-scala',
+    {
+      'scalameta/nvim-metals',
+      config = [[require("plugins.metals").setup()]],
+    },
+    'derekwyatt/vim-scala',
   }
 
   use {
@@ -174,16 +178,14 @@ return require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator'
   use {
     "AckslD/nvim-neoclip.lua",
-    requires = {
-      { 'nvim-telescope/telescope.nvim' },
-    },
+    requires = 'nvim-telescope/telescope.nvim',
     config = [[require('neoclip').setup()]],
   }
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' },
-    config = [[require("plugins.tree").setup()]], -- we need [[]] because we want to lazy loading the config
+    config = [[require("plugins.tree").setup()]],
   }
 
   use 'mileszs/ack.vim'

@@ -87,7 +87,7 @@ map("v", ":", ";")
 map("n", "\"y", "\"+y")
 map("n", "\"yy", "\"+yy")
 map("n", "\"p", "\"+p")
-map("n", "\"pp", "\"+pp")
+map("n", "\"P", "\"+P")
 
 -- Easy exit from terminal mode
 map("t", "<Esc>", "<C-\\><C-n>")
@@ -123,9 +123,11 @@ map("n", "<leader>tf", ":NvimTreeFindFile<CR>")
 
 -- Ack
 g["ackprg"] = "rg --vimgrep --no-heading --ignore-case"
+
 map("n", "<leader>sw", "\"ryiw:Ack! <C-r>r<CR>")
 map("n", "<leader>sW", "\"ryiW:Ack! <C-r>r<CR>")
 map("n", "<leader>si", "T*\"ryt*:Ack! \'<C-r>r\'<CR>")
+map("n", "<leader>s\"", "\"ryi\":Ack! <C-r>r<CR>")
 
 -- COMMANDS -----------------------
 

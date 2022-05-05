@@ -24,7 +24,7 @@ autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 " Turn on spell checking
 augroup textfiles
   autocmd!
-  autocmd filetype markdown :setlocal spell spelllang=en " | syntax clear
+  autocmd filetype markdown :setlocal spell spelllang=en
 augroup end
 
 " Ensure changes to buffers are saved when you navigate away from that buffer
