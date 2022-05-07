@@ -4,6 +4,9 @@
   path = ~/.dotfiles/git/gitconfig.aliases
   path = ~/.dotfiles/git/gitconfig.delta
 
+[init]
+  defaultBranch = main
+
 [user]
   name = Thanh Le
   email = lenguyenthanh@hotmail.com
