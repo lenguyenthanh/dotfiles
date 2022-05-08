@@ -1,6 +1,7 @@
 [alias]
   # clone
   cl = clone --recurse-submodules
+  clb = clone --bare --recurse-submodules
 
   # init
   it = !git init && git commit -m root --allow-empty
@@ -151,3 +152,8 @@
   stra = subtree add
   strl = subtree pull
   strp = subtree push
+
+  # worktree
+  wt = worktree
+  wta = worktree add
+  wtr = worktree remove

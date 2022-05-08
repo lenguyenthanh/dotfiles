@@ -14,6 +14,7 @@ M.setup = function()
   telescope.load_extension('frecency')
   telescope.load_extension('luasnip')
   telescope.load_extension('neoclip')
+  telescope.load_extension('git_worktree')
 
   map('n', '<leader>fp', [[<cmd>lua require("telescope.builtin").find_files()<cr>]])
   map('n', '<leader>fy', [[<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>]])
@@ -35,6 +36,8 @@ M.setup = function()
 
   map('n', '<leader>gc', [[<cmd>lua require("telescope.builtin").git_commits()<cr>]])
   map('n', '<leader>gb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
+  map('n', '<leader>gw', [[<cmd>lua require("telescope").extensions.git_worktree.git_worktrees()<cr>]])
+  map('n', '<leader>ga', [[<cmd>lua require("telescope").extensions.git_worktree.create_git_worktree()<cr>]])
 
   telescope.setup({
     pickers = {
