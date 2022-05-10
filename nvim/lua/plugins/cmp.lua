@@ -31,6 +31,7 @@ M.setup = function()
         luasnip.lsp_expand(args.body)
       end,
     },
+
     mapping = cmp.mapping.preset.insert({
       -- None of this made sense to me when first looking into this since there
       -- is no vim docs, but you can't have select = true here _unless_ you are
@@ -61,7 +62,7 @@ M.setup = function()
           fallback()
         end
       end, { "i", "s" }),
-      ['<C-e>'] = cmp.mapping.close(),
+      ['<C-e>'] = cmp.mapping.abort(),
     }),
   })
 end
