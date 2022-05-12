@@ -56,7 +56,7 @@
 
   # add
   aa = add --all
-  aaa = !git add --all && git commit --amend --no-edit
+  aaaa = !git add --all && git commit --amend --no-edit
   aav = add --all --verbose
   ai = add --interactive
   au = add -u
