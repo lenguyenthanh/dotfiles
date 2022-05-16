@@ -52,6 +52,7 @@ return require('packer').startup(function()
     'aloussase/telescope-gradle.nvim',
     'crispgm/telescope-heading.nvim',
     'softinio/scaladex.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
   }
 
   -- nvim-cmp autocompletion

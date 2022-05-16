@@ -6,16 +6,6 @@ local map = f.map
 M.setup = function()
   local telescope = require('telescope')
 
-  telescope.load_extension('fzf')
-  telescope.load_extension('scaladex')
-  telescope.load_extension('metals')
-  telescope.load_extension('gradle')
-  telescope.load_extension('heading')
-  telescope.load_extension('frecency')
-  telescope.load_extension('luasnip')
-  telescope.load_extension('neoclip')
-  telescope.load_extension('git_worktree')
-
   map('n', '<leader>fp', [[<cmd>lua require("telescope.builtin").find_files()<cr>]])
   map('n', '<leader>fy', [[<cmd>lua require("telescope.builtin").find_files( { cwd = vim.fn.expand("%:p:h") })<cr>]])
   map('n', '<leader>fb', [[<cmd>lua require("telescope.builtin").buffers()<cr>]])
@@ -46,6 +36,9 @@ M.setup = function()
       }
     },
     extensions = {
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown {}
+      },
       fzf = {
         fuzzy = true, -- false will only do exact matching
         override_generic_sorter = true, -- override the generic sorter
@@ -55,6 +48,17 @@ M.setup = function()
       }
     }
   })
+
+  telescope.load_extension('fzf')
+  telescope.load_extension('scaladex')
+  telescope.load_extension('metals')
+  telescope.load_extension('gradle')
+  telescope.load_extension('heading')
+  telescope.load_extension('frecency')
+  telescope.load_extension('luasnip')
+  telescope.load_extension('neoclip')
+  telescope.load_extension('git_worktree')
+  telescope.load_extension "ui-select"
 
   vim.api.nvim_create_autocmd("FileType", {
     pattern = { "groovy" },
