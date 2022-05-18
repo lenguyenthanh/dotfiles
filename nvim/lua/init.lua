@@ -128,6 +128,8 @@ map("n", "<leader>sw", "\"ryiw:Ack! <C-r>r<CR>")
 map("n", "<leader>sW", "\"ryiW:Ack! <C-r>r<CR>")
 map("n", "<leader>si", "T*\"ryt*:Ack! \'<C-r>r\'<CR>")
 map("n", "<leader>s\"", "\"ryi\":Ack! <C-r>r<CR>")
+map("n", "<leader>sp", ":Ack! \'<C-r>\"\'<CR>")
+map("n", "<leader>ss", ":Ack! ")
 
 -- COMMANDS -----------------------
 
