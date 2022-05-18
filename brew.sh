@@ -34,6 +34,8 @@ brew install trash
 brew install tree
 brew install yarn
 brew install zsh
+brew install pandoc
+brew install mactex --cask
 
 # Apps
 brew install appcleaner --cask

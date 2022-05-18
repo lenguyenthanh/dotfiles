@@ -20,3 +20,6 @@ RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 # Coursier
 export PATH="$PATH:/Users/thanhle/Library/Application Support/Coursier/bin"
+
+# mactext
+export PATH=$PATH:/Library/TeX/texbin/
