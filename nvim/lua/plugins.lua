@@ -121,8 +121,8 @@ return require('packer').startup(function()
     config = function()
       vim.cmd [[nnoremap gdh :diffget //2<CR>]]
       vim.cmd [[nnoremap gdl :diffget //3<CR>]]
+      vim.cmd [[nnoremap <leader>gd :Gvdiffsplit!<CR>]]
     end,
-    -- cmd = { 'Git', 'Gwrite', 'Gvdiffsplit', 'Flog', 'FlogSplit' },
   }
 
   use 'ThePrimeagen/git-worktree.nvim'

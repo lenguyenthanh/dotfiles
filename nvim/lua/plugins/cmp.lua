@@ -7,6 +7,7 @@ end
 
 local luasnip = require("luasnip")
 local cmp = require("cmp")
+local compare = require 'cmp.config.compare'
 
 M.setup = function()
   cmp.setup({
@@ -31,7 +32,28 @@ M.setup = function()
         luasnip.lsp_expand(args.body)
       end,
     },
-
+    -- https://github.com/scalameta/metals/issues/3559#issuecomment-1135073987
+    sorting = {
+      comparators = {
+        compare.exact,
+        compare.score,
+        function(a, b)
+          if a:get_kind() == 5 and b:get_kind() == 2 then
+            return true
+          elseif a:get_kind() == 2 and b:get_kind() == 5 then
+            return false
+          end
+          return nil
+        end,
+        compare.kind,
+        compare.recently_used,
+        compare.locality,
+        compare.offset,
+        compare.sort_text,
+        compare.length,
+        compare.order
+      }
+    },
     mapping = cmp.mapping.preset.insert({
       -- None of this made sense to me when first looking into this since there
       -- is no vim docs, but you can't have select = true here _unless_ you are
