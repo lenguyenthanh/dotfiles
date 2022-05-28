@@ -46,8 +46,7 @@ brew install flux --cask
 brew install gpg-suite --cask
 brew install iTerm2 --cask
 brew install intellij-idea --cask
-brew install keybase --cask
-brew install temurin --cask
+brew install temurin17 --cask
 brew install vagrant --cask
 brew install virtualbox --cask
 brew install virtualbox-extension-pack --cask
@@ -55,7 +54,6 @@ brew install virtualbox-extension-pack --cask
 # Mac App Store
 mas install 823766827 # OneDrive
 mas install 497799835 # Xcode
-mas install 425955336 # Skitch
 
 # fonts
 brew install font-fira-code --cask
