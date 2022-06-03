@@ -3,9 +3,14 @@ local M = {}
 local f = require("functions")
 local map = f.map
 
-M.setup = function ()
+M.setup = function()
 
   local dap = require("dap")
+
+  dap.listeners.after["event_terminated"]["nvim-metals"] = function(session, body)
+    vim.notify("Tests have finished!")
+    dap.repl.open({}, 'vsplit')
+  end
 
   dap.configurations.scala = {
     {
@@ -39,12 +44,12 @@ M.setup = function ()
   }
 
   map("n", "<leader>dc", [[<cmd>lua require("dap").continue()<CR>]])
+  map("n", "<leader>dl", [[<cmd>lua require("dap").run_last()<CR>]])
   map("n", "<leader>dt", [[<cmd>lua require("dap").repl.toggle({}, 'vsplit')<CR>]])
   map("n", "<leader>dK", [[<cmd>lua require("dap.ui.widgets").hover()<CR>]])
   map("n", "<leader>db", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
   map("n", "<leader>dso", [[<cmd>lua require("dap").step_over()<CR>]])
   map("n", "<leader>dsi", [[<cmd>lua require("dap").step_into()<CR>]])
-  map("n", "<leader>dl", [[<cmd>lua require("dap").run_last()<CR>]])
 
 end
 
