@@ -56,6 +56,9 @@ alias ip='ifconfig | rg inet'
 # python3 as default
 alias python='python3'
 
+# scala-cli
+alias sc='scala-cli'
+
 # Yarn
 alias y='yarn'
 alias yd='yarn add --dev'
