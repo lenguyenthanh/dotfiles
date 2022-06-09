@@ -53,6 +53,7 @@ return require('packer').startup(function()
     'crispgm/telescope-heading.nvim',
     'softinio/scaladex.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
+    'nvim-telescope/telescope-symbols.nvim',
   }
 
   -- nvim-cmp autocompletion

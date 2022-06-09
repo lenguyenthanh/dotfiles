@@ -115,6 +115,12 @@ map("n", "<leader>ws", "\"ryiw:!say <C-r>r<CR><CR>")
 -- Load all plugins with packer
 require("plugins")
 
+-- sane default for diagnostics
+vim.diagnostic.config({
+    virtual_text = false,
+    severity_sort = true,
+  })
+
 -- PLUGIN MAPPINGS -----------------------
 
 -- nvim-tree
