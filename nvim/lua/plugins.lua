@@ -139,6 +139,11 @@ return require('packer').startup(function()
   -- Destroy trailing whitespace
   use 'bronson/vim-trailing-whitespace'
 
+  use { "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+  }
 
   -- dictionary
   -- Add shortcut for vim motion
