@@ -143,6 +143,9 @@ return require('packer').startup(function()
     run = "cd app && npm install",
     setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
     ft = { "markdown" },
+    config = function()
+      vim.cmd [[nnoremap <leader>vm :MarkdownPreview<CR>]]
+    end,
   }
 
   -- dictionary
