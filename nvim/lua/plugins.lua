@@ -103,6 +103,8 @@ return require('packer').startup(function()
     config = [[require("plugins.rust").setup()]],
   }
 
+  use 'github/copilot.vim'
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',

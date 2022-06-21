@@ -36,6 +36,7 @@ brew install yarn
 brew install zsh
 brew install pandoc
 brew install mactex --cask
+brew install jenv
 
 # Apps
 brew install appcleaner --cask
