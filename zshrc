@@ -14,5 +14,3 @@ ZSH_CUSTOM=$DOTFILES/zsh
 
 # Active completion
 . $DOTFILES/zsh/completion
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

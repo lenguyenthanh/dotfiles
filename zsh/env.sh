@@ -31,6 +31,8 @@ export FZF_DEFAULT_OPTS='
 # GPG signing
 export GPG_TTY=$(tty)
 
+[ -f "/Users/thanhle/.ghcup/env" ] && source "/Users/thanhle/.ghcup/env" # ghcup-env
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 

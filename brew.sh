@@ -13,7 +13,6 @@ brew install elixir
 brew install fasd
 brew install fd
 brew install fzf
-brew install ghc
 brew install git
 brew install git-delta
 brew install gnu-sed

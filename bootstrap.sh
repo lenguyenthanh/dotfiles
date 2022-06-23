@@ -11,7 +11,7 @@ if test ! $(which brew); then
 fi
 
 # Install dependencies using brew
-echo "Installing brewfile"
+echo "Installing brewfile..."
 chmod +x brew.sh
 ./brew.sh
 
@@ -23,16 +23,14 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 cp $HOME/.dotfiles/themes/nt9.zsh-theme $HOME/.oh-my-zsh/themes/
 
-# Install VimPlug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Install Haskell Stack
-echo "Installiing Stack..."
-curl -sSL https://get.haskellstack.org/ | sh
+echo "Installing Scala...."
+cs setup
 
 echo "Installing Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+echo "Installing Haskell..."
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 # Tmux plugins Manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -67,7 +65,7 @@ $(brew --prefix)/opt/fzf/install
 pip3 install pynvim
 
 # Install Ansible
-pip3 install ansible
+# pip3 install ansible
 
 # https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
 touch ~/.android/repositories.cfg
