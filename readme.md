@@ -2,6 +2,7 @@
 
 for [@lenguyenthanh](https://twitter.com/lenguyenthanh)
 
+![Screenshot](./screenshot.png)
 
 ## Install
 
@@ -13,8 +14,7 @@ curl -sSL https://raw.githubusercontent.com/lenguyenthanh/dotfiles/master/instal
 
 ## Tools
 
-- Vim
-- NeoVim
+- Vim/NeoVim
 - Git
 - Mac
 - Brew
@@ -25,6 +25,7 @@ curl -sSL https://raw.githubusercontent.com/lenguyenthanh/dotfiles/master/instal
 
 ## Languages
 
-- Haskell
 - Scala
+- Haskell
 - Rust
+- Lua
