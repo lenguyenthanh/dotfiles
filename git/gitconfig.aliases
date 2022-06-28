@@ -134,6 +134,8 @@
 
   # tag
   t = tag
+  td = tag -d
+  tdo = push --delete origin
 
   # remote
   rma = remote add
