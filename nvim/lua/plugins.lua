@@ -108,7 +108,7 @@ return require('packer').startup(function()
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = [[require("plugins.treesister").setup()]],
+    config = [[require("plugins.treesitter").setup()]],
   }
 
   -- git

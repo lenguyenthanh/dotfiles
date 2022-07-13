@@ -29,15 +29,15 @@ M.setup = function()
     on_attach = M.on_attach
   }
 
-  --lsp.kotlin_language_server.setup{
-  --cmd = { "/Users/thanhle/source/kotlin/kotlin-language-server/server/build/install/server/bin/kotlin-language-server" }
-  --}
-
   lsp.sumneko_lua.setup {
     on_attach = M.on_attach,
   }
 
-  lsp.elmls.setup{
+  lsp.elmls.setup {
+    on_attach = M.on_attach
+  }
+
+  lsp.hls.setup {
     on_attach = M.on_attach
   }
 
