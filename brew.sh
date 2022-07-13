@@ -36,7 +36,7 @@ brew install zsh
 brew install pandoc
 brew install mactex --cask
 brew install jenv
-
+brew install llvm # scala-native
 # Apps
 brew install appcleaner --cask
 brew install docker --cask
