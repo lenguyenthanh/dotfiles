@@ -58,6 +58,10 @@ ln -s $HOME/.dotfiles/ideavimrc $HOME/.ideavimrc
 rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 
+# Symlink Marta conf
+rm -rf "$HOME/Library/Application Support/org.yanex.marta/conf.marco"
+ln -s $HOME/.dotfiles/preferences/marta.conf "$HOME/Library/Application Support/org.yanex.marta/conf.marco"
+
 # Install fzf key bindings and fuzzy compeletion:
 $(brew --prefix)/opt/fzf/install
 
