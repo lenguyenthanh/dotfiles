@@ -37,6 +37,7 @@ brew install pandoc
 brew install mactex --cask
 brew install jenv
 brew install llvm # scala-native
+
 # Apps
 brew install appcleaner --cask
 brew install docker --cask
@@ -50,6 +51,7 @@ brew install temurin17 --cask
 brew install vagrant --cask
 brew install virtualbox --cask
 brew install virtualbox-extension-pack --cask
+brew install marta --cask
 
 # Mac App Store
 mas install 823766827 # OneDrive
