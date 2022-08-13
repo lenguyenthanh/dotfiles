@@ -21,7 +21,7 @@ M.setup = function()
 
   local lsp_group = api.nvim_create_augroup("lsp_metals", { clear = true })
 
-  metals_config.on_attach = function (client, bufnr)
+  metals_config.on_attach = function(client, bufnr)
 
     require("plugins.lsp").on_attach(client, bufnr)
 
