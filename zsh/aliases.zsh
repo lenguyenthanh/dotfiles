@@ -39,6 +39,8 @@ function gradlewrapper() { ./gradlew wrapper --gradle-version $1 --distribution-
 # mkdir then cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
+# kill
+alias k9='kill -9'
 
 # Copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
