@@ -203,6 +203,8 @@ return require('packer').startup(function()
     config = [[require("plugins.tree").setup()]],
   }
 
+  use 'numToStr/FTerm.nvim'
+
   use 'mileszs/ack.vim'
 
   -- theme

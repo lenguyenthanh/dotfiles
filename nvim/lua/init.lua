@@ -137,6 +137,11 @@ map("n", "<leader>s\"", "\"ryi\":Ack! <C-r>r<CR>")
 map("n", "<leader>sp", ":Ack! \'<C-r>\"\'<CR>")
 map("n", "<leader>ss", ":Ack! ")
 
+-- Fterm
+
+map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
+map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
 -- COMMANDS -----------------------
 
 -- setup highlight on yank
