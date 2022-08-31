@@ -42,6 +42,9 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 # kill
 alias k9='kill -9'
 
+# Elm
+alias ep='npx elm-pages'
+
 # Copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
 
