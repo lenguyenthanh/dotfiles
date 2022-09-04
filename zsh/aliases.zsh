@@ -11,9 +11,6 @@ alias :c='clear'
 # git
 alias g='git'
 
-# github
-alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
-
 # hoogle
 alias h='hoogle'
 

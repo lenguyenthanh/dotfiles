@@ -14,6 +14,7 @@ brew install fasd
 brew install fd
 brew install fzf
 brew install git
+brew install gh
 brew install git-delta
 brew install gnu-sed
 brew install gnupg2
