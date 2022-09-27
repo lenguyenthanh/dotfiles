@@ -5,6 +5,7 @@ local opt = vim.opt
 
 M.setup = function()
 
+  -- local installed = { "lua", "rust", "kotlin", "java", "haskell" }
   local installed = { "lua", "rust", "kotlin", "markdown", "markdown_inline", "java", "haskell" }
   -- local installed = { "lua", "rust", "kotlin", "java" }
   require("nvim-treesitter.configs").setup({
@@ -17,7 +18,7 @@ M.setup = function()
     ensure_installed = installed,
     highlight = {
       enable = true,
-      disable = { "scala" },
+      disable = { "scala", "markdown", "markdown_inline" },
       additional_vim_regex_highlighting = false,
     },
     indent = {

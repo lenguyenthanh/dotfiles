@@ -51,7 +51,7 @@ M.setup = function()
   telescope.load_extension('fzf')
   telescope.load_extension('scaladex')
   telescope.load_extension('metals')
-  telescope.load_extension('gradle')
+  -- telescope.load_extension('gradle')
   telescope.load_extension('heading')
   telescope.load_extension('frecency')
   telescope.load_extension('luasnip')
@@ -59,12 +59,12 @@ M.setup = function()
   telescope.load_extension('git_worktree')
   telescope.load_extension "ui-select"
 
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "groovy" },
-    callback = function()
-      map('n', '<leader>gr', [[<cmd>lua require("telescope").extensions.gradle.tasks()<cr>]])
-    end,
-  })
+  -- vim.api.nvim_create_autocmd("FileType", {
+  --   pattern = { "groovy" },
+  --   callback = function()
+  --     map('n', '<leader>gr', [[<cmd>lua require("telescope").extensions.gradle.tasks()<cr>]])
+  --   end,
+  -- })
 
 end
 

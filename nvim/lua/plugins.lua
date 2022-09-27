@@ -49,7 +49,6 @@ return require('packer').startup(function()
       run = 'make',
     },
     "benfowler/telescope-luasnip.nvim", -- TODO remove when I have my own snippets
-    'aloussase/telescope-gradle.nvim',
     'crispgm/telescope-heading.nvim',
     'softinio/scaladex.nvim',
     'nvim-telescope/telescope-ui-select.nvim',
