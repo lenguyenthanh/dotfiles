@@ -3,7 +3,6 @@ if require("pre")() then
   return
 end
 
-
 local api = vim.api
 local cmd = vim.cmd
 local g = vim.g
@@ -21,9 +20,6 @@ local go = vim.opt_global
 --================================
 
 local indent = 2
-
--- nvim-metals needs this
-go.shortmess:remove("F"):append("c")
 
 go.termguicolors = true
 go.background = "dark"
