@@ -47,7 +47,7 @@ M.setup = function()
     handlers = {
       ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
     },
-    capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
+    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities),
   })
 
 end
