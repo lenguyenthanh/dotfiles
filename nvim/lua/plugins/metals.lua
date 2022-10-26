@@ -8,10 +8,13 @@ M.setup = function()
   local metals_config = require("metals").bare_config()
 
   metals_config.init_options.statusBarProvider = "on"
+  metals_config.init_options.testExplorerProvider = true
+
   metals_config.settings = {
     showImplicitArguments = true,
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+    testUserInterface = "Test Explorer",
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -29,6 +32,7 @@ M.setup = function()
     map("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]])
     map("n", "<leader>mc", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
     map('n', '<leader>si', [[<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>]])
+    map('n', '<leader>dd', [[<cmd>lua require("metals").select_test_suite()<cr>]])
 
     api.nvim_create_autocmd("CursorHold", {
       callback = vim.lsp.buf.document_highlight,
