@@ -5,9 +5,7 @@ local opt = vim.opt
 
 M.setup = function()
 
-  -- local installed = { "lua", "rust", "kotlin", "java", "haskell" }
   local installed = { "lua", "rust", "kotlin", "markdown", "markdown_inline", "java", "haskell" }
-  -- local installed = { "lua", "rust", "kotlin", "java" }
   require("nvim-treesitter.configs").setup({
     playground = { enable = true },
     query_linter = {
