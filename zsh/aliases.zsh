@@ -74,9 +74,6 @@ alias usenvm='source $(brew --prefix nvm)/nvm.sh'
 alias dk='docker'
 alias dc='docker-compose'
 
-# vagrant
-alias vg='vagrant'
-
 # scala
 alias scala='scala3-repl'
 

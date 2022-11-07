@@ -49,9 +49,9 @@ brew install gpg-suite --cask
 brew install iTerm2 --cask
 brew install intellij-idea --cask
 brew install temurin17 --cask
-brew install vagrant --cask
-brew install virtualbox --cask
-brew install virtualbox-extension-pack --cask
+# brew install vagrant --cask
+# brew install virtualbox --cask
+# brew install virtualbox-extension-pack --cask
 brew install marta --cask
 
 # Mac App Store
