@@ -104,11 +104,14 @@ return require('packer').startup(function()
 
   -- use 'github/copilot.vim'
 
-  -- use {
-  --   'nvim-treesitter/nvim-treesitter',
-  --   run = ':TSUpdate',
-  --   config = [[require("plugins.treesitter").setup()]],
-  -- }
+  use {
+    {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+      config = [[require("plugins.treesitter").setup()]],
+    },
+    'nvim-treesitter/playground'
+  }
 
   -- git
   use {
