@@ -14,7 +14,9 @@ M.setup = function()
     showImplicitArguments = true,
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-    testUserInterface = "Test Explorer",
+    -- testUserInterface = "Test Explorer",
+    -- for testing only
+    -- serverVersion = "0.11.10-SNAPSHOT",
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
