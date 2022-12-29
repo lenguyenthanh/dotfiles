@@ -48,27 +48,27 @@ M.setup = function()
     },
   }
 
-  -- use treesister fold for installed languages only
-  local treesister_fold = vim.api.nvim_create_augroup("treesister_fold", { clear = true })
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = table.insert(installed, 'scala'),
-    callback = function()
-      opt.foldmethod = "expr"
-      opt.foldexpr = "nvim_treesitter#foldexpr()"
-    end,
-    group = treesister_fold,
-  })
+  -- -- use treesister fold for installed languages only
+  -- local treesister_fold = vim.api.nvim_create_augroup("treesister_fold", { clear = true })
+  -- vim.api.nvim_create_autocmd("FileType", {
+  --   pattern = table.insert(installed, 'scala'),
+  --   callback = function()
+  --     opt.foldmethod = "expr"
+  --     opt.foldexpr = "nvim_treesitter#foldexpr()"
+  --   end,
+  --   group = treesister_fold,
+  -- })
 
-  -- hack to enable fold when enter a file
-  -- waiting for Telescope to fix this
-  vim.api.nvim_create_autocmd('BufRead', {
-    callback = function()
-      vim.api.nvim_create_autocmd('BufWinEnter', {
-        once = true,
-        command = 'normal! zx zR'
-      })
-    end
-  })
+  -- -- hack to enable fold when enter a file
+  -- -- waiting for Telescope to fix this
+  -- vim.api.nvim_create_autocmd('BufRead', {
+  --   callback = function()
+  --     vim.api.nvim_create_autocmd('BufWinEnter', {
+  --       once = true,
+  --       command = 'normal! zx zR'
+  --     })
+  --   end
+  -- })
 
 end
 

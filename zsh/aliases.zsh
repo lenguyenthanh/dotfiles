@@ -19,6 +19,9 @@ alias sed='gsed -E'
 
 alias ghcid='stack exec ghcid'
 
+# update all dependencies
+alias utd='cs update && brew upgrade && brew doctor'
+
 # Top
 alias cpu='top -o cpu'
 alias mem='top -o rsize' # memory
@@ -41,7 +44,7 @@ alias k9='kill -9'
 alias killsbt='jps -v | grep sbt-launch | cut -d "'" "'" -f1 | xargs kill -9'
 
 # Elm
-alias ep='npx elm-pages'
+# alias ep='npx elm-pages'
 
 # Copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
