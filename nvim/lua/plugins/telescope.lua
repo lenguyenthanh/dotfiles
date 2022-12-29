@@ -27,8 +27,6 @@ M.setup = function()
 
   map('n', '<leader>gc', [[<cmd>lua require("telescope.builtin").git_commits()<cr>]])
   map('n', '<leader>gb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
-  map('n', '<leader>gw', [[<cmd>lua require("telescope").extensions.git_worktree.git_worktrees()<cr>]])
-  map('n', '<leader>ga', [[<cmd>lua require("telescope").extensions.git_worktree.create_git_worktree()<cr>]])
 
   telescope.setup({
     pickers = {
@@ -51,12 +49,10 @@ M.setup = function()
   telescope.load_extension('fzf')
   telescope.load_extension('scaladex')
   telescope.load_extension('metals')
-  -- telescope.load_extension('gradle')
   telescope.load_extension('heading')
   telescope.load_extension('frecency')
   telescope.load_extension('luasnip')
   telescope.load_extension('neoclip')
-  telescope.load_extension('git_worktree')
   telescope.load_extension "ui-select"
 
   -- vim.api.nvim_create_autocmd("FileType", {

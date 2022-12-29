@@ -113,24 +113,25 @@ return require('packer').startup(function()
     'nvim-treesitter/playground'
   }
 
-  -- git
-  use {
-    'rbong/vim-flog',
-    requires = 'tpope/vim-fugitive',
-  }
-
-  -- Todo think away to make vim-fugitive lazy loading
+  --  Move mapping out
   use 'rhysd/git-messenger.vim'
+  use 'tpope/vim-rhubarb'
   use {
     'tpope/vim-fugitive',
     config = function()
       vim.cmd [[nnoremap gdh :diffget //2<CR>]]
       vim.cmd [[nnoremap gdl :diffget //3<CR>]]
-      vim.cmd [[nnoremap <leader>gd :Gvdiffsplit!<CR>]]
+      vim.cmd [[nnoremap <leader>gds :Gvdiffsplit!<CR>]]
+      vim.cmd [[nnoremap <leader>gg :Git ]]
+      vim.cmd [[nnoremap <leader>gss :Git ss<CR>]]
+      vim.cmd [[nnoremap <leader>gs :Git<CR>]]
+      vim.cmd [[nnoremap <leader>gd :Git diff<CR>]]
+      vim.cmd [[nnoremap <leader>gw :Gwrite<CR>]]
+      vim.cmd [[nnoremap <leader>gbr :GBrowse<CR>]]
     end,
   }
 
-  use 'ThePrimeagen/git-worktree.nvim'
+  -- use 'ThePrimeagen/git-worktree.nvim'
 
   use {
     'lukas-reineke/indent-blankline.nvim',

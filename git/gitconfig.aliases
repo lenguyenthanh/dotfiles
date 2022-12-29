@@ -115,10 +115,10 @@
 
   # bisect
   bs = bisect
-  bss	= bisect start
+  bss = bisect start
   bsb = bisect bad
-  bsg	= bisect good
-  bsr	= bisect reset
+  bsg = bisect good
+  bsr = bisect reset
   bsl = bisect log
 
   # stash
