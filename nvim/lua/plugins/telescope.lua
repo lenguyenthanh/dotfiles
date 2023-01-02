@@ -25,8 +25,8 @@ M.setup = function()
 
   map('n', '<leader>f"', [[<cmd>lua require("telescope").extensions.neoclip.neoclip()<cr>]])
 
-  map('n', '<leader>gc', [[<cmd>lua require("telescope.builtin").git_commits()<cr>]])
-  map('n', '<leader>gb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
+  map('n', '<leader>gl', [[<cmd>lua require("telescope.builtin").git_commits()<cr>]])
+  map('n', '<leader>glb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
 
   telescope.setup({
     pickers = {

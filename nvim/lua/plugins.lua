@@ -118,17 +118,7 @@ return require('packer').startup(function()
   use 'tpope/vim-rhubarb'
   use {
     'tpope/vim-fugitive',
-    config = function()
-      vim.cmd [[nnoremap gdh :diffget //2<CR>]]
-      vim.cmd [[nnoremap gdl :diffget //3<CR>]]
-      vim.cmd [[nnoremap <leader>gds :Gvdiffsplit!<CR>]]
-      vim.cmd [[nnoremap <leader>gg :Git ]]
-      vim.cmd [[nnoremap <leader>gss :Git ss<CR>]]
-      vim.cmd [[nnoremap <leader>gs :Git<CR>]]
-      vim.cmd [[nnoremap <leader>gd :Git diff<CR>]]
-      vim.cmd [[nnoremap <leader>gw :Gwrite<CR>]]
-      vim.cmd [[nnoremap <leader>gbr :GBrowse<CR>]]
-    end,
+    config = [[require("plugins.git").setup()]],
   }
 
   -- use 'ThePrimeagen/git-worktree.nvim'
