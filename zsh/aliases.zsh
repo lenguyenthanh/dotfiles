@@ -20,7 +20,7 @@ alias sed='gsed -E'
 alias ghcid='stack exec ghcid'
 
 # update all dependencies
-alias utd='cs update && brew upgrade && brew doctor'
+alias utd='cs update && brew upgrade && brew doctor && brew cleanup --prune=all'
 
 # Top
 alias cpu='top -o cpu'
