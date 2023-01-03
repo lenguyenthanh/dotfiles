@@ -62,6 +62,10 @@ ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 rm -rf "$HOME/Library/Application Support/org.yanex.marta/conf.marco"
 ln -s $HOME/.dotfiles/preferences/marta.conf "$HOME/Library/Application Support/org.yanex.marta/conf.marco"
 
+# Symlink zshrc
+rm -rf /private/etc/hosts
+sudo ln -s $HOME/.dotfiles/hosts /private/etc/hosts
+
 # Install fzf key bindings and fuzzy compeletion:
 $(brew --prefix)/opt/fzf/install
 
