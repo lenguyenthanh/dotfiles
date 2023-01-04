@@ -36,18 +36,6 @@ M.setup = function()
 
   })
 
-  local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-  parser_config.scala = {
-    install_info = {
-      -- url can be Git repo or a local directory:
-      -- url = "~/work/tree-sitter-scala",
-      url = "https://github.com/eed3si9n/tree-sitter-scala.git",
-      branch = "fork-integration",
-      files = { "src/parser.c", "src/scanner.c" },
-      requires_generate_from_grammar = false,
-    },
-  }
-
   -- -- use treesister fold for installed languages only
   -- local treesister_fold = vim.api.nvim_create_augroup("treesister_fold", { clear = true })
   -- vim.api.nvim_create_autocmd("FileType", {
