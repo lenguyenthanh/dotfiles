@@ -1,13 +1,15 @@
 local M = {}
 
+local lsp = require("lspconfig")
+
 local f = require("functions")
 local map = f.map
-local lsp = require("lspconfig")
 
 M.on_attach = function(client, buffer)
   map('n', '[d', [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]])
   map('n', ']d', [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]])
   map('n', '<leader>la', [[<cmd>lua vim.lsp.buf.code_action()<CR>]])
+  map("n", "<leader>lc", [[<cmd>lua vim.lsp.codelens.run() <CR>]])
   map('n', '<leader>ld', [[<cmd>lua vim.lsp.buf.definition()<CR>]])
   map('n', '<leader>lD', [[<cmd>lua vim.lsp.buf.type_definition()<CR>]])
   map('n', '<leader>li', [[<cmd>lua vim.lsp.buf.implementation()<CR>]])

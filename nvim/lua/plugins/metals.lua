@@ -6,15 +6,19 @@ local map = f.map
 
 M.setup = function()
   local metals_config = require("metals").bare_config()
+  metals_config.tvp = {
+    icons = {
+      enabled = true,
+    },
+  }
 
   metals_config.init_options.statusBarProvider = "on"
-  metals_config.init_options.testExplorerProvider = true
 
   metals_config.settings = {
     showImplicitArguments = true,
+    showImplicitConversionsAndClasses = true,
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
-    -- testUserInterface = "Test Explorer",
     -- for testing only
     -- serverVersion = "0.11.10-SNAPSHOT",
   }
@@ -27,7 +31,6 @@ M.setup = function()
   local lsp_group = api.nvim_create_augroup("lsp_metals", { clear = true })
 
   metals_config.on_attach = function(client, bufnr)
-
     require("plugins.lsp").on_attach(client, bufnr)
 
     map("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]])
