@@ -26,18 +26,18 @@ end
 
 M.setup = function()
 
-  lsp.elixirls.setup {
-    cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
-    on_attach = M.on_attach
-  }
+  -- lsp.elixirls.setup {
+  --   cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
+  --   on_attach = M.on_attach
+  -- }
 
   lsp.sumneko_lua.setup {
     on_attach = M.on_attach,
   }
 
-  lsp.elmls.setup {
-    on_attach = M.on_attach
-  }
+  -- lsp.elmls.setup {
+  --   on_attach = M.on_attach
+  -- }
 
   lsp.hls.setup {
     on_attach = M.on_attach

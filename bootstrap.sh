@@ -58,10 +58,6 @@ ln -s $HOME/.dotfiles/ideavimrc $HOME/.ideavimrc
 rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 
-# Symlink Marta conf
-rm -rf "$HOME/Library/Application Support/org.yanex.marta/conf.marco"
-ln -s $HOME/.dotfiles/preferences/marta.conf "$HOME/Library/Application Support/org.yanex.marta/conf.marco"
-
 # Symlink zshrc
 rm -rf /private/etc/hosts
 sudo ln -s $HOME/.dotfiles/hosts /private/etc/hosts
@@ -74,9 +70,6 @@ pip3 install pynvim
 
 # Install Ansible
 # pip3 install ansible
-
-# https://stackoverflow.com/questions/43433542/stuck-at-android-repositories-cfg-could-not-be-loaded
-touch ~/.android/repositories.cfg
 
 # Default Mac settings
 

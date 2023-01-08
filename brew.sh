@@ -9,7 +9,6 @@ brew install bat
 brew install coreutils # Those that come with macOS are outdated
 brew install coursier/formulas/coursier
 brew install ctags
-brew install elixir
 brew install fasd
 brew install fd
 brew install fzf
@@ -28,7 +27,6 @@ brew install pinentry-mac
 brew install python@3.8
 brew install reattach-to-user-namespace # tmux copy/paste
 brew install ripgrep
-brew install sbt
 brew install tmux
 brew install trash
 brew install tree
@@ -38,6 +36,7 @@ brew install pandoc
 brew install mactex --cask
 brew install jenv
 brew install llvm # scala-native
+brew install alfred
 
 # Apps
 brew install appcleaner --cask
@@ -49,10 +48,6 @@ brew install gpg-suite --cask
 brew install iTerm2 --cask
 brew install intellij-idea --cask
 brew install temurin17 --cask
-# brew install vagrant --cask
-# brew install virtualbox --cask
-# brew install virtualbox-extension-pack --cask
-brew install marta --cask
 
 # Mac App Store
 mas install 823766827 # OneDrive
