@@ -37,6 +37,7 @@ brew install mactex --cask
 brew install jenv
 brew install llvm # scala-native
 brew install alfred
+brew install visualvm
 
 # Apps
 brew install appcleaner --cask
