@@ -15,6 +15,9 @@ echo "Installing brewfile..."
 chmod +x brew.sh
 ./brew.sh
 
+# Accept Xcode license
+sudo xcodebuild -license accept
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
