@@ -33,6 +33,7 @@ echo "Installing Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 echo "Installing Haskell..."
+export BOOTSTRAP_HASKELL_NONINTERACTIVE=yes
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
 # Tmux plugins Manager
@@ -70,9 +71,6 @@ $(brew --prefix)/opt/fzf/install
 
 # Install py3 for Neovim
 pip3 install pynvim
-
-# Install Ansible
-# pip3 install ansible
 
 # Default Mac settings
 
