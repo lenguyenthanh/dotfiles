@@ -3,20 +3,20 @@
 echo "Setting up your Mac..."
 
 # Install Xcode
-xcode-select --install
+# xcode-select --install
 
 # Check for Homebrew and install if we don't have it
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
+# Accept Xcode license
+xcodebuild -license accept
+
 # Install dependencies using brew
 echo "Installing brewfile..."
 chmod +x brew.sh
 ./brew.sh
-
-# Accept Xcode license
-sudo xcodebuild -license accept
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
@@ -63,8 +63,8 @@ rm -rf $HOME/.tmux.conf
 ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 
 # Symlink zshrc
-rm -rf /private/etc/hosts
-sudo ln -s $HOME/.dotfiles/hosts /private/etc/hosts
+# rm -rf /private/etc/hosts
+# sudo ln -s $HOME/.dotfiles/hosts /private/etc/hosts
 
 # Install fzf key bindings and fuzzy compeletion:
 $(brew --prefix)/opt/fzf/install
