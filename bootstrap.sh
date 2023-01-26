@@ -5,7 +5,8 @@ echo "Setting up your Mac..."
 # Install Xcode
 # xcode-select --install
 
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Install brew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Accept Xcode license
 xcodebuild -license accept
