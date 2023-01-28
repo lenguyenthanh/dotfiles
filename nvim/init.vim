@@ -12,12 +12,12 @@ command! -nargs=* HT split | terminal <args>
 command! -nargs=* T vsplit | terminal <args>
 
 " Global status line
-" set laststatus=3
 highlight WinSeparator guibg=None
 
 " Set updatetime for CursorHold
-" 300ms of no cursor movement to trigger CursorHold
-set updatetime=300
+" 500ms of no cursor movement to trigger CursorHold
+set updatetime=500
+
 " Show diagnostic popup on cursor hover
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 

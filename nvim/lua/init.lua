@@ -150,7 +150,6 @@ api.nvim_create_autocmd("TextYankPost", {
   group = lua_highlight,
 })
 
-
 cmd([[hi! link StatusLineNC Comment]])
 cmd([[hi! link StatusError DiagnosticError]])
 cmd([[hi! link StatusWarn DiagnosticWarn]])
