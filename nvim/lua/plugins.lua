@@ -104,6 +104,8 @@ return require('packer').startup(function()
     config = [[require("plugins.rust").setup()]],
   }
 
+  use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+
   use 'github/copilot.vim'
 
   use {

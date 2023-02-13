@@ -31,7 +31,7 @@ M.setup = function()
   --   on_attach = M.on_attach
   -- }
 
-  lsp.sumneko_lua.setup {
+  lsp.lua_ls.setup {
     on_attach = M.on_attach,
   }
 
