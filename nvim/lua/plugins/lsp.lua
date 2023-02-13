@@ -21,18 +21,16 @@ M.on_attach = function(client, buffer)
 
   map("n", "<leader>lds", [[<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>]])
   map("n", "<leader>lws", [[<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>]])
-
 end
 
 M.setup = function()
-
   -- lsp.elixirls.setup {
   --   cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
   --   on_attach = M.on_attach
   -- }
 
   lsp.lua_ls.setup {
-    on_attach = M.on_attach,
+      on_attach = M.on_attach,
   }
 
   -- lsp.elmls.setup {
@@ -40,18 +38,17 @@ M.setup = function()
   -- }
 
   lsp.hls.setup {
-    on_attach = M.on_attach
+      on_attach = M.on_attach
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
-    handlers = {
-      ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
-    },
-    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities),
-  })
-
+          handlers = {
+              ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
+          },
+          capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities),
+      })
 end
 
 return M

@@ -4,7 +4,6 @@ local f = require("functions")
 local map = f.map
 
 M.setup = function()
-
   local dap = require("dap")
 
   dap.listeners.after["event_terminated"]["nvim-metals"] = function(session, body)
@@ -13,34 +12,34 @@ M.setup = function()
   end
 
   dap.configurations.scala = {
-    {
-      type = "scala",
-      request = "launch",
-      name = "Run",
-      metals = {
-        runType = "runOrTestFile",
+      {
+          type = "scala",
+          request = "launch",
+          name = "Run",
+          metals = {
+              runType = "runOrTestFile",
+          },
       },
-    },
-    {
-      type = "scala",
-      request = "launch",
-      name = "RunWithArgs",
-      metals = {
-        runType = "runOrTestFile",
-        args = function()
-          local args_string = vim.fn.input('Arguments: ')
-          return vim.split(args_string, " +")
-        end
+      {
+          type = "scala",
+          request = "launch",
+          name = "RunWithArgs",
+          metals = {
+              runType = "runOrTestFile",
+              args = function()
+                local args_string = vim.fn.input('Arguments: ')
+                return vim.split(args_string, " +")
+              end
+          },
       },
-    },
-    {
-      type = "scala",
-      request = "launch",
-      name = "Test Target",
-      metals = {
-        runType = "testTarget",
+      {
+          type = "scala",
+          request = "launch",
+          name = "Test Target",
+          metals = {
+              runType = "testTarget",
+          },
       },
-    },
   }
 
   map("n", "<leader>dc", [[<cmd>lua require("dap").continue()<CR>]])
@@ -50,7 +49,6 @@ M.setup = function()
   map("n", "<leader>db", [[<cmd>lua require("dap").toggle_breakpoint()<CR>]])
   map("n", "<leader>dso", [[<cmd>lua require("dap").step_over()<CR>]])
   map("n", "<leader>dsi", [[<cmd>lua require("dap").step_into()<CR>]])
-
 end
 
 return M

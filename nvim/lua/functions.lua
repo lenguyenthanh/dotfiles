@@ -12,17 +12,17 @@ end
 
 M.search_dotfiles = function()
   require("telescope.builtin").find_files({
-    prompt_title = "< Dotfiles >",
-    cwd = vim.env.DOTFILES,
-    hidden = false,
+      prompt_title = "< Dotfiles >",
+      cwd = vim.env.DOTFILES,
+      hidden = false,
   })
 end
 
 M.search_notes = function()
   require("telescope.builtin").find_files({
-    prompt_title = "< Notes >",
-    cwd = "~/source/personal/notes",
-    hidden = false,
+      prompt_title = "< Notes >",
+      cwd = "~/source/personal/notes",
+      hidden = false,
   })
 end
 

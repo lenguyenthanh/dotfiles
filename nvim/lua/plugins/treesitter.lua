@@ -5,34 +5,32 @@ local vim = vim
 local opt = vim.opt
 
 M.setup = function()
-
   local installed = { "lua", "rust", "kotlin", "markdown", "markdown_inline", "java", "haskell" }
   require("nvim-treesitter.configs").setup({
-    playground = { enable = true },
-    query_linter = {
-      enable = true,
-      use_virtual_text = true,
-      lint_events = { "BufWrite", "CursorHold" },
-    },
-    ensure_installed = installed,
-    highlight = {
-      enable = true,
-      -- disable = { "scala", "markdown", "markdown_inline" },
-      additional_vim_regex_highlighting = false,
-    },
-    indent = {
-      enable = true
-    },
-
-    --incremental_selection = {
-    --enable = true,
-    --keymaps = {
-    --init_selection = "gnn",
-    --node_incremental = "grn",
-    --scnpe_incremental = "grc",
-    --node_decremental = "grm",
-    --},
-    --},
+      playground = { enable = true },
+      query_linter = {
+          enable = true,
+          use_virtual_text = true,
+          lint_events = { "BufWrite", "CursorHold" },
+      },
+      ensure_installed = installed,
+      highlight = {
+          enable = true,
+          -- disable = { "scala", "markdown", "markdown_inline" },
+          additional_vim_regex_highlighting = false,
+      },
+      indent = {
+          enable = true
+      },
+      --incremental_selection = {
+      --enable = true,
+      --keymaps = {
+      --init_selection = "gnn",
+      --node_incremental = "grn",
+      --scnpe_incremental = "grc",
+      --node_decremental = "grm",
+      --},
+      --},
 
   })
 
@@ -57,7 +55,6 @@ M.setup = function()
   --     })
   --   end
   -- })
-
 end
 
 return M
