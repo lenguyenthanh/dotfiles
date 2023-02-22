@@ -22,6 +22,7 @@ brew install lua-language-server
 brew install mas # Mac App Store command-line
 brew install neovim
 brew install nvm
+bew install node@18
 brew install pass
 brew install pinentry-mac
 brew install python@3.8

@@ -2,14 +2,19 @@
 
 echo "Setting up your Mac..."
 
-# Install Xcode
-xcode-select --install
+# Install XCode Command Line Tools.
+xcode-select --install &> /dev/null
 
-# Install brew
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Wait until XCode Command Line Tools installation has finished.
+until $(xcode-select --print-path &> /dev/null); do
+  sleep 5;
+done
 
 # Accept Xcode license
-xcodebuild -license accept
+sudo xcodebuild -license accept
+
+# Install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install dependencies using brew
 echo "Installing brewfile..."

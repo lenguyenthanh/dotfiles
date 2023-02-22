@@ -17,3 +17,12 @@
 ## Ideas
 
 - [ ] dot grapviz neovim plugin
+
+
+## TODO after run install.sh
+
+- Iterm preferences
+  - Load preferences
+  - import color preset
+  - font
+- Alfred
