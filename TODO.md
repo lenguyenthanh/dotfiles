@@ -13,3 +13,7 @@
 
 - [ ] rustup without prompt: https://github.com/rust-lang/rustup/issues/1031
 - [ ] ghcup without prompt: https://github.com/rust-lang/rustup/issues/1031
+
+## Ideas
+
+- [ ] dot grapviz neovim plugin

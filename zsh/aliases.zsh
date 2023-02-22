@@ -78,6 +78,9 @@ alias usenvm='source $(brew --prefix nvm)/nvm.sh'
 alias dk='docker'
 alias dc='docker-compose'
 
+# Support italics in tmux
+alias tmux='env TERM=screen-256color tmux'
+
 # scala
 alias scala='scala3-repl'
 
