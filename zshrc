@@ -14,3 +14,6 @@ ZSH_CUSTOM=$DOTFILES/zsh
 
 # Active completion
 . $DOTFILES/zsh/completion
+
+# copilot-cli alias
+eval "$(github-copilot-cli alias -- "$0")"
