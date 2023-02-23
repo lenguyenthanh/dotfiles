@@ -8,6 +8,7 @@
 - [ ] Custom luasnip
 - [ ] Proper Rust setup
 - [ ] Disable hjkl
+- [ ] Only enable dap when using
 
 ## Bootstrap
 

@@ -32,6 +32,8 @@ cp $HOME/.dotfiles/themes/nt9.zsh-theme $HOME/.oh-my-zsh/themes/
 echo "Installing Scala...."
 cs setup
 
+scala-cli config power true
+
 echo "Installing Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
@@ -54,7 +56,7 @@ ln -s $HOME/.dotfiles/git/gitconfig $HOME/.gitconfig
 
 # Symlink neovim
 rm -rf $HOME/.config/nvim/init.vim
-mkdir -p .config/nvim
+mkdir -p $HOME/.config/nvim
 ln -s $HOME/.dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
 
 # Symlink ideavimrc

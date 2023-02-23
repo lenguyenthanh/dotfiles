@@ -11,7 +11,7 @@ export ANDROID_NDK_HOME="/usr/local/share/android-ndk"
 export PATH="$JAVA_HOME/bin:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH"
 
 # Node
-export PATH="/usr/local/opt/node@16/bin:$PATH"
+export PATH="/usr/local/opt/node@18/bin:$PATH"
 
 # RUST
 export PATH="$HOME/.cargo/bin:$PATH"

@@ -21,22 +21,20 @@ brew install jq
 brew install lua-language-server
 brew install mas # Mac App Store command-line
 brew install neovim
-brew install nvm
-bew install node@18
+brew install node@18
 brew install pass
 brew install pinentry-mac
-brew install python@3.8
+brew install python
 brew install reattach-to-user-namespace # tmux copy/paste
 brew install ripgrep
 brew install tmux
 brew install trash
 brew install tree
-brew install yarn
 brew install zsh
 brew install pandoc
 brew install mactex --cask
 brew install jenv
-brew install llvm # scala-native
+brew install llvm
 brew install alfred
 brew install visualvm
 
@@ -53,7 +51,7 @@ brew install temurin17 --cask
 
 # Mac App Store
 mas install 823766827 # OneDrive
-mas install 497799835 # Xcode
+# mas install 497799835 # Xcode
 
 # fonts
 brew install font-fira-code --cask
