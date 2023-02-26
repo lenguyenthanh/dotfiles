@@ -3,233 +3,233 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
-      -- PackerSync after save
-      vim.cmd([[
+  -- PackerSync after save
+  vim.cmd([[
     augroup packer_user_config
       autocmd!
       autocmd BufWritePost plugins.lua source <afile> | PackerSync
     augroup end
   ]])
 
-      -- Packer can manage itself
-      use 'wbthomason/packer.nvim'
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-      use "folke/neodev.nvim"
+  use "folke/neodev.nvim"
 
-      -- comment
-      use {
-          'numToStr/Comment.nvim',
-          config = [[require('plugins.comment').setup()]]
+  -- comment
+  use {
+    'numToStr/Comment.nvim',
+    config = [[require('plugins.comment').setup()]]
+  }
+
+  -- todo write my own luasnip functions
+  use {
+    'L3MON4D3/LuaSnip',
+    requires = "rafamadriz/friendly-snippets", -- TODO remove when I have my own snippets
+    config = [[require("plugins.snippets").setup()]]
+  }
+
+  -- telescope
+  use {
+    {
+      'nvim-telescope/telescope.nvim',
+      requires = {
+        'nvim-lua/popup.nvim',
+        'nvim-lua/plenary.nvim',
+        'vim-telescope/telescope-frecency.nvim',
+        'telescope-fzf-native.nvim',
+      },
+      config = [[require("plugins.telescope").setup()]],
+    },
+    {
+      'nvim-telescope/telescope-frecency.nvim',
+      requires = 'tami5/sqlite.lua',
+    },
+    {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      run = 'make',
+    },
+    "benfowler/telescope-luasnip.nvim", -- TODO remove when I have my own snippets
+    'crispgm/telescope-heading.nvim',
+    'softinio/scaladex.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
+    'nvim-telescope/telescope-symbols.nvim',
+  }
+
+  -- nvim-cmp autocompletion
+  use {
+    {
+      'hrsh7th/nvim-cmp',
+      config = [[require("plugins.cmp").setup()]],
+    },
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'saadparwaiz1/cmp_luasnip',
+    'octaltree/cmp-look',
+    'hrsh7th/cmp-nvim-lua',
+  }
+
+  -- lsp
+  use {
+    {
+      'neovim/nvim-lspconfig',
+      config = [[require("plugins.lsp").setup()]],
+      require = {
+        'nvim-lua/plenary.nvim',
       }
+    },
+    'kevinhwang91/nvim-bqf', -- better quickfix
+    'ray-x/lsp_signature.nvim',
+  }
 
-      -- todo write my own luasnip functions
-      use {
-          'L3MON4D3/LuaSnip',
-          requires = "rafamadriz/friendly-snippets", -- TODO remove when I have my own snippets
-          config = [[require("plugins.snippets").setup()]]
-      }
+  -- dap
+  use {
+    'mfussenegger/nvim-dap',
+    config = [[require("plugins.dap").setup()]],
+  }
 
-      -- telescope
-      use {
-          {
-              'nvim-telescope/telescope.nvim',
-              requires = {
-                  'nvim-lua/popup.nvim',
-                  'nvim-lua/plenary.nvim',
-                  'vim-telescope/telescope-frecency.nvim',
-                  'telescope-fzf-native.nvim',
-              },
-              config = [[require("plugins.telescope").setup()]],
-          },
-          {
-              'nvim-telescope/telescope-frecency.nvim',
-              requires = 'tami5/sqlite.lua',
-          },
-          {
-              'nvim-telescope/telescope-fzf-native.nvim',
-              run = 'make',
-          },
-          "benfowler/telescope-luasnip.nvim", -- TODO remove when I have my own snippets
-          'crispgm/telescope-heading.nvim',
-          'softinio/scaladex.nvim',
-          'nvim-telescope/telescope-ui-select.nvim',
-          'nvim-telescope/telescope-symbols.nvim',
-      }
+  -- scala metals
+  use {
+    {
+      'scalameta/nvim-metals',
+      config = [[require("plugins.metals").setup()]],
+    },
+    'derekwyatt/vim-scala',
+  }
 
-      -- nvim-cmp autocompletion
-      use {
-          {
-              'hrsh7th/nvim-cmp',
-              config = [[require("plugins.cmp").setup()]],
-          },
-          'hrsh7th/cmp-nvim-lsp',
-          'hrsh7th/cmp-buffer',
-          'hrsh7th/cmp-path',
-          'saadparwaiz1/cmp_luasnip',
-          'octaltree/cmp-look',
-          'hrsh7th/cmp-nvim-lua',
-      }
+  use {
+    'simrat39/rust-tools.nvim',
+    config = [[require("plugins.rust").setup()]],
+  }
 
-      -- lsp
-      use {
-          {
-              'neovim/nvim-lspconfig',
-              config = [[require("plugins.lsp").setup()]],
-              require = {
-                  'nvim-lua/plenary.nvim',
-              }
-          },
-          'kevinhwang91/nvim-bqf', -- better quickfix
-          'ray-x/lsp_signature.nvim',
-      }
+  use {
+    'akinsho/flutter-tools.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = [[require("flutter-tools").setup{}]],
+  }
 
-      -- dap
-      use {
-          'mfussenegger/nvim-dap',
-          config = [[require("plugins.dap").setup()]],
-      }
+  use 'github/copilot.vim'
 
-      -- scala metals
-      use {
-          {
-              'scalameta/nvim-metals',
-              config = [[require("plugins.metals").setup()]],
-          },
-          'derekwyatt/vim-scala',
-      }
+  use {
+    {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+      config = [[require("plugins.treesitter").setup()]],
+    },
+    'nvim-treesitter/playground'
+  }
 
-      use {
-          'simrat39/rust-tools.nvim',
-          config = [[require("plugins.rust").setup()]],
-      }
+  --  Move mapping out
+  use 'rhysd/git-messenger.vim'
+  -- GitHub extension for fugitive.vim
+  use 'tpope/vim-rhubarb'
+  use {
+    'tpope/vim-fugitive',
+    config = [[require("plugins.git").setup()]],
+  }
 
-      use {
-          'akinsho/flutter-tools.nvim',
-          requires = 'nvim-lua/plenary.nvim',
-          config = [[require("flutter-tools").setup{}]],
-      }
+  -- use 'ThePrimeagen/git-worktree.nvim'
 
-      use 'github/copilot.vim'
+  use {
+    'lukas-reineke/indent-blankline.nvim',
+    config = [[require("plugins.indent").setup()]],
+  }
 
-      use {
-          {
-              'nvim-treesitter/nvim-treesitter',
-              run = ':TSUpdate',
-              config = [[require("plugins.treesitter").setup()]],
-          },
-          'nvim-treesitter/playground'
-      }
+  -- Writing focus mode
+  use 'junegunn/goyo.vim'
 
-      --  Move mapping out
-      use 'rhysd/git-messenger.vim'
-      -- GitHub extension for fugitive.vim
-      use 'tpope/vim-rhubarb'
-      use {
-          'tpope/vim-fugitive',
-          config = [[require("plugins.git").setup()]],
-      }
+  -- Destroy trailing whitespace
+  -- use 'bronson/vim-trailing-whitespace'
 
-      -- use 'ThePrimeagen/git-worktree.nvim'
+  use { "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    ft = { "markdown" },
+    config = function()
+      vim.cmd [[nnoremap <leader>vm :MarkdownPreview<CR>]]
+    end,
+  }
 
-      use {
-          'lukas-reineke/indent-blankline.nvim',
-          config = [[require("plugins.indent").setup()]],
-      }
+  -- dictionary
+  -- Add shortcut for vim motion
+  use {
+    'xfyuan/vim-mac-dictionary',
+    requires = 'skywind3000/vim-quickui',
+    config = function()
+      vim.cmd [[nnoremap <leader>ww :MacDictPopup<CR>]]
+      vim.cmd [[nnoremap <leader>wd :MacDictWord<CR>]]
+      vim.cmd [[nnoremap <leader>wq :MacDictQuery<CR>]]
+    end,
+  }
 
-      -- Writing focus mode
-      use 'junegunn/goyo.vim'
+  -- fades inactive buffers
+  use {
+    "TaDaa/vimade",
+    config = function()
+      vim.cmd [[nnoremap yot :VimadeToggle<CR>]]
+    end,
+  }
 
-      -- Destroy trailing whitespace
-      -- use 'bronson/vim-trailing-whitespace'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
+  use 'tpope/vim-unimpaired'
 
-      use { "iamcco/markdown-preview.nvim",
-          run = "cd app && npm install",
-          setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-          ft = { "markdown" },
-          config = function()
-            vim.cmd [[nnoremap <leader>vm :MarkdownPreview<CR>]]
-          end,
-      }
+  use {
+    "windwp/nvim-autopairs",
+    config = [[require('nvim-autopairs').setup({ })]],
+  }
 
-      -- dictionary
-      -- Add shortcut for vim motion
-      use {
-          'xfyuan/vim-mac-dictionary',
-          requires = 'skywind3000/vim-quickui',
-          config = function()
-            vim.cmd [[nnoremap <leader>ww :MacDictPopup<CR>]]
-            vim.cmd [[nnoremap <leader>wd :MacDictWord<CR>]]
-            vim.cmd [[nnoremap <leader>wq :MacDictQuery<CR>]]
-          end,
-      }
+  use "kyazdani42/nvim-web-devicons"
 
-      -- fades inactive buffers
-      use {
-          "TaDaa/vimade",
-          config = function()
-            vim.cmd [[nnoremap yot :VimadeToggle<CR>]]
-          end,
-      }
+  use {
+    'junegunn/vim-easy-align',
+    config = function()
+      vim.cmd [[xmap ga <Plug>(EasyAlign)]]
+      vim.cmd [[nmap ga <Plug>(EasyAlign)]]
+    end,
+  }
 
-      use 'tpope/vim-surround'
-      use 'tpope/vim-repeat'
-      use 'tpope/vim-unimpaired'
+  -- Tmux
+  use 'christoomey/vim-tmux-navigator'
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = 'nvim-telescope/telescope.nvim',
+    config = [[require('neoclip').setup()]],
+  }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' },
+    config = [[require("plugins.tree").setup()]],
+  }
 
-      use {
-          "windwp/nvim-autopairs",
-          config = [[require('nvim-autopairs').setup({ })]],
-      }
+  use 'numToStr/FTerm.nvim'
 
-      use "kyazdani42/nvim-web-devicons"
+  use 'mileszs/ack.vim'
 
-      use {
-          'junegunn/vim-easy-align',
-          config = function()
-            vim.cmd [[xmap ga <Plug>(EasyAlign)]]
-            vim.cmd [[nmap ga <Plug>(EasyAlign)]]
-          end,
-      }
+  -- theme
+  use {
+    disable = false,
+    'rebelot/kanagawa.nvim',
+    config = function()
+      vim.cmd('colorscheme kanagawa')
+    end
+  }
 
-      -- Tmux
-      use 'christoomey/vim-tmux-navigator'
-      use {
-          "AckslD/nvim-neoclip.lua",
-          requires = 'nvim-telescope/telescope.nvim',
-          config = [[require('neoclip').setup()]],
-      }
-      use {
-          'kyazdani42/nvim-tree.lua',
-          requires = 'kyazdani42/nvim-web-devicons',
-          cmd = { 'NvimTreeToggle', 'NvimTreeFindFileToggle' },
-          config = [[require("plugins.tree").setup()]],
-      }
+  use {
+    disable = true,
+    'joshdick/onedark.vim',
+    config = function()
+      vim.cmd('colorscheme onedark')
+    end
+  }
 
-      use 'numToStr/FTerm.nvim'
-
-      use 'mileszs/ack.vim'
-
-      -- theme
-      use {
-          disable = false,
-          'rebelot/kanagawa.nvim',
-          config = function()
-            vim.cmd('colorscheme kanagawa')
-          end
-      }
-
-      use {
-          disable = true,
-          'joshdick/onedark.vim',
-          config = function()
-            vim.cmd('colorscheme onedark')
-          end
-      }
-
-      use {
-          disable = true,
-          'ayu-theme/ayu-vim',
-          config = function()
-            vim.cmd('colorscheme ayu')
-          end
-      }
-    end)
+  use {
+    disable = true,
+    'ayu-theme/ayu-vim',
+    config = function()
+      vim.cmd('colorscheme ayu')
+    end
+  }
+end)
