@@ -140,7 +140,7 @@ return require('packer').startup(function()
   use 'junegunn/goyo.vim'
 
   -- Destroy trailing whitespace
-  -- use 'bronson/vim-trailing-whitespace'
+  use 'bronson/vim-trailing-whitespace'
 
   use { "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",

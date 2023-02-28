@@ -42,6 +42,7 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 # kill
 alias k9='kill -9'
 alias killsbt='jps -v | grep sbt-launch | cut -d "'" "'" -f1 | xargs kill -9'
+alias killmetals='jps -v | grep metals | cut -d "'" "'" -f1 | xargs kill -9'
 
 # Elm
 # alias ep='npx elm-pages'
