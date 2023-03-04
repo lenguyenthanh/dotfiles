@@ -106,5 +106,8 @@
 [commit]
   gpgsign = true
 
-[includeIf "gitdir:~/source/ttc/"]
-  path = ~/.dotfiles/git/gitconfig.ttc
+[user]
+	signingkey = 09577D5140217D8F
+
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg
