@@ -1,6 +1,5 @@
 # Local/private config goes in the include
 [include]
-  path = ~/.dotfiles/git/gitconfig.local
   path = ~/.dotfiles/git/gitconfig.aliases
   path = ~/.dotfiles/git/gitconfig.delta
 
@@ -10,6 +9,8 @@
 [user]
   name = Thanh Le
   email = lenguyenthanh@hotmail.com
+	signingkey = 09577D5140217D8F
+
 
 [core]
   excludesfile = ~/.dotfiles/git/gitignore.global
@@ -105,9 +106,6 @@
 
 [commit]
   gpgsign = true
-
-[user]
-	signingkey = 09577D5140217D8F
 
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg
