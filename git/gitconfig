@@ -11,7 +11,6 @@
   email = lenguyenthanh@hotmail.com
 	signingkey = 09577D5140217D8F
 
-
 [core]
   excludesfile = ~/.dotfiles/git/gitignore.global
   editor = nvim
