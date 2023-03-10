@@ -108,3 +108,6 @@
 
 [gpg]
 	program = /usr/local/MacGPG2/bin/gpg
+
+[includeIf "gitdir:~/work/git/"]
+  path = ~/.dotfiles/git/gitconfig.rf.local

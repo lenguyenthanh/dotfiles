@@ -21,7 +21,7 @@ end
 M.search_notes = function()
   require("telescope.builtin").find_files({
       prompt_title = "< Notes >",
-      cwd = "~/source/personal/notes",
+      cwd = "~/git/personal/notes",
       hidden = false,
   })
 end

@@ -62,6 +62,7 @@ alias ip='ifconfig | rg inet'
 
 # python3 as default
 alias python='python3'
+alias pip=pip3
 
 # scala-cli
 alias sc='scala-cli'
@@ -78,9 +79,6 @@ alias usenvm='source $(brew --prefix nvm)/nvm.sh'
 # docker
 alias dk='docker'
 alias dc='docker-compose'
-
-# Support italics in tmux
-alias tmux='env TERM=screen-256color tmux'
 
 # scala
 alias scala='scala3-repl'

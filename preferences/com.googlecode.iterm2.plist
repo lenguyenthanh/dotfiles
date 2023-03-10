@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AdjustWindowForFontSizeChange</key>
+	<true/>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AlternateMouseScroll</key>
@@ -1051,6 +1053,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>2DD113D5-070F-4F28-BBCE-B473E9BD808E</string>
+	<key>DisableFullscreenTransparency</key>
+	<false/>
 	<key>DisableWindowSizeSnap</key>
 	<true/>
 	<key>DoubleClickPerformsSmartSelection</key>
@@ -1059,6 +1063,8 @@
 	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideTabNumber</key>
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -1299,6 +1305,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Background Image Mode</key>
+			<integer>0</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1386,6 +1394,8 @@
 			<string>Default</string>
 			<key>Disable Window Resizing</key>
 			<true/>
+			<key>Draw Powerline Glyphs</key>
+			<true/>
 			<key>Flashing Bell</key>
 			<false/>
 			<key>Foreground Color</key>
@@ -1407,6 +1417,8 @@
 			<real>1</real>
 			<key>Idle Code</key>
 			<integer>0</integer>
+			<key>Initial Use Transparency</key>
+			<true/>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -1711,9 +1723,9 @@
 				<real>0.44705882668495178</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.30051491477272729</real>
+			<real>0.30311908143939392</real>
 			<key>Mouse Reporting</key>
-			<true/>
+			<false/>
 			<key>Mouse Reporting allow mouse wheel</key>
 			<true/>
 			<key>Name</key>
@@ -1789,6 +1801,8 @@
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
 			<integer>4</integer>
+			<key>Title Components</key>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -1806,7 +1820,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>15</integer>
 			<key>Working Directory</key>
 			<string>/Users/thanhle</string>
 		</dict>
@@ -1816,7 +1830,7 @@
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PerPaneBackgroundImage</key>
@@ -1862,10 +1876,12 @@
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
+	<key>SmartPlacement</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.40238247769550206</real>
+	<real>0.40218109723433709</real>
 	<key>StretchTabsToFillBar</key>
 	<true/>
 	<key>SwitchTabModifier</key>
@@ -1873,9 +1889,13 @@
 	<key>SwitchWindowModifier</key>
 	<integer>9</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>5</integer>
+	<integer>6</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalMargin</key>
+	<integer>4</integer>
+	<key>TerminalVMargin</key>
+	<integer>7</integer>
 	<key>TmuxUsesDedicatedProfile</key>
 	<true/>
 	<key>ToolbeltTools</key>
@@ -1883,6 +1903,8 @@
 		<string>Profiles</string>
 	</array>
 	<key>Use background pattern indicator</key>
+	<true/>
+	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>UseVirtualKeyCodesForDetectingDigits</key>
 	<false/>

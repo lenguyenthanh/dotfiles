@@ -1,9 +1,5 @@
  #!/bin/zsh
 
-# You may need to manually set your language environment
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-
 # Theme
 ZSH_THEME="nt9"
 
@@ -31,7 +27,7 @@ export FZF_DEFAULT_OPTS='
 # GPG signing
 export GPG_TTY=$(tty)
 
-[ -f "/Users/thanhle/.ghcup/env" ] && source "/Users/thanhle/.ghcup/env" # ghcup-env
+source $HOME/.ghcup/env
 
 # nvm
 export NVM_DIR="$HOME/.nvm"

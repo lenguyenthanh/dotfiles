@@ -24,10 +24,6 @@ M.on_attach = function(client, buffer)
 end
 
 M.setup = function()
-  -- lsp.elixirls.setup {
-  --   cmd = { "/Users/thanhle/source/elixir/elixir-ls/release/language_server.sh" };
-  --   on_attach = M.on_attach
-  -- }
 
   lsp.lua_ls.setup {
       on_attach = M.on_attach,

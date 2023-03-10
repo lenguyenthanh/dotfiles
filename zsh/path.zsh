@@ -1,21 +1,21 @@
 # PATH
-export PATH="~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 
-# JAVA & ANDROID
+# JAVA
 export PATH="$JAVA_HOME/bin:$PATH"
 
 # RUST
 export PATH="$HOME/.cargo/bin:$PATH"
-RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
-
-# Coursier
-export PATH="$PATH:/Users/thanhle/Library/Application Support/Coursier/bin"
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
 # mactext
-export PATH=$PATH:/Library/TeX/texbin/:/opt/homebrew/bin
+export PATH=$PATH:/Library/TeX/texbin/
 
 # jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+
+# private local path
+. $DOTFILES/zsh/path.local

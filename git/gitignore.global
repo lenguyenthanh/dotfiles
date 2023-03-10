@@ -15,3 +15,6 @@ rusty-tags.vi
 
 project/project/
 project/metals.sbt
+
+.java-version
+.python-version
