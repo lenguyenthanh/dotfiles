@@ -10,6 +10,11 @@
 - [ ] Disable hjkl
 - [ ] Only enable dap when using
 
+## Common
+
+- [ ] functions.zsh for all function
+
+
 ## Ideas
 
 - [ ] dot grapviz neovim plugin

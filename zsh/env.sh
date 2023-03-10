@@ -4,7 +4,7 @@
 ZSH_THEME="nt9"
 
 # Oh-My-Zsh Plugins
-plugins=(fzf fasd colored-man-pages)
+plugins=(fzf fasd colored-man-pages gradle-completion)
 
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh
@@ -33,3 +33,23 @@ source $HOME/.ghcup/env
 export NVM_DIR="$HOME/.nvm"
 
 export EDITOR=nvim
+
+complete -F _gradle gw
+function gw {
+    gradle=$(
+	current=$(pwd)
+	while [ ! -f gradlew ]; do
+	    cd ..
+	    if [ $current = $(pwd) ]; then
+		exit 1
+	    fi
+	    current=$(pwd)
+	done
+	echo $current/gradlew
+    )
+    if [ $? = 0 ]; then
+	$gradle $*
+    else
+	echo "Could not find gradlew"
+    fi
+}

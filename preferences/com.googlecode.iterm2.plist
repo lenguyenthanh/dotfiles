@@ -4,10 +4,12 @@
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
+	<key>AggressiveFocusFollowsMouse</key>
+	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
 	<key>AlternateMouseScroll</key>
-	<false/>
+	<true/>
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>CopyLastNewline</key>
@@ -1835,6 +1837,8 @@
 	<false/>
 	<key>PerPaneBackgroundImage</key>
 	<false/>
+	<key>PinchToChangeFontSizeDisabled</key>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1905,6 +1909,8 @@
 	<key>Use background pattern indicator</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
+	<true/>
+	<key>UseSystemCursorWhenPossible</key>
 	<true/>
 	<key>UseVirtualKeyCodesForDetectingDigits</key>
 	<false/>

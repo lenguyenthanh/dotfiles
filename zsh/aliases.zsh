@@ -27,12 +27,8 @@ alias cpu='top -o cpu'
 alias mem='top -o rsize' # memory
 
 # Gradle
-alias gw='./gradlew'
-alias grdcln='./gradlew clean'
-alias grdcheck='./gradlew clean check'
-alias grdclnb='./gradlew clean build'
-alias installAll='./gradlew :app:installAll'
-alias installDebug='./gradlew :app:installDebug'
+alias grdcheck='gw clean check'
+alias grdclnb='gw clean build'
 
 function gradlewrapper() { ./gradlew wrapper --gradle-version $1 --distribution-type all}
 
@@ -91,6 +87,12 @@ function cheatsheet() { curl "cheat.sh/$1" | cat }
 function qrcode() { curl "qrenco.de/$1" }
 function dict() { curl "dict.org/d:$1" | cat }
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+
+# pass
+alias pg='pass git'
+
+# quick restart zshrc
+alias zrc='source ~/.zshrc'
 
 # chess
 function dlgames() { curl -L -o $1_$2.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }
