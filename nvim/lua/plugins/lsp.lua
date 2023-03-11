@@ -24,9 +24,8 @@ M.on_attach = function(client, buffer)
 end
 
 M.setup = function()
-
   lsp.lua_ls.setup {
-      on_attach = M.on_attach,
+    on_attach = M.on_attach,
   }
 
   -- lsp.elmls.setup {
@@ -34,17 +33,17 @@ M.setup = function()
   -- }
 
   lsp.hls.setup {
-      on_attach = M.on_attach
+    on_attach = M.on_attach
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
   lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
-          handlers = {
-              ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
-          },
-          capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities),
-      })
+    handlers = {
+          ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
+    },
+    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities),
+  })
 end
 
 return M

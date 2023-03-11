@@ -29,21 +29,21 @@ M.setup = function()
   map('n', '<leader>glb', [[<cmd>lua require("telescope.builtin").git_bcommits()<cr>]])
 
   telescope.setup({
-      pickers = {
-          buffers = {
-              sort_lastused = true
-          }
-      },
-      extensions = {
-          ["ui-select"] = {
-              require("telescope.themes").get_dropdown {}
-          },
-          fzf = {
-              fuzzy = true, -- false will only do exact matching
-              override_generic_sorter = true, -- override the generic sorter
-              override_file_sorter = true, -- override the file sorter
-          }
+    pickers = {
+      buffers = {
+        sort_lastused = true
       }
+    },
+    extensions = {
+          ["ui-select"] = {
+        require("telescope.themes").get_dropdown {}
+      },
+      fzf = {
+        fuzzy = true,                         -- false will only do exact matching
+        override_generic_sorter = true,       -- override the generic sorter
+        override_file_sorter = true,          -- override the file sorter
+      }
+    }
   })
 
   telescope.load_extension('fzf')

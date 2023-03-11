@@ -111,14 +111,14 @@ return require('packer').startup(function()
 
   use 'github/copilot.vim'
 
-  -- use {
-  --   {
-  --     'nvim-treesitter/nvim-treesitter',
-  --     run = ':TSUpdate',
-  --     config = [[require("plugins.treesitter").setup()]],
-  --   },
-  --   'nvim-treesitter/playground'
-  -- }
+  use {
+    {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+      config = [[require("plugins.treesitter").setup()]],
+    },
+    'nvim-treesitter/playground'
+  }
 
   --  Move mapping out
   use 'rhysd/git-messenger.vim'

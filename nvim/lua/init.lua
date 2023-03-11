@@ -113,9 +113,9 @@ require("plugins")
 
 -- sane default for diagnostics
 vim.diagnostic.config({
-    virtual_text = false,
-    severity_sort = true,
-  })
+  virtual_text = false,
+  severity_sort = true,
+})
 
 -- PLUGIN MAPPINGS -----------------------
 
