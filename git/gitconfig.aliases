@@ -108,6 +108,10 @@
   logFor2week = shortlog --since=2.week
   lf = log -u
 
+  # fetch
+  f = fetch
+  fo = fetch origin
+
   # diff
   d = diff
   dl = diff --cached HEAD^ # Show a diff last commit

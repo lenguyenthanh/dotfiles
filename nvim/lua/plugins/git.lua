@@ -11,7 +11,8 @@ M.setup = function()
   vim.cmd [[nnoremap <leader>gc :Git commit<CR>]]
   vim.cmd [[nnoremap <leader>gw :Gwrite<CR>]]
   vim.cmd [[nnoremap <leader>gp :Git push<CR>]]
-  vim.cmd [[noremap <leader>gb :GBrowse<CR>]]
+  vim.cmd [[noremap <leader>gb :GBrowse @upstream<CR>]]
+  vim.cmd [[noremap <leader>gu :GBrowse<CR>]]
 end
 
 return M

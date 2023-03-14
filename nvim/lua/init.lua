@@ -124,7 +124,7 @@ map("n", "<leader>to", ":NvimTreeToggle<CR>")
 map("n", "<leader>tf", ":NvimTreeFindFile<CR>")
 
 -- Ack
-g["ackprg"] = "rg --vimgrep --no-heading --ignore-case"
+g["ackprg"] = "rg --vimgrep --no-heading"
 
 map("n", "<leader>sw", "\"ryiw:Ack! <C-r>r<CR>")
 map("n", "<leader>sW", "\"ryiW:Ack! <C-r>r<CR>")

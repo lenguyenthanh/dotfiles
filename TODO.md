@@ -27,3 +27,9 @@
   - import color preset
   - font
 - Alfred
+
+## Issues
+
+- tmux/nvim mouse scroll 50%
+- multiple clipboards
+- async-profile
