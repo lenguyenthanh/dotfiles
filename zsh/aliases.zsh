@@ -40,8 +40,9 @@ alias k9='kill -9'
 alias killsbt='jps -v | grep sbt-launch | cut -d "'" "'" -f1 | xargs kill -9'
 alias killmetals='jps -v | grep metals | cut -d "'" "'" -f1 | xargs kill -9'
 
-# Elm
-# alias ep='npx elm-pages'
+# tmux session
+alias tp='tmux attach -t personal'
+alias trf='tmux attach -t rf'
 
 # Copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
