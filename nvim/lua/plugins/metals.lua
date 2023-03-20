@@ -19,6 +19,7 @@ M.setup = function()
     showImplicitConversionsAndClasses = true,
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
+    enableSemanticHighlighting = true,
     -- for testing only
     -- serverVersion = "0.11.10-SNAPSHOT",
   }

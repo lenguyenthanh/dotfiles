@@ -18,3 +18,5 @@ project/metals.sbt
 
 .java-version
 .python-version
+
+.jvmopts
