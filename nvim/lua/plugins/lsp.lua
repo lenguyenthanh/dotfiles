@@ -28,10 +28,6 @@ M.setup = function()
     on_attach = M.on_attach,
   }
 
-  -- lsp.elmls.setup {
-  --   on_attach = M.on_attach
-  -- }
-
   lsp.hls.setup {
     on_attach = M.on_attach
   }
@@ -40,7 +36,7 @@ M.setup = function()
 
   lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
     handlers = {
-          ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
+      ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
     },
     capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities),
   })

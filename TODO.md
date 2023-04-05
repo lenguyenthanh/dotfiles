@@ -9,6 +9,7 @@
 - [ ] Proper Rust setup
 - [ ] Disable hjkl
 - [ ] Only enable dap when using
+- [ ] https://github.com/sourcegraph/sg.nvim
 
 ## Common
 
