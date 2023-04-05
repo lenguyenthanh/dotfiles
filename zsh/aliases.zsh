@@ -12,7 +12,7 @@ alias :c='clear'
 alias g='git'
 
 # hoogle
-alias h='hoogle'
+# alias h='hoogle'
 
 alias cat='bat'
 alias sed='gsed -E'
@@ -78,13 +78,13 @@ alias dk='docker'
 alias dc='docker-compose'
 
 # scala
-alias scala='scala3-repl'
+# alias scala='scala3-repl'
 
 # curl
 alias weather='curl wttr.in'
 alias publicip='curl ifconfig.co'
 function shortlink() { curl --max-redirs 0 "https://tinyurl.com/api-create.php?url=$1" | pbcopy | echo "Copied!" }
-function cheatsheet() { curl "cheat.sh/$1" | cat }
+function cheat() { curl "cheat.sh/$1" | cat }
 function qrcode() { curl "qrenco.de/$1" }
 function dict() { curl "dict.org/d:$1" | cat }
 alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'

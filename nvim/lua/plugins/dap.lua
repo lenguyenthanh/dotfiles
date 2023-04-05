@@ -44,7 +44,7 @@ M.setup = function()
 
   local nvim_dap_group = vim.api.nvim_create_augroup("nvim-dap", { clear = true })
   vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "scala", "sbt", "sc" },
+    pattern = { "scala", "sbt", "sc", "yml", "dart" },
     callback = function()
       map("n", "<leader>dc", [[<cmd>lua require("dap").continue()<CR>]])
       map("n", "<leader>dl", [[<cmd>lua require("dap").run_last()<CR>]])

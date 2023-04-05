@@ -106,7 +106,10 @@ return require('packer').startup(function()
   use {
     'akinsho/flutter-tools.nvim',
     requires = 'nvim-lua/plenary.nvim',
-    config = [[require("flutter-tools").setup{}]],
+    config = [[require("plugins.flutter").setup()]],
+    ft = "dart",
+    event = "BufRead pubspec.yaml",
+    module = "flutter-tools",
   }
 
   use 'github/copilot.vim'
