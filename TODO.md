@@ -14,6 +14,7 @@
 ## Common
 
 - [ ] functions.zsh for all function
+- [ ] https://github.com/ajeetdsouza/zoxide
 
 
 ## Ideas
