@@ -17,3 +17,8 @@ ZSH_CUSTOM=$DOTFILES/zsh
 
 # copilot-cli alias
 eval "$(github-copilot-cli alias -- "$0")"
+
+# >>> scala-cli completions >>>
+# fpath=("/Users/tle/Library/Application Support/ScalaCli/completions/zsh" $fpath)
+# compinit
+# <<< scala-cli completions <<<
