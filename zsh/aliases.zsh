@@ -35,6 +35,7 @@ function gradlewrapper() { ./gradlew wrapper --gradle-version $1 --distribution-
 # mkdir then cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 function copy() { cat "$@" | pbcopy; }
+function js() { cat "$@" | jq }
 
 # kill
 alias k9='kill -9'

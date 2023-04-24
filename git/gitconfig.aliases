@@ -28,6 +28,10 @@
   lus = pull upstream master
   lrs = pull --recurse-submodules
 
+  # merge
+  m = merge
+  ms = merge master
+
   # checkout
   co = checkout # not restore
   com = checkout main

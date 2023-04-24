@@ -20,6 +20,7 @@ M.setup = function()
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
     enableSemanticHighlighting = true,
+    serverProperties = { "-Xmx8g" },
     -- for testing only
     -- serverVersion = "0.11.10-SNAPSHOT",
   }
@@ -36,6 +37,7 @@ M.setup = function()
 
     map("n", "<leader>tt", [[<cmd>lua require("metals.tvp").toggle_tree_view()<CR>]])
     map("n", "<leader>tr", [[<cmd>lua require("metals.tvp").reveal_in_tree()<CR>]])
+    map("n", "<leader>mm", [[<cmd>lua require("metals").compile_cascade()<CR>]])
     map("n", "<leader>mc", [[<cmd>lua require("telescope").extensions.metals.commands()<CR>]])
     map('n', '<leader>si', [[<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>]])
     map('n', '<leader>dd', [[<cmd>lua require("metals").select_test_suite()<cr>]])
