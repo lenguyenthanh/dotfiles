@@ -4,7 +4,7 @@
 ZSH_THEME="nt9"
 
 # Oh-My-Zsh Plugins
-plugins=(fzf fasd colored-man-pages gradle-completion)
+plugins=(fzf zoxide colored-man-pages)
 
 # Activate Oh-My-Zsh
 source $ZSH/oh-my-zsh.sh

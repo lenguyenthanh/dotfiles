@@ -9,7 +9,6 @@ brew install bat
 brew install coreutils # Those that come with macOS are outdated
 brew install coursier/formulas/coursier
 brew install ctags
-brew install fasd
 brew install fd
 brew install fzf
 brew install git
@@ -37,6 +36,7 @@ brew install jenv
 brew install llvm
 brew install alfred
 brew install visualvm
+brew install zoxide
 
 # Apps
 brew install appcleaner --cask

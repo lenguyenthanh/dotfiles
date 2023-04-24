@@ -14,7 +14,6 @@
 ## Common
 
 - [ ] functions.zsh for all function
-- [ ] https://github.com/ajeetdsouza/zoxide
 
 
 ## Ideas
@@ -35,3 +34,7 @@
 - tmux/nvim mouse scroll 50%
 - multiple clipboards
 - async-profile
+
+## Done
+
+- [x] https://github.com/ajeetdsouza/zoxide
