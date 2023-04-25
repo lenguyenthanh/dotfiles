@@ -53,3 +53,5 @@ function gw {
 	echo "Could not find gradlew"
     fi
 }
+
+eval "$(zoxide init --cmd j zsh)"
