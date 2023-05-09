@@ -1423,6 +1423,8 @@
 			</dict>
 			<key>Guid</key>
 			<string>2DD113D5-070F-4F28-BBCE-B473E9BD808E</string>
+			<key>Hide After Opening</key>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -1745,7 +1747,9 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraMonoNerdFontCompleteM-Regular 13</string>
+			<string>FiraMonoNFM-Regular 13</string>
+			<key>Open Toolbelt</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1821,6 +1825,8 @@
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Custom Window Title</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -1841,6 +1847,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>2</integer>
+	<key>OptionClickMovesCursor</key>
+	<true/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PerPaneBackgroundImage</key>
@@ -1910,6 +1918,8 @@
 	<integer>4</integer>
 	<key>TerminalVMargin</key>
 	<integer>4</integer>
+	<key>ThreeFingerEmulates</key>
+	<true/>
 	<key>TmuxUsesDedicatedProfile</key>
 	<true/>
 	<key>ToolbeltTools</key>
@@ -1918,6 +1928,8 @@
 	</array>
 	<key>Use background pattern indicator</key>
 	<true/>
+	<key>UseBorder</key>
+	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>UseSystemCursorWhenPossible</key>

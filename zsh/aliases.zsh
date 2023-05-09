@@ -79,9 +79,6 @@ alias usenvm='source $(brew --prefix nvm)/nvm.sh'
 alias dk='docker'
 alias dc='docker-compose'
 
-# scala
-# alias scala='scala3-repl'
-
 # curl
 alias weather='curl wttr.in'
 alias publicip='curl ifconfig.co'
@@ -93,9 +90,6 @@ alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/mas
 
 # pass
 alias pg='pass git'
-
-# quick restart zshrc
-alias zrc='source ~/.zshrc'
 
 # chess
 function dlgames() { curl -L -o $1_$2.pgn "https://lichess.org/games/export/$1?perfType=classical,rapid&color=$2" }

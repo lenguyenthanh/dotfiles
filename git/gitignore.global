@@ -20,3 +20,4 @@ project/metals.sbt
 .python-version
 
 .jvmopts
+.sbtopts
