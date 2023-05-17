@@ -41,6 +41,7 @@ function js() { cat "$@" | jq }
 alias k9='kill -9'
 alias killsbt='jps -v | grep sbt-launch | cut -d "'" "'" -f1 | xargs kill -9'
 alias killmetals='jps -v | grep metals | cut -d "'" "'" -f1 | xargs kill -9'
+alias killjps='jps -v | cut -d "'" "'" -f1 | xargs kill -9'
 
 # tmux session
 alias tp='tmux attach -t personal'
@@ -60,8 +61,8 @@ alias rmf='trash -rf -F'
 alias ip='ifconfig | rg inet'
 
 # python3 as default
-alias python='python3'
-alias pip=pip3
+# alias python='python3'
+# alias pip=pip3
 
 # scala-cli
 alias sc='scala-cli'

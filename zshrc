@@ -1,5 +1,5 @@
 #zmodload zsh/zprof
-
+export LC_ALL=en_US.UTF-8
 # Path to your dotfiles installation.
 export DOTFILES=$HOME/.dotfiles
 

@@ -13,6 +13,7 @@ M.setup = function()
   vim.cmd [[nnoremap <leader>gp :Git push<CR>]]
   vim.cmd [[noremap <leader>gb :GBrowse @upstream<CR>]]
   vim.cmd [[noremap <leader>gu :GBrowse<CR>]]
+  vim.cmd [[noremap <leader>gB :G blame<CR>]]
 end
 
 return M

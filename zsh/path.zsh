@@ -13,8 +13,10 @@ export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 # mactext
 PATH=$PATH:/Library/TeX/texbin/
 
+export RUBY_HOME="/opt/homebrew/lib/ruby/gems/3.2.0/bin:/opt/homebrew/opt/ruby/bin"
+
 # jenv
-export PATH="$HOME/.jenv/bin:$PATH:$HOME/.flutter/bin"
+export PATH="$RUBY_HOME:$HOME/.jenv/bin:$PATH:$HOME/.flutter/bin"
 eval "$(jenv init -)"
 
 # private local path
