@@ -1,8 +1,8 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter/issues/3092
 local M = {}
 
-local vim = vim
-local opt = vim.opt
+-- local vim = vim
+-- local opt = vim.opt
 
 M.setup = function()
   local installed = { "lua", "rust", "kotlin", "markdown", "markdown_inline", "java", "haskell", "javascript",

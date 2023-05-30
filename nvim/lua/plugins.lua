@@ -83,6 +83,10 @@ return require('packer').startup(function()
     'ray-x/lsp_signature.nvim',
   }
 
+  use {
+    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+    config = [[require("lsp_lines").setup()]],
+  }
   -- dap
   use {
     'mfussenegger/nvim-dap',
@@ -166,13 +170,13 @@ return require('packer').startup(function()
     end,
   }
 
-  -- fades inactive buffers
-  use {
-    "TaDaa/vimade",
-    config = function()
-      vim.cmd [[nnoremap yot :VimadeToggle<CR>]]
-    end,
-  }
+  -- -- fades inactive buffers
+  -- use {
+  --   "TaDaa/vimade",
+  --   config = function()
+  --     vim.cmd [[nnoremap yot :VimadeToggle<CR>]]
+  --   end,
+  -- }
 
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
