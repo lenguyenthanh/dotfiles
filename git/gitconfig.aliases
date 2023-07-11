@@ -132,7 +132,6 @@
   # stash
   st = stash
   stu = stash -u # include untracked files
-  stp = stash push
   sta = stash apply
   stc = stash clear
   std = stash drop
