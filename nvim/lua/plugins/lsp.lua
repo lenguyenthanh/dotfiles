@@ -21,6 +21,8 @@ M.on_attach = function(client, buffer)
 
   map("n", "<leader>lds", [[<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>]])
   map("n", "<leader>lws", [[<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>]])
+  map("n", "<Leader>l", [[<cmd> lua require("lsp_lines").toggle()<CR>]]
+  )
 end
 
 M.setup = function()
