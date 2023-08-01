@@ -135,8 +135,7 @@ return require('packer').startup(function()
     'tpope/vim-fugitive',
     config = [[require("plugins.git").setup()]],
   }
-
-  -- use 'ThePrimeagen/git-worktree.nvim'
+  use "sindrets/diffview.nvim"
 
   use {
     'lukas-reineke/indent-blankline.nvim',

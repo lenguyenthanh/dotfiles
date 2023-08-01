@@ -30,6 +30,9 @@ augroup end
 " Ensure changes to buffers are saved when you navigate away from that buffer
 autocmd FileType markdown set autowriteall
 
+" Agda
+au BufNewFile,BufRead *.agda setf agda
+
 " More text objects
 for char in [ '_', '.', ':', ',', ';', '/', '<bslash>', '*', '+', '%', '-', '#' ]
     execute 'xnoremap i' . char . ' :<C-u>normal! T' . char . 'vt' . char . '<CR>'

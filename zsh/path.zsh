@@ -14,8 +14,9 @@ eval "$(jenv init -)"
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 20)"
 
+
 # JAVA
-export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/async-profiler"
 
 # private local path
 . $DOTFILES/zsh/path.local
