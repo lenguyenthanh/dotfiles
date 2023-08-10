@@ -93,6 +93,12 @@ return require('packer').startup(function()
     config = [[require("plugins.dap").setup()]],
   }
 
+  -- Agda
+
+  use 'isovector/cornelis'
+  use 'liuchengxu/vim-which-key'
+
+
   -- scala metals
   use {
     {

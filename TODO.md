@@ -8,8 +8,9 @@
 - [ ] Custom luasnip
 - [ ] Proper Rust setup
 - [ ] Disable hjkl
-- [ ] Only enable dap when using
+- [ ] Only enable dap when using metals
 - [ ] https://github.com/sourcegraph/sg.nvim
+- [ ] Agda: https://github.com/isovector/cornelis
 
 ## Common
 
