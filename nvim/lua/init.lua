@@ -134,7 +134,6 @@ map("n", "<leader>sp", ":Ack! \'<C-r>\"\'<CR>")
 map("n", "<leader>ss", ":Ack! ")
 
 -- Fterm
-
 map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>')
 map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 
