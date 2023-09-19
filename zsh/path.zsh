@@ -19,4 +19,4 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 20)"
 export PATH="$JAVA_HOME/bin:$PATH:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/async-profiler"
 
 # private local path
-. $DOTFILES/zsh/path.local
+. $DOTFILES/zsh/rf.local

@@ -1,0 +1,21 @@
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+  AddKeysToAgent yes
+
+Host github.com
+  UpdateHostKeys yes
+
+Host jupiter
+  HostName 192.168.0.37
+  User thanh
+
+Host khiaw
+  HostName khiaw.lichess.ovh
+  User root
+
+Host starr
+  HostName starr.lichess.ovh
+  User root
+
