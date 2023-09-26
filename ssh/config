@@ -19,3 +19,6 @@ Host starr
   HostName starr.lichess.ovh
   User root
 
+Host grokking
+  HostName 165.22.100.177
+  User root
