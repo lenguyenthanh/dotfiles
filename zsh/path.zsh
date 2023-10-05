@@ -11,8 +11,11 @@ PATH=$PATH:/Library/TeX/texbin/
 # jenv
 PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+# https://github.com/jenv/jenv/issues/44
+export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
+alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 20)"
+# export JAVA_HOME="$(/usr/libexec/java_home -v 20)"
 
 
 # JAVA

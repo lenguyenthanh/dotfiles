@@ -5,7 +5,7 @@ M.setup = function()
   --vim.opt.listchars:append("space:⋅")
   --vim.opt.listchars:append("eol:↴")
 
-  require("indent_blankline").setup {
+  require("ibl").setup {
     filetype_exclude = {
       "vim",
       "markdown",

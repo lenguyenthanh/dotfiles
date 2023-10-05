@@ -20,7 +20,7 @@ M.setup = function()
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
     enableSemanticHighlighting = true,
-    serverProperties = { "-Xmx8g" },
+    serverProperties = { "-Xmx16g" },
     -- for testing only
     -- serverVersion = "0.11.10-SNAPSHOT",
   }

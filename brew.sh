@@ -26,6 +26,7 @@ brew install pinentry-mac
 brew install python
 brew install reattach-to-user-namespace # tmux copy/paste
 brew install ripgrep
+brew install tldr
 brew install tmux
 brew install trash
 brew install tree
