@@ -35,6 +35,7 @@
 - tmux/nvim mouse scroll 50%
 - multiple clipboards
 - async-profile
+- fix infinity scrolling iterm/tmux
 
 ## Done
 

@@ -26,6 +26,7 @@ M.on_attach = function(client, buffer)
 end
 
 M.setup = function()
+
   lsp.lua_ls.setup {
     on_attach = M.on_attach,
   }
