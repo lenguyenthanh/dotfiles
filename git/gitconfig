@@ -9,7 +9,7 @@
 [user]
   name = Thanh Le
   email = lenguyenthanh@hotmail.com
-	signingkey = 09577D5140217D8F
+  signingkey = 09577D5140217D8F
 
 [core]
   excludesfile = ~/.dotfiles/git/gitignore.global
@@ -50,24 +50,24 @@
 
 [rerere]
   # Fix conflicts only once
-	enabled = 1
+  enabled = 1
 
 [diff]
   mnemonicprefix = true
   tool = nvimdiff
-	# Detect copies as well as renames
-	renames = copies
+  # Detect copies as well as renames
+  renames = copies
 
 [difftool]
   prompt = false
 
 [diff "bin"]
-	# Use `hexdump` to diff binary files
-	textconv = hexdump -v -C
+  # Use `hexdump` to diff binary files
+  textconv = hexdump -v -C
 
 [help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+  # Automatically correct and execute mistyped commands
+  autocorrect = 1
 
 [branch]
   autosetuprebase = always
@@ -107,7 +107,7 @@
   gpgsign = true
 
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg
+  program = /usr/local/MacGPG2/bin/gpg
 
 [includeIf "gitdir:~/work/git/"]
   path = ~/.dotfiles/git/gitconfig.rf.local
