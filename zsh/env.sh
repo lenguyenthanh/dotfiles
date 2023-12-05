@@ -1,19 +1,6 @@
- #!/bin/zsh
-
-# Theme
-ZSH_THEME="nt9"
-
-# Oh-My-Zsh Plugins
-plugins=(fzf colored-man-pages)
-
-# Activate Oh-My-Zsh
-source $ZSH/oh-my-zsh.sh
-
-# Vim key binding
-#bindkey -v
+#!/bin/zsh
 
 # Fzf config
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
@@ -21,8 +8,19 @@ export FZF_DEFAULT_OPTS='
   --height 50% --multi --reverse
   --bind ctrl-f:page-down,ctrl-b:page-up
 '
-
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 { eval ssh-agent; ssh-add -A; } &>/dev/null
+
+# CTRL-/ to toggle small preview window to see the full command
+# CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
 
 # GPG signing
 export GPG_TTY=$(tty)
@@ -34,7 +32,9 @@ export NVM_DIR="$HOME/.nvm"
 
 export EDITOR=nvim
 
-complete -F _gradle gw
+source ~/.dotfiles/powerlevel10k/powerlevel10k.zsh-theme
+
+# complete -F _gradle gw
 function gw {
     gradle=$(
 	current=$(pwd)
@@ -53,8 +53,10 @@ function gw {
 	echo "Could not find gradlew"
     fi
 }
+
 eval "$(zoxide init --cmd j zsh)"
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
+

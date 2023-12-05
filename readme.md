@@ -21,7 +21,6 @@ curl -sSL https://raw.githubusercontent.com/lenguyenthanh/dotfiles/master/instal
 - Iterm2
 - Tmux
 - Zsh
-- Oh-My-Zsh
 
 ## Languages
 

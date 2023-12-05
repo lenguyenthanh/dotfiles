@@ -24,11 +24,6 @@ chmod +x brew.sh
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-# Install Oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-ln -s $HOME/.dotfiles/themes/nt9.zsh-theme $HOME/.oh-my-zsh/themes/nt9.zsh-theme
-
 echo "Installing Scala...."
 cs setup
 
