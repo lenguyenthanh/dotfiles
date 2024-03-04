@@ -60,7 +60,7 @@
 
   # add
   aa = add --all
-  aaaa = !git add --all && git commit --amend --no-edit
+  aaaa = !git add -u && git commit --amend --no-edit
   aav = add --all --verbose
   ai = add --interactive
   au = add -u
@@ -154,7 +154,9 @@
   rmv = remote -v
 
   # count
-  count = rev-list --count HEAD ^main
+  countM = rev-list --count HEAD ^main
+  countS = rev-list --count HEAD ^master
+  count = shortlog -s -n
 
   # subtree
   str = subtree

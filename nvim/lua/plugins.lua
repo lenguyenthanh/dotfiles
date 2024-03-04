@@ -36,14 +36,9 @@ return require('packer').startup(function()
       requires = {
         'nvim-lua/popup.nvim',
         'nvim-lua/plenary.nvim',
-        'vim-telescope/telescope-frecency.nvim',
         'telescope-fzf-native.nvim',
       },
       config = [[require("plugins.telescope").setup()]],
-    },
-    {
-      'nvim-telescope/telescope-frecency.nvim',
-      requires = 'tami5/sqlite.lua',
     },
     {
       'nvim-telescope/telescope-fzf-native.nvim',
