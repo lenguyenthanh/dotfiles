@@ -79,7 +79,7 @@
   keepBackup = false
 
 [rebase]
-	autosquash = true
+  autosquash = true
 
 [color]
   branch = auto
@@ -102,6 +102,9 @@
   added = yellow
   changed = green
   untracked = cyan
+
+[column]
+  ui = auto
 
 [commit]
   gpgsign = true
