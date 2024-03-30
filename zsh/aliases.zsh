@@ -15,6 +15,7 @@ alias g='git'
 alias cat='bat'
 alias sed='gsed -E'
 alias find='fd'
+alias less='less +F'
 
 alias ghcid='stack exec ghcid'
 
