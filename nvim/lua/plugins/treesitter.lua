@@ -6,7 +6,7 @@ local M = {}
 
 M.setup = function()
   local installed = { "lua", "rust", "kotlin", "markdown", "markdown_inline", "java", "haskell", "javascript",
-    "typescript", "python", "dart", "agda" }
+    "typescript", "python", "dart", "agda", "sql" }
   require("nvim-treesitter.configs").setup({
     playground = { enable = true },
     query_linter = {
@@ -23,6 +23,7 @@ M.setup = function()
     indent = {
       enable = true
     },
+
     --incremental_selection = {
     --enable = true,
     --keymaps = {
@@ -32,6 +33,7 @@ M.setup = function()
     --node_decremental = "grm",
     --},
     --},
+
   })
 
   -- -- use treesister fold for installed languages only

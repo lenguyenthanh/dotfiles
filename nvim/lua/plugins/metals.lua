@@ -20,7 +20,10 @@ M.setup = function()
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
     enableSemanticHighlighting = false,
-    serverProperties = { "-Xmx16g" },
+    serverProperties = { "-Xmx32g" },
+    autoImportBuild = "always",
+    -- javaVersion = 21,
+    defaultBspToBuildTool = "sbt",
     -- for testing only
     -- serverVersion = "0.11.10-SNAPSHOT",
   }
