@@ -42,7 +42,7 @@ for char in [ '_', '.', ':', ',', ';', '/', '<bslash>', '*', '+', '%', '-', '#' 
 endfor
 
 " " No hjkl
-" noremap h <Nop>
-" noremap j <Nop>
-" noremap k <Nop>
-" noremap l <Nop>
+noremap h <Nop>
+noremap j <Nop>
+noremap k <Nop>
+noremap l <Nop>
