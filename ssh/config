@@ -19,6 +19,10 @@ Host starr
   HostName starr.lichess.ovh
   User root
 
-Host grokking
-  HostName 165.22.100.177
+Host snafu
+  HostName snafu.lichess.ovh
+  User root
+
+Host sirch
+  HostName sirch.lichess.ovh
   User root

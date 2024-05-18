@@ -211,6 +211,21 @@ return require('packer').startup(function()
     config = [[require("plugins.tree").setup()]],
   }
 
+  use({
+    "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup {
+        column = {"icon"},
+        keymap = {
+          ["<C-h>"] = false,
+        }
+      }
+      -- open parent directory in current window
+      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+      vim.keymap.set("n", "<space>-", require("oil").toggle_float)
+    end,
+  })
+
   use 'numToStr/FTerm.nvim'
 
   use 'mileszs/ack.vim'
