@@ -2,7 +2,7 @@ local M = {}
 
 M.setup = function()
   require 'nvim-tree'.setup {
-    disable_netrw = false,
+    disable_netrw = true,
     filters = {
       custom = {
         ".git",

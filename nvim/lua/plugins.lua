@@ -108,15 +108,6 @@ return require('packer').startup(function()
     config = [[require("plugins.rust").setup()]],
   }
 
-  use {
-    'akinsho/flutter-tools.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-    config = [[require("plugins.flutter").setup()]],
-    ft = "dart",
-    event = "BufRead pubspec.yaml",
-    module = "flutter-tools",
-  }
-
   use 'github/copilot.vim'
 
   use {
@@ -204,6 +195,7 @@ return require('packer').startup(function()
     requires = 'nvim-telescope/telescope.nvim',
     config = [[require('neoclip').setup()]],
   }
+
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
