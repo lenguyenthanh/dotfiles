@@ -22,7 +22,6 @@ M.setup = function()
     enableSemanticHighlighting = false,
     serverProperties = { "-Xmx32g" },
     autoImportBuild = "always",
-    -- javaVersion = 21,
     defaultBspToBuildTool = "sbt",
     -- for testing only
     -- serverVersion = "0.11.10-SNAPSHOT",

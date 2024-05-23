@@ -90,8 +90,8 @@ return require('packer').startup(function()
 
   -- Agda
 
-  use 'isovector/cornelis'
-  use 'liuchengxu/vim-which-key'
+  -- use 'isovector/cornelis'
+  -- use 'liuchengxu/vim-which-key'
 
 
   -- scala metals
