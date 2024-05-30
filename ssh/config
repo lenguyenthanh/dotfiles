@@ -22,3 +22,11 @@ Host snafu
 Host sirch
   HostName sirch.lichess.ovh
   User root
+
+Host radio
+  HostName radio.lichess.ovh
+  User root
+
+Host image
+  HostName image.lichess.ovh
+  User root

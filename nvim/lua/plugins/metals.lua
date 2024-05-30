@@ -22,9 +22,8 @@ M.setup = function()
     enableSemanticHighlighting = false,
     serverProperties = { "-Xmx32g" },
     autoImportBuild = "always",
-    defaultBspToBuildTool = "sbt",
-    -- for testing only
-    -- serverVersion = "0.11.10-SNAPSHOT",
+    defaultBspToBuildTool = "true",
+    serverVersion = "latest.snapshot",
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -44,11 +43,11 @@ M.setup = function()
     map('n', '<leader>si', [[<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>]])
     map('n', '<leader>dd', [[<cmd>lua require("metals").select_test_suite()<cr>]])
 
-    api.nvim_create_autocmd("CursorHold", {
-      callback = vim.lsp.buf.document_highlight,
-      buffer = bufnr,
-      group = lsp_group,
-    })
+    -- api.nvim_create_autocmd("CursorHold", {
+    --   callback = vim.lsp.buf.document_highlight,
+    --   buffer = bufnr,
+    --   group = lsp_group,
+    -- })
     api.nvim_create_autocmd("CursorMoved", {
       callback = vim.lsp.buf.clear_references,
       buffer = bufnr,
@@ -72,7 +71,7 @@ M.setup = function()
 
   local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
   vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "scala", "sbt", "java", "sc", "groovy" },
+    pattern = { "scala", "sbt", "sc", "groovy", "java" },
     callback = function()
       require("metals").initialize_or_attach(metals_config)
     end,
