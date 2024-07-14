@@ -4,6 +4,7 @@ local lsp = require("lspconfig")
 
 local f = require("functions")
 local map = f.map
+local api = vim.api
 
 M.on_attach = function(client, buffer)
   map('n', '[d', [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]])
@@ -35,18 +36,21 @@ M.setup = function()
     on_attach = M.on_attach
   }
 
-  -- lsp.smithy.setup {
-  --   on_attach = M.on_attach
-  -- }
+  lsp.smithy_ls.setup({
+    on_attach = M.on_attach,
+    cmd = { "cs", "launch", "com.disneystreaming.smithy:smithy-language-server:0.0.21", "--", "0" },
+  })
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
   lsp.util.default_config = vim.tbl_extend("force", lsp.util.default_config, {
-    handlers = {
-      ["textDocument/publishDiagnostics"] = shared_diagnostic_settings,
-    },
-    capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities),
+    capabilities = capabilities,
   })
+
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+
 end
+
+M.lsp_group = api.nvim_create_augroup("lsp", { clear = true })
 
 return M

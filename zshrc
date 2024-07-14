@@ -27,10 +27,12 @@ ZSH_CUSTOM=$DOTFILES/zsh
 . $DOTFILES/zsh/aliases.zsh
 . $DOTFILES/zsh/path.zsh
 
-# copilot-cli alias
-eval "$(github-copilot-cli alias -- "$0")"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> scala-cli completions >>>
+fpath=("/Users/tle/Library/Application Support/ScalaCli/completions/zsh" $fpath)
+compinit
+# <<< scala-cli completions <<<

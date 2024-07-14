@@ -30,3 +30,19 @@ Host radio
 Host image
   HostName image.lichess.ovh
   User root
+
+Host manta
+  HostName manta.lichess.ovh
+  User root
+
+Host rodan
+  HostName rodan.lichess.ovh
+  User root
+
+Host gappa
+  HostName gappa.lichess.ovh
+  User root
+
+Host study
+  HostName study.lichess.ovh
+  User root

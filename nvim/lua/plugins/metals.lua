@@ -23,15 +23,13 @@ M.setup = function()
     serverProperties = { "-Xmx32g" },
     autoImportBuild = "always",
     defaultBspToBuildTool = "true",
-    serverVersion = "latest.snapshot",
+    -- serverVersion = "latest.snapshot",
   }
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true
 
   metals_config.capabilities = capabilities
-
-  local lsp_group = api.nvim_create_augroup("lsp_metals", { clear = true })
 
   metals_config.on_attach = function(client, bufnr)
     require("plugins.lsp").on_attach(client, bufnr)
@@ -46,24 +44,27 @@ M.setup = function()
     -- api.nvim_create_autocmd("CursorHold", {
     --   callback = vim.lsp.buf.document_highlight,
     --   buffer = bufnr,
-    --   group = lsp_group,
+    --   group = M.lsp_group,
     -- })
-    api.nvim_create_autocmd("CursorMoved", {
-      callback = vim.lsp.buf.clear_references,
-      buffer = bufnr,
-      group = lsp_group,
-    })
-    api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-      callback = vim.lsp.codelens.refresh,
-      buffer = bufnr,
-      group = lsp_group,
-    })
+
+    -- api.nvim_create_autocmd("CursorMoved", {
+    --   callback = vim.lsp.buf.clear_references,
+    --   buffer = bufnr,
+    --   group = M.lsp_group,
+    -- })
+
+    -- api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+    --   callback = vim.lsp.codelens.refresh,
+    --   buffer = bufnr,
+    --   group = M.lsp_group,
+    -- })
+
     api.nvim_create_autocmd("FileType", {
       pattern = { "dap-repl" },
       callback = function()
         require("dap.ext.autocompl").attach()
       end,
-      group = lsp_group,
+      group = M.lsp_group,
     })
 
     require("metals").setup_dap()
