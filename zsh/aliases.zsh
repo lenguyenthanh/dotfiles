@@ -80,7 +80,7 @@ alias usenvm='source $(brew --prefix nvm)/nvm.sh'
 
 # docker
 alias dk='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # curl
 alias weather='curl wttr.in'
@@ -129,3 +129,6 @@ alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
+
+# Java
+alias cfr='java -jar ~/bin/java/cfr.jar'

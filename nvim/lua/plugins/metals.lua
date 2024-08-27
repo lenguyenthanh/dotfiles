@@ -41,23 +41,23 @@ M.setup = function()
     map('n', '<leader>si', [[<cmd>lua require("telescope").extensions.scaladex.scaladex.search()<cr>]])
     map('n', '<leader>dd', [[<cmd>lua require("metals").select_test_suite()<cr>]])
 
-    -- api.nvim_create_autocmd("CursorHold", {
-    --   callback = vim.lsp.buf.document_highlight,
-    --   buffer = bufnr,
-    --   group = M.lsp_group,
-    -- })
+    api.nvim_create_autocmd("CursorHold", {
+      callback = vim.lsp.buf.document_highlight,
+      buffer = bufnr,
+      group = M.lsp_group,
+    })
 
-    -- api.nvim_create_autocmd("CursorMoved", {
-    --   callback = vim.lsp.buf.clear_references,
-    --   buffer = bufnr,
-    --   group = M.lsp_group,
-    -- })
+    api.nvim_create_autocmd("CursorMoved", {
+      callback = vim.lsp.buf.clear_references,
+      buffer = bufnr,
+      group = M.lsp_group,
+    })
 
-    -- api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
-    --   callback = vim.lsp.codelens.refresh,
-    --   buffer = bufnr,
-    --   group = M.lsp_group,
-    -- })
+    api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+      callback = vim.lsp.codelens.refresh,
+      buffer = bufnr,
+      group = M.lsp_group,
+    })
 
     api.nvim_create_autocmd("FileType", {
       pattern = { "dap-repl" },
