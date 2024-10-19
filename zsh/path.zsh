@@ -16,7 +16,7 @@ export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
 # JAVA
-export PATH="$JAVA_HOME/bin:$PATH:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/async-profiler"
+export PATH="$JAVA_HOME/bin:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/async-profiler:$PATH"
 
 # private local path
 . $DOTFILES/zsh/rf.local
