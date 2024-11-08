@@ -1,5 +1,3 @@
-Include /Users/tle/.colima/ssh_config
-
 Host *
   AddKeysToAgent yes
   UseKeychain yes
@@ -48,3 +46,11 @@ Host gappa
 Host study
   HostName study.lichess.ovh
   User root
+
+Host kaiju
+  HostName kaiju.lichess.ovh
+  user root
+
+Host talos
+  HostName talos.lichess.ovh
+  user root

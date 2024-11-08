@@ -20,3 +20,4 @@ export PATH="$JAVA_HOME/bin:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/as
 
 # private local path
 . $DOTFILES/zsh/rf.local
+. $DOTFILES/zsh/lichess.local
