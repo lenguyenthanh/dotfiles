@@ -39,9 +39,13 @@ export RF_EXTRA_OPTS="$RF_EXTRA_OPTS --add-opens java.base/sun.net.www.protocol.
 export RF_EXTRA_OPTS="$RF_EXTRA_OPTS --add-opens java.base/sun.net.www.protocol.jar=ALL-UNNAMED"
 export ES_JAVA_OPTS='-Xms512m -Xmx1g'
 export KAFKA_HEAP_OPTS='-Xms256m -Xmx512m'
-export RF_LOGBACK_CONFIG=~/rfconf/logback.xml
-export RF_LOG_BASE=~/rfData/log
-export RF_VAULT_BASE=~/work/git/vault
+
+export RF_LOGBACK_CONFIG=
+# ~/rfconf/logback.xml
+# export RF_LOG_BASE
+# ~/rfData/log
+# export RF_VAULT_BASE
+# ~/work/git/vault
 
 # use sbt-toplecat dev mode
 # to avoid faltal warning in development
