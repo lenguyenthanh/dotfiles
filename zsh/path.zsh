@@ -1,5 +1,5 @@
 # PATH
-# PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
+PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 
 # RUST
 # PATH="$HOME/.cargo/bin:$PATH"
@@ -18,7 +18,7 @@ export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
 alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
 
 # JAVA
-# export PATH="$JAVA_HOME/bin:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/async-profiler:$PATH"
+export PATH="$JAVA_HOME/bin:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/async-profiler:$PATH"
 
 # private local path
 . $DOTFILES/zsh/rf.local

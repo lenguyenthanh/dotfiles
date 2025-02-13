@@ -50,3 +50,9 @@ export RF_LOGBACK_CONFIG=
 # use sbt-toplecat dev mode
 # to avoid faltal warning in development
 export SBT_TPOLECAT_DEV=true
+
+# colima and testcontainers
+
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+export TESTCONTAINERS_HOST_OVERRIDE=192.168.106.2
+export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
