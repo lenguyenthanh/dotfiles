@@ -21,3 +21,5 @@ project/metals.sbt
 
 .jvmopts
 .sbtopts
+
+.tool-versions

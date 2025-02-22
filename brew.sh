@@ -33,7 +33,7 @@ brew install tree
 brew install zsh
 brew install pandoc
 brew install mactex --cask
-brew install jenv
+brew install asdf
 brew install llvm
 brew install alfred
 brew install visualvm

@@ -8,17 +8,18 @@ export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 # mactext
 # PATH=$PATH:/Library/TeX/texbin/
 
-# jenv
-# PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-# https://github.com/jenv/jenv/issues/44
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
-export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"
-alias jenv_set_java_home='export JAVA_HOME="$HOME/.jenv/versions/`jenv version-name`"'
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+. ~/.asdf/plugins/java/set-java-home.zsh
 
 # JAVA
-export PATH="$JAVA_HOME/bin:$HOME/bin/kafka/bin:$HOME/.dotfiles/bin:$HOME/bin/async-profiler:$PATH"
+export PATH="$HOME/.dotfiles/bin:$HOME/bin/async-profiler:$PATH"
 
 # private local path
 . $DOTFILES/zsh/rf.local

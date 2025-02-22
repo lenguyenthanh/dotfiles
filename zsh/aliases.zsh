@@ -68,6 +68,7 @@ alias ip='ifconfig | rg inet'
 
 # scala-cli
 alias sc='scala-cli'
+alias countScalaLine='fd -e *.scala | xargs wc -l'
 
 # Yarn
 alias y='yarn'
