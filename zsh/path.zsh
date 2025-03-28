@@ -21,6 +21,9 @@ autoload -Uz compinit && compinit
 # JAVA
 export PATH="$HOME/.dotfiles/bin:$HOME/bin/async-profiler:$PATH"
 
+# krew
+export PATH=${KREW_ROOT:-$HOME/.krew}/bin:$PATH
+
 # private local path
 . $DOTFILES/zsh/rf.local
 . $DOTFILES/zsh/lichess.local

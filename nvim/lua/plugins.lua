@@ -78,10 +78,6 @@ return require('packer').startup(function()
     'ray-x/lsp_signature.nvim',
   }
 
-  use {
-    "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-    config = [[require("lsp_lines").setup()]],
-  }
   -- dap
   use {
     'mfussenegger/nvim-dap',

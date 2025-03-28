@@ -132,5 +132,6 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 
 # Java
-function cfr() { cfr.sh $1 | cat }
+function cfr() { cfr.sh $1 }
+function cfrc() { cfr.sh $1 | cat }
 function jp() { javap -c $1 | cat }
