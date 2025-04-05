@@ -15,14 +15,22 @@ M.setup = function()
   metals_config.init_options.statusBarProvider = "on"
 
   metals_config.settings = {
-    showImplicitArguments = true,
-    showImplicitConversionsAndClasses = true,
+    showImplicitArguments = { enabled = true },
+    showImplicitConversionsAndClasses = { enabled = true },
     showInferredType = true,
     excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
     enableSemanticHighlighting = false,
     serverProperties = { "-Xmx32g" },
     autoImportBuild = "always",
     defaultBspToBuildTool = "true",
+    javaHome = os.getenv("JAVA_HOME"),
+    inlayHints = {
+      hintsInPatternMatch = { enable = true },
+      implicitArguments = { enable = true },
+      implicitConversions = { enable = true },
+      inferredTypes = { enable = true },
+      typeParameters = { enable = true },
+    },
     -- serverVersion = "latest.snapshot",
   }
 

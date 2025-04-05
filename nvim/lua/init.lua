@@ -115,8 +115,17 @@ require("plugins")
 
 -- sane default for diagnostics
 vim.diagnostic.config({
-  virtual_text = false,
+  -- virtual_text = false, default is false already
   severity_sort = true,
+  virtual_lines = false, -- <leader>ll to enable
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "▬",
+      [vim.diagnostic.severity.WARN] = "▬",
+      [vim.diagnostic.severity.INFO] = "▬",
+      [vim.diagnostic.severity.HINT] = "▬",
+    }
+    }
 })
 
 -- PLUGIN MAPPINGS -----------------------

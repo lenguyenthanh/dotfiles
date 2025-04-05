@@ -7,8 +7,8 @@ local map = f.map
 local api = vim.api
 
 M.on_attach = function(client, buffer)
-  map('n', '[d', [[<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>]])
-  map('n', ']d', [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]])
+  map('n', '[d', [[<cmd>lua vim.diagnostic.goto_prev()<CR>]])
+  map('n', ']d', [[<cmd>lua vim.diagnostic.goto_next()<CR>]])
   map('n', '<leader>la', [[<cmd>lua vim.lsp.buf.code_action()<CR>]])
   map("n", "<leader>lc", [[<cmd>lua vim.lsp.codelens.run() <CR>]])
   map('n', '<leader>ld', [[<cmd>lua vim.lsp.buf.definition()<CR>]])
@@ -20,11 +20,11 @@ M.on_attach = function(client, buffer)
   map('n', '<leader>lr', [[<cmd>lua vim.lsp.buf.rename()<CR>]])
   map('n', '<leader>lx', [[<cmd>lua vim.lsp.buf.references()<CR>]])
   map('n', '<leader>ls', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]])
+  map('n', '<leader>lo', [[<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<CR>]])
+  map('n', '<Leader>ll', [[<cmd>lua vim.diagnostic.config({ virtual_lines = (not vim.diagnostic.config().virtual_lines) })<CR>]])
 
-  map("n", "<leader>lds", [[<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>]])
-  map("n", "<leader>lws", [[<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>]])
-  map("n", "<Leader>l", [[<cmd> lua require("lsp_lines").toggle()<CR>]]
-  )
+  map('n', '<leader>lds', [[<cmd>lua require("telescope.builtin").lsp_document_symbols()<CR>]])
+  map('n', '<leader>lws', [[<cmd>lua require("telescope.builtin").lsp_dynamic_workspace_symbols()<CR>]])
 end
 
 M.setup = function()
@@ -39,7 +39,7 @@ M.setup = function()
 
   lsp.smithy_ls.setup({
     on_attach = M.on_attach,
-    cmd = { "cs", "launch", "com.disneystreaming.smithy:smithy-language-server:0.0.21", "--", "0" },
+    cmd = { "coursier", "launch", "com.disneystreaming.smithy:smithy-language-server:0.0.21", "--", "0" },
   })
 
   local capabilities = require("cmp_nvim_lsp").default_capabilities()

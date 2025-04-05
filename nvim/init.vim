@@ -18,8 +18,8 @@ highlight WinSeparator guibg=None
 " 1 second of no cursor movement to trigger CursorHold
 set updatetime=1000
 
-" Show diagnostic popup on cursor hover
-autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+" Show diagnostic popup on cursor hover we have virtual_lines
+" autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 
 " Turn on spell checking
 augroup textfiles
@@ -42,7 +42,7 @@ for char in [ '_', '.', ':', ',', ';', '/', '<bslash>', '*', '+', '%', '-', '#' 
 endfor
 
 " No hjkl
-" noremap h <Nop>
-" noremap j <Nop>
-" noremap k <Nop>
-" noremap l <Nop>
+noremap h <Nop>
+noremap j <Nop>
+noremap k <Nop>
+noremap l <Nop>
