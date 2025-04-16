@@ -184,6 +184,14 @@ parser_config.smithy = {
 }
 
 
+-- -- https://jmaguire.tech/posts/treesitter_folding/
+set.foldmethod = "expr"
+set.foldexpr = "nvim_treesitter#foldexpr()"
+set.foldlevel = 99
+set.foldlevelstart = 99
+set.foldcolumn = '0'
+set.foldenable = true
+
 vim.api.nvim_create_user_command(
   'Browse',
   function (opts)

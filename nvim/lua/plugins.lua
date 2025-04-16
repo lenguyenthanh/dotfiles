@@ -115,6 +115,12 @@ return require('packer').startup(function()
     'nvim-treesitter/playground'
   }
 
+  -- use {
+  --   'kevinhwang91/nvim-ufo',
+  --   requires = 'kevinhwang91/promise-async',
+  --   config = [[require("plugins.ufo").setup()]]
+  -- }
+
   --  Move mapping out
   use 'rhysd/git-messenger.vim'
   -- GitHub extension for fugitive.vim
@@ -203,7 +209,7 @@ return require('packer').startup(function()
     "stevearc/oil.nvim",
     config = function()
       require("oil").setup {
-        column = {"icon"},
+        column = { "icon" },
         keymap = {
           ["<C-h>"] = false,
         }

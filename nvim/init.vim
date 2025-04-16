@@ -41,6 +41,10 @@ for char in [ '_', '.', ':', ',', ';', '/', '<bslash>', '*', '+', '%', '-', '#' 
     execute 'onoremap a' . char . ' :normal va' . char . '<CR>'
 endfor
 
+" don't fold all
+
+" autocmd BufReadPost,FileReadPost * normal zR
+
 " No hjkl
 noremap h <Nop>
 noremap j <Nop>
