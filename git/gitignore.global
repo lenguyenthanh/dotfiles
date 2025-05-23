@@ -23,3 +23,4 @@ project/metals.sbt
 .sbtopts
 
 .tool-versions
+.env

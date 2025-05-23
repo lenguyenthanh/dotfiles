@@ -10,7 +10,7 @@ Host github.com
   UpdateHostKeys yes
 
 Host jupiter
-  HostName 192.168.0.37
+  HostName 192.168.1.183
   User thanh
 
 Host starr

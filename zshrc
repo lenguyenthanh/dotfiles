@@ -56,3 +56,7 @@ export SBT_TPOLECAT_DEV=true
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
 export TESTCONTAINERS_HOST_OVERRIDE=192.168.106.2
 export DOCKER_HOST="unix://${HOME}/.colima/default/docker.sock"
+
+
+source ~/kubectl-context-prompt.sh
+export PS1="${BLUE}\W ${GREEN}\u${YELLOW}\$(__kube_ps1)${NORMAL} \$ "
