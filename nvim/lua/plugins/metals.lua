@@ -30,6 +30,7 @@ M.setup = function()
       implicitConversions = { enable = true },
       inferredTypes = { enable = true },
       typeParameters = { enable = true },
+      hintsXRayMode = { enable = true },
     },
     -- serverVersion = "latest.snapshot",
   }

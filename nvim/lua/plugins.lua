@@ -75,7 +75,6 @@ return require('packer').startup(function()
       }
     },
     'kevinhwang91/nvim-bqf', -- better quickfix
-    'ray-x/lsp_signature.nvim',
   }
 
   -- dap
@@ -175,10 +174,10 @@ return require('packer').startup(function()
   use 'tpope/vim-repeat'
   use 'tpope/vim-unimpaired'
 
-  use {
-    "windwp/nvim-autopairs",
-    config = [[require('nvim-autopairs').setup({ })]],
-  }
+  -- use {
+  --   "windwp/nvim-autopairs",
+  --   config = [[require('nvim-autopairs').setup({ })]],
+  -- }
 
   use "kyazdani42/nvim-web-devicons"
 
