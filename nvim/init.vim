@@ -46,7 +46,7 @@ endfor
 " autocmd BufReadPost,FileReadPost * normal zR
 
 " No hjkl
-noremap h <Nop>
-noremap j <Nop>
-noremap k <Nop>
-noremap l <Nop>
+" noremap h <Nop>
+" noremap j <Nop>
+" noremap k <Nop>
+" noremap l <Nop>

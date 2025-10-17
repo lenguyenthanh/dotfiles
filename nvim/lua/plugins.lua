@@ -91,11 +91,8 @@ return require('packer').startup(function()
 
   -- scala metals
   use {
-    {
-      'scalameta/nvim-metals',
-      config = [[require("plugins.metals").setup()]],
-    },
-    'derekwyatt/vim-scala',
+    'scalameta/nvim-metals',
+    config = [[require("plugins.metals").setup()]],
   }
 
   use {
